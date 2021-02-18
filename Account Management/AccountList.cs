@@ -27,6 +27,7 @@ namespace Account_Management
 
         public List<Account> GetList()
         {
+            //return accounts;
             return accounts;
         }
     }
