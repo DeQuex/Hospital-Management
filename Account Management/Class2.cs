@@ -9,5 +9,6 @@ namespace Account_Management
     class Class2
     {
         //test
+        //savas
     }
 }
