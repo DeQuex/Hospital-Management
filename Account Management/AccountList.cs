@@ -22,12 +22,12 @@ namespace Account_Management
 
         public void delAccount(Account account)
         {
-            accounts.Remove(account);
+            //accounts.Remove(account);
+            accounts.Add(account);
         }
 
         public List<Account> GetList()
         {
-            //return accounts;
             return accounts;
         }
     }
