@@ -22,8 +22,7 @@ namespace Account_Management
 
         public void delAccount(Account account)
         {
-            //accounts.Remove(account);
-            accounts.Add(account);
+            accounts.Remove(account);
         }
 
         public List<Account> GetList()
