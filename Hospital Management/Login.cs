@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Hospital_Management.Form1;
 
 namespace Hospital_Management
 {
@@ -15,6 +16,11 @@ namespace Hospital_Management
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

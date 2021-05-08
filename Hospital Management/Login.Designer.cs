@@ -67,6 +67,7 @@ namespace Hospital_Management
             this.Controls.Add(this.button1);
             this.Name = "Login";
             this.Size = new System.Drawing.Size(165, 210);
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

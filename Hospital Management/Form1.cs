@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Hospital_Management
 {
     public partial class Form1 : Form
@@ -20,32 +21,21 @@ namespace Hospital_Management
             InitializeComponent();
         }
 
-        private void CenterUserControl(Form fName, Control name)
-        {
-            name.Location = new Point(fName.Size.Width / 2 - (name.Size.Width / 2), fName.Size.Height / 2 - (name.Size.Height / 2));
-        }
-        private void ResizeForm(Form fName, Control name)
-        {
-            fName.Size = new Size(name.Size.Width, name.Size.Height);
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
             
             Controls.Add(loginUserControl);
-            CenterUserControl(this, loginUserControl);
+            Functions.CenterUserControl(this, loginUserControl);
             //Controls.Add(AdminUControl);
 
-            ResizeForm(this, loginUserControl);
+            Functions.ResizeForm(this, loginUserControl);
 
-            
         }
 
-            
-            
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-            CenterUserControl(this, loginUserControl);
+            Functions.CenterUserControl(this, loginUserControl);
         }
     }
 }
