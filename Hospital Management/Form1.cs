@@ -28,14 +28,14 @@ namespace Hospital_Management
             Functions.CenterUserControl(this, AdminUControl);
             //Controls.Add(AdminUControl);
 
-            Functions.ResizeForm(this, AdminUControl);
+            //Functions.ResizeForm(this, AdminUControl);
 
         }
 
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-           Functions.CenterUserControl(this, AdminUControl);
+          // Functions.CenterUserControl(this, AdminUControl);
         }
     }
 }
