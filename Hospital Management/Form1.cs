@@ -12,18 +12,27 @@ namespace Hospital_Management
 {
     public partial class Form1 : Form
     {
+        UserControl loginUserControl = new Login();
         public Form1()
         {
             InitializeComponent();
         }
 
+        private void CenterUserControl(Control name)
+        {
+            name.Location = new Point(Size.Width / 2 - (name.Size.Width / 2), Size.Height / 2 - (name.Size.Height / 2));
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
-            UserControl test = new Login();
-            Controls.Add(test);
+            
+            Controls.Add(loginUserControl);
+            CenterUserControl(loginUserControl);
 
-            test.Location = new Point(Size.Width / 2 - (test.Size.Width / 2), Size.Height / 2 - (test.Size.Height / 2));
+        }
 
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            CenterUserControl(loginUserControl);
         }
     }
 }
