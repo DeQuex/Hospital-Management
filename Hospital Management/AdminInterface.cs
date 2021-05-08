@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static Hospital_Management.Functions;
 namespace Hospital_Management
 {
     public partial class AdminInterface : UserControl
@@ -19,9 +19,8 @@ namespace Hospital_Management
 
         private void AdminInterface_Load(object sender, EventArgs e)
         {
-           
-            
-            
+
         }
+
     }
 }
