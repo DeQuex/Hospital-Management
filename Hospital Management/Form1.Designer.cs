@@ -40,6 +40,7 @@ namespace Hospital_Management
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.Form1_ControlAdded);
             this.ResumeLayout(false);
 
         }

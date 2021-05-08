@@ -21,8 +21,7 @@ namespace Hospital_Management
         private void AdminInterface_Load(object sender, EventArgs e)
         {
 
-            
-
         }
+
     }
 }
