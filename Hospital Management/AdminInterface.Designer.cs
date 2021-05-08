@@ -29,8 +29,16 @@ namespace Hospital_Management
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // AdminInterface
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "AdminInterface";
+            this.Size = new System.Drawing.Size(1920, 1080);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
