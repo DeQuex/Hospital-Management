@@ -16,5 +16,12 @@ namespace Hospital_Management
         {
             InitializeComponent();
         }
+
+        private void AdminInterface_Load(object sender, EventArgs e)
+        {
+           
+            
+            
+        }
     }
 }
