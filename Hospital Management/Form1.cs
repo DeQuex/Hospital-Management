@@ -19,6 +19,10 @@ namespace Hospital_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            UserControl test = new Login();
+            Controls.Add(test);
+
+            test.Location = new Point(Size.Width / 2 - (test.Size.Width / 2), Size.Height / 2 - (test.Size.Height / 2));
 
         }
     }

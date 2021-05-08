@@ -1,14 +1,14 @@
 ﻿
 namespace Hospital_Management
 {
-    partial class Form1
+    partial class Register
     {
-        /// <summary>
+        /// <summary> 
         ///Gerekli tasarımcı değişkeni.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         ///Kullanılan tüm kaynakları temizleyin.
         /// </summary>
         ///<param name="disposing">yönetilen kaynaklar dispose edilmeliyse doğru; aksi halde yanlış.</param>
@@ -21,9 +21,9 @@ namespace Hospital_Management
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer üretilen kod
+        #region Bileşen Tasarımcısı üretimi kod
 
-        /// <summary>
+        /// <summary> 
         /// Tasarımcı desteği için gerekli metot - bu metodun 
         ///içeriğini kod düzenleyici ile değiştirmeyin.
         /// </summary>
@@ -31,14 +31,12 @@ namespace Hospital_Management
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(748, 521);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "Register";
+            this.Size = new System.Drawing.Size(252, 210);
             this.ResumeLayout(false);
 
         }
@@ -46,4 +44,3 @@ namespace Hospital_Management
         #endregion
     }
 }
-
