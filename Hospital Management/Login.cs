@@ -12,19 +12,25 @@ namespace Hospital_Management
 {
     public partial class Login : UserControl
     {
+        private void colorSettings()
+        {
+            BackColor = Functions.HexToRGB(0x2F5A65);
+            LoginPanel.BackColor = Functions.HexToRGB(0x222831);
+        }
         public Login()
         {
             InitializeComponent();
+            colorSettings();
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-            Functions.CenterControl(this, LoginBox);
+            Functions.CenterControl(this, LoginPanel);
         }
 
         private void Login_SizeChanged(object sender, EventArgs e)
         {
-            Functions.CenterControl(this, LoginBox);
+            Functions.CenterControl(this, LoginPanel);
         }
     }
 }
