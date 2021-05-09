@@ -33,7 +33,7 @@ namespace Hospital_Management
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-          // Functions.CenterUserControl(this, AdminUControl);
+           Functions.CenterUserControl(this, loginUserControl);
         }
 
         private void Form1_ControlAdded(object sender, ControlEventArgs e)
