@@ -30,7 +30,7 @@ namespace Hospital_Management
         }
 
         // hexadecimal renk kodlarını argb ye çeviren fonksiyon
-        public static Color changeColor(int hexCode)
+        public static Color HexToRGB(int hexCode)
         {
             Color temp = Color.FromArgb(hexCode);
             Color result = Color.FromArgb(temp.R, temp.G, temp.B);

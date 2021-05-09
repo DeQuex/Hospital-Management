@@ -15,9 +15,9 @@ namespace Hospital_Management
         public AdminInterface()
         {
             InitializeComponent();
-            this.BackColor = Functions.changeColor(0x2F5A65);
-            this.sidePanel.BackColor = Functions.changeColor(0x222831);
-            this.label1.ForeColor = Functions.changeColor(0xF3F3F3);
+            BackColor = Functions.HexToRGB(0x2F5A65);
+            sidePanel.BackColor = Functions.HexToRGB(0x222831);
+            label1.ForeColor = Functions.HexToRGB(0xF3F3F3);
         }
 
         
