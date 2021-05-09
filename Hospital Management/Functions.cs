@@ -18,6 +18,14 @@ namespace Hospital_Management
         {
             fName.Size = new Size(name.Size.Width, name.Size.Height);
         }
+        // hexadecimal renk kodlarını argb ye çeviren fonksiyon
+        public static Color changeColor(int hexCode)
+        {
+            Color temp = Color.FromArgb(hexCode);
+            Color result = Color.FromArgb(temp.R, temp.G, temp.B);
+
+            return result;
+        }
 
     }
 }
