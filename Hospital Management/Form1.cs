@@ -24,18 +24,17 @@ namespace Hospital_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Controls.Add(loginUserControl);
             
-            Controls.Add(AdminUControl);
-            
-
-
         }
 
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
+            if (lastControl == null) return;
             Functions.ResizeUserControl(this, lastControl);
             Functions.CenterUserControl(this, lastControl);
+
         }
 
         private void Form1_ControlAdded(object sender, ControlEventArgs e)

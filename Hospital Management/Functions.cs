@@ -23,6 +23,12 @@ namespace Hospital_Management
         {
             fName.Size = new Size(name.Size.Width, name.Size.Height);
         }
+
+        public static void ResizeUserControl(Form fName, Control cName)
+        {
+            cName.Size = new Size(fName.Size.Width, fName.Size.Height);
+        }
+
         // hexadecimal renk kodlarını argb ye çeviren fonksiyon
         public static Color changeColor(int hexCode)
         {
@@ -32,10 +38,7 @@ namespace Hospital_Management
             return result;
         }
 
-        public static void ResizeUserControl(Form fName, Control cName)
-        {
-            cName.Size = new Size(fName.Size.Width, fName.Size.Height);
-        }
+
 
     }
 }
