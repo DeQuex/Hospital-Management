@@ -19,7 +19,12 @@ namespace Hospital_Management
 
         private void Login_Load(object sender, EventArgs e)
         {
-            
+            Functions.CenterControl(this, LoginBox);
+        }
+
+        private void Login_SizeChanged(object sender, EventArgs e)
+        {
+            Functions.CenterControl(this, LoginBox);
         }
     }
 }

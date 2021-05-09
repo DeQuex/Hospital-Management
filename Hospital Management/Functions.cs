@@ -14,9 +14,19 @@ namespace Hospital_Management
         {
             name.Location = new Point(fName.Size.Width / 2 - (name.Size.Width / 2), fName.Size.Height / 2 - (name.Size.Height / 2));
         }
+
+        public static void CenterControl(UserControl userControlName, Control cName)
+        {
+            cName.Location = new Point(userControlName.Size.Width / 2 - (cName.Size.Width / 2), userControlName.Size.Height / 2 - (cName.Size.Height / 2));
+        }
         public static void ResizeForm(Form fName, Control name)
         {
             fName.Size = new Size(name.Size.Width, name.Size.Height);
+        }
+
+        public static void ResizeUserControl(Form fName, Control cName)
+        {
+            cName.Size = new Size(fName.Size.Width, fName.Size.Height);
         }
 
     }

@@ -15,6 +15,7 @@ namespace Hospital_Management
     {
         UserControl loginUserControl = new Login();
         UserControl AdminUControl = new AdminInterface();
+        private Control lastControl;
 
         public Form1()
         {
@@ -32,13 +33,15 @@ namespace Hospital_Management
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
-           Functions.CenterUserControl(this, loginUserControl);
+            Functions.ResizeUserControl(this, lastControl);
+            Functions.CenterUserControl(this, lastControl);
         }
 
         private void Form1_ControlAdded(object sender, ControlEventArgs e)
         {
-            Functions.ResizeForm(this, e.Control);
-            Functions.CenterUserControl(this, e.Control);
+            lastControl = e.Control;
+            Functions.ResizeForm(this, lastControl);
+            Functions.CenterUserControl(this, lastControl);
         }
     }
 }

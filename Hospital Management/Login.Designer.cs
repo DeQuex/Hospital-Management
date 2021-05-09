@@ -32,11 +32,13 @@ namespace Hospital_Management
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.LoginBox = new System.Windows.Forms.GroupBox();
+            this.LoginBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(44, 158);
+            this.button1.Location = new System.Drawing.Point(88, 159);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -45,31 +47,42 @@ namespace Hospital_Management
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(30, 82);
+            this.textBox1.Location = new System.Drawing.Point(74, 83);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(30, 35);
+            this.textBox2.Location = new System.Drawing.Point(74, 36);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 2;
+            // 
+            // LoginBox
+            // 
+            this.LoginBox.Controls.Add(this.button1);
+            this.LoginBox.Controls.Add(this.textBox2);
+            this.LoginBox.Controls.Add(this.textBox1);
+            this.LoginBox.Location = new System.Drawing.Point(274, 162);
+            this.LoginBox.Name = "LoginBox";
+            this.LoginBox.Size = new System.Drawing.Size(250, 214);
+            this.LoginBox.TabIndex = 3;
+            this.LoginBox.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.LoginBox);
             this.Name = "Login";
-            this.Size = new System.Drawing.Size(165, 210);
+            this.Size = new System.Drawing.Size(817, 556);
             this.Load += new System.EventHandler(this.Login_Load);
+            this.SizeChanged += new System.EventHandler(this.Login_SizeChanged);
+            this.LoginBox.ResumeLayout(false);
+            this.LoginBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -78,5 +91,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.GroupBox LoginBox;
     }
 }
