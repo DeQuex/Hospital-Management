@@ -13,22 +13,22 @@ namespace Hospital_Management
     {
         public static void CenterUserControl(Form fName, Control name) // usercontrolu forma gore ortalar.
         {
-             name.Location = new Point(fName.Size.Width / 2 - (name.Size.Width / 2), fName.Size.Height / 2 - (name.Size.Height / 2));
+             name.Location = new Point(fName.Size.Width / 2 - name.Size.Width / 2, fName.Size.Height / 2 - name.Size.Height / 2);
         }
 
         public static void CenterControl(UserControl userControlName, Control cName) // Controlleri usercontrole gore ortalar.
         {
-            cName.Location = new Point(userControlName.Size.Width / 2 - (cName.Size.Width / 2), userControlName.Size.Height / 2 - (cName.Size.Height / 2));
+            cName.Location = new Point(userControlName.Size.Width / 2 - cName.Size.Width / 2, userControlName.Size.Height / 2 - cName.Size.Height / 2);
         }
         
         public static void ResizeForm(Form fName, Control cName) // formu, usercontrol boyutuna getirir.
         {
-            fName.Size = new Size(cName.Size.Width, cName.Size.Height + 40);
+            fName.ClientSize = new Size(cName.Size.Width, cName.Size.Height );
         }
 
         public static void ResizeUserControl(Form fName, Control cName) // usercontrolu, form boyutuna getirir.
         {
-            cName.Size = new Size(fName.Size.Width, fName.Size.Height);
+            cName.ClientSize = new Size(fName.Size.Width, fName.Size.Height);
         }
 
         public static Color HexToRGB(int hexCode) //  !!GEREKSİZ!!             hexadecimal renk kodlarını argb ye çeviren fonksiyon
@@ -43,11 +43,11 @@ namespace Hospital_Management
         {
             var gp = new GraphicsPath();
             //Upper-right arc:
-            gp.AddArc(X + width - (radius * 2), Y, radius * 2, radius * 2, 270, 90);
+            gp.AddArc(X + width - radius * 2, Y, radius * 2, radius * 2, 270, 90);
             //Lower-right arc:
-            gp.AddArc(X + width - (radius * 2), Y + height - (radius * 2), radius * 2, radius * 2, 0, 90);
+            gp.AddArc(X + width - radius * 2, Y + height - radius * 2, radius * 2, radius * 2, 0, 90);
             //Lower-left arc:
-            gp.AddArc(X, Y + height - (radius * 2), radius * 2, radius * 2, 90, 90);
+            gp.AddArc(X, Y + height - radius * 2, radius * 2, radius * 2, 90, 90);
             //Upper-left arc:
             gp.AddArc(X, Y, radius * 2, radius * 2, 180, 90);
             gp.CloseFigure();
