@@ -39,14 +39,14 @@ namespace Hospital_Management
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.patient_panel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.patient_tc_input = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_search_patient = new System.Windows.Forms.Button();
             this.patient_id_input = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_search_patient = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.patient_tc_input = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
@@ -167,26 +167,48 @@ namespace Hospital_Management
             this.patient_panel.Size = new System.Drawing.Size(1018, 693);
             this.patient_panel.TabIndex = 5;
             // 
-            // label2
+            // button1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label2.Location = new System.Drawing.Point(78, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "TC No";
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(118)))), ((int)(((byte)(28)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(327, 159);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(103, 33);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Hasta Bilgileri";
+            this.button1.UseVisualStyleBackColor = false;
             // 
-            // patient_tc_input
+            // button2
             // 
-            this.patient_tc_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.patient_tc_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.patient_tc_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patient_tc_input.Location = new System.Drawing.Point(83, 55);
-            this.patient_tc_input.Name = "patient_tc_input";
-            this.patient_tc_input.Size = new System.Drawing.Size(209, 23);
-            this.patient_tc_input.TabIndex = 1;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(118)))), ((int)(((byte)(28)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(462, 159);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(90, 33);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Envanter";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel2.Location = new System.Drawing.Point(327, 193);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(691, 500);
+            this.panel2.TabIndex = 7;
+            // 
+            // btn_search_patient
+            // 
+            this.btn_search_patient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(165)))), ((int)(((byte)(87)))));
+            this.btn_search_patient.FlatAppearance.BorderSize = 0;
+            this.btn_search_patient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btn_search_patient.Location = new System.Drawing.Point(141, 156);
+            this.btn_search_patient.Name = "btn_search_patient";
+            this.btn_search_patient.Size = new System.Drawing.Size(95, 36);
+            this.btn_search_patient.TabIndex = 6;
+            this.btn_search_patient.Text = "Bul";
+            this.btn_search_patient.UseVisualStyleBackColor = false;
             // 
             // patient_id_input
             // 
@@ -209,48 +231,26 @@ namespace Hospital_Management
             this.label3.TabIndex = 2;
             this.label3.Text = "Hasta İd";
             // 
-            // btn_search_patient
+            // patient_tc_input
             // 
-            this.btn_search_patient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(165)))), ((int)(((byte)(87)))));
-            this.btn_search_patient.FlatAppearance.BorderSize = 0;
-            this.btn_search_patient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btn_search_patient.Location = new System.Drawing.Point(141, 156);
-            this.btn_search_patient.Name = "btn_search_patient";
-            this.btn_search_patient.Size = new System.Drawing.Size(95, 36);
-            this.btn_search_patient.TabIndex = 6;
-            this.btn_search_patient.Text = "Bul";
-            this.btn_search_patient.UseVisualStyleBackColor = false;
+            this.patient_tc_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.patient_tc_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.patient_tc_input.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patient_tc_input.Location = new System.Drawing.Point(83, 55);
+            this.patient_tc_input.Name = "patient_tc_input";
+            this.patient_tc_input.Size = new System.Drawing.Size(209, 23);
+            this.patient_tc_input.TabIndex = 1;
             // 
-            // panel2
+            // label2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel2.Location = new System.Drawing.Point(327, 193);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(691, 500);
-            this.panel2.TabIndex = 7;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(118)))), ((int)(((byte)(28)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(462, 159);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 33);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Envanter";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(118)))), ((int)(((byte)(28)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(327, 159);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(103, 33);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Hasta Bilgileri";
-            this.button1.UseVisualStyleBackColor = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label2.Location = new System.Drawing.Point(78, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "TC No";
             // 
             // NurseInterface
             // 
