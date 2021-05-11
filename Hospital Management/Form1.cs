@@ -16,6 +16,7 @@ namespace Hospital_Management
         UserControl loginUserControl = new Login();
         UserControl AdminUControl = new AdminInterface();
         UserControl NurseUControl = new NurseInterface();
+        UserControl DoctorUControl = new DoctorInterface();
         private Control lastControl;
 
         public Form1()
