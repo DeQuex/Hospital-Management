@@ -15,6 +15,7 @@ namespace Hospital_Management
     {
         UserControl loginUserControl = new Login();
         UserControl AdminUControl = new AdminInterface();
+        UserControl NurseUControl = new NurseInterface();
         private Control lastControl;
 
         public Form1()
@@ -25,7 +26,7 @@ namespace Hospital_Management
         private void Form1_Load(object sender, EventArgs e)
         {
             //Controls.Add(loginUserControl);
-            Controls.Add(AdminUControl);
+            Controls.Add(NurseUControl);
 
         }
 
