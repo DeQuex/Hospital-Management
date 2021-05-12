@@ -16,9 +16,52 @@ namespace Hospital_Management
              name.Location = new Point(fName.Size.Width / 2 - name.Size.Width / 2, fName.Size.Height / 2 - name.Size.Height / 2);
         }
 
-        public static void CenterControl(UserControl userControlName, Control cName) // Controlleri usercontrole gore ortalar.
+        public enum Direction
         {
-            cName.Location = new Point(userControlName.Size.Width / 2 - cName.Size.Width / 2, userControlName.Size.Height / 2 - cName.Size.Height / 2);
+            Vertical,
+            Horizontal,
+            Diagonal
+        }
+
+        public static void CenterControl(UserControl userControlName, Direction direction, int space = 0, params Control[] controls) // Controlleri usercontrole gore ortalar.
+        {
+            var uControlCenterWidth = userControlName.Size.Width / 2;
+            var uControlCenterHeight = userControlName.Size.Height / 2;
+            var totalControlsHeight = 0;
+            var totalControlsWidth = 0;
+            var hOffset = 0;
+            var wOffset = 0;
+
+            foreach (var x in controls)
+            {
+                totalControlsHeight += x.Height;
+                totalControlsWidth += x.Width;
+            }
+
+            foreach (var control in controls)
+            {
+                switch (direction)
+                {
+                    case Direction.Vertical:
+                        control.Location = new Point(uControlCenterWidth - control.Size.Width / 2, uControlCenterHeight - totalControlsHeight / controls.Length + hOffset);
+                        hOffset += control.Height + space;
+                        break;
+                    case Direction.Horizontal:
+                        control.Location = new Point(uControlCenterWidth - totalControlsWidth / controls.Length + wOffset, uControlCenterHeight - control.Size.Height / 2);
+                        wOffset += control.Width + space;
+                        break;
+                    case Direction.Diagonal:
+                        control.Location = new Point(uControlCenterWidth - totalControlsWidth / controls.Length + wOffset, uControlCenterHeight - totalControlsHeight / controls.Length + hOffset);
+                        hOffset += control.Height + space;
+                        wOffset += control.Width + space;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
+                }
+               
+            }
+
+            
         }
         
         public static void ResizeForm(Form fName, Control cName) // formu, usercontrol boyutuna getirir.
@@ -39,21 +82,6 @@ namespace Hospital_Management
             return result;
         }
 
-        public static void DrawRoundRect(Graphics g, Pen p, float X, float Y, float width, float height, float radius)
-        {
-            var gp = new GraphicsPath();
-            //Upper-right arc:
-            gp.AddArc(X + width - radius * 2, Y, radius * 2, radius * 2, 270, 90);
-            //Lower-right arc:
-            gp.AddArc(X + width - radius * 2, Y + height - radius * 2, radius * 2, radius * 2, 0, 90);
-            //Lower-left arc:
-            gp.AddArc(X, Y + height - radius * 2, radius * 2, radius * 2, 90, 90);
-            //Upper-left arc:
-            gp.AddArc(X, Y, radius * 2, radius * 2, 180, 90);
-            gp.CloseFigure();
-            g.DrawPath(p, gp);
-            gp.Dispose();
-        }
 
     }
 }
