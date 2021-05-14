@@ -26,8 +26,8 @@ namespace Hospital_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Controls.Add(loginUserControl);
-            //Controls.Add(NurseUControl);
+            //Controls.Add(loginUserControl);
+            Controls.Add(AdminUControl);
 
         }
 

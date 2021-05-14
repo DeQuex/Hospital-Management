@@ -22,5 +22,23 @@ namespace Hospital_Management
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            if (user_panel.Visible == true && confirmation_panel.Visible == false)
+            {
+                user_panel.Hide();
+                confirmation_panel.Show();
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            if (user_panel.Visible == false && confirmation_panel.Visible == true)
+            {
+                user_panel.Show();
+                confirmation_panel.Hide();
+            }
+        }
     }
 }

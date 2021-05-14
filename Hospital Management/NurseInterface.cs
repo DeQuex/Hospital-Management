@@ -16,5 +16,23 @@ namespace Hospital_Management
         {
             InitializeComponent();
         }
+
+        private void storage_label_Click(object sender, EventArgs e)
+        {
+            if(patient_panel.Visible == true && storage_panel.Visible == false)
+            {
+                patient_panel.Hide();
+                storage_panel.Show();
+            }
+        }
+
+        private void patientInfo_label_Click(object sender, EventArgs e)
+        {
+            if (patient_panel.Visible == false && storage_panel.Visible == true)
+            {
+                patient_panel.Show();
+                storage_panel.Hide();
+            }
+        }
     }
 }
