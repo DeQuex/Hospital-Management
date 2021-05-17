@@ -17,27 +17,40 @@ namespace Hospital_Management
             InitializeComponent();
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void DoctorInterface_Load(object sender, EventArgs e)
         {
-
+            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
+            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
+            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            information.Visible = true;
+            operation.Visible = false;
+            panel22.Visible = false;
         }
 
-        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            TabPage page = tabControl1.TabPages[e.Index];
-            Color col = e.Index == 0 ? Color.SaddleBrown : Color.SaddleBrown;
-            e.Graphics.FillRectangle(new SolidBrush(col), e.Bounds);
 
-            Rectangle paddedBounds = e.Bounds;
-            int yOffset = (e.State == DrawItemState.Selected) ? -2 : 1;
-            paddedBounds.Offset(1, yOffset);
-            TextRenderer.DrawText(e.Graphics, page.Text, Font, paddedBounds, page.ForeColor);
+        private void button2_Click(object sender, EventArgs e)
+        {
+            information.Visible = false;
+            operation.Visible = true;
+            panel22.Visible = false;
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            information.Visible = false;
+            operation.Visible = false;
+            panel22.Visible = true;
+        }
+
+        private void DoctorInterface_SizeChanged(object sender, EventArgs e)
+        {
+            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
+            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
+            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
+        }
     }
 }
