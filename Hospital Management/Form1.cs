@@ -13,10 +13,10 @@ namespace Hospital_Management
 {
     public partial class Form1 : Form
     {
-        UserControl loginUserControl = new Login();
-        UserControl AdminUControl = new AdminInterface();
-        UserControl NurseUControl = new NurseInterface();
-        UserControl DoctorUControl = new DoctorInterface();
+        readonly UserControl loginUserControl = new Login();
+        readonly UserControl AdminUControl = new AdminInterface();
+        readonly UserControl NurseUControl = new NurseInterface();
+        readonly UserControl DoctorUControl = new DoctorInterface();
         private Control lastControl;
 
         public Form1()
