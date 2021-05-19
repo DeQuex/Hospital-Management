@@ -23,14 +23,16 @@ namespace Hospital_Management
             Diagonal
         }
 
-        public static void CenterControl(UserControl userControlName, Direction direction, int space = 0, params Control[] controls) // Controlleri usercontrole gore ortalar.
+        public static void OrderControl(UserControl userControlName, Direction direction, int space = 0, params Control[] controls) // Controlleri usercontrole gore ortalar.
         {
-            var uControlCenterWidth = userControlName.Size.Width / 2;
-            var uControlCenterHeight = userControlName.Size.Height / 2;
+            var uControlCenterWidth = userControlName.ClientSize.Width / 2;
+            var uControlCenterHeight = userControlName.ClientSize.Height / 2;
             var totalControlsHeight = 0;
             var totalControlsWidth = 0;
             var hOffset = 0;
             var wOffset = 0;
+            var spaceOffset = 0;
+            spaceOffset = space * (controls.Length - 1);
 
             foreach (var x in controls)
             {
@@ -38,16 +40,22 @@ namespace Hospital_Management
                 totalControlsWidth += x.Width;
             }
 
+            totalControlsHeight += spaceOffset;
+            totalControlsWidth += spaceOffset;
+
+
             foreach (var control in controls)
             {
                 switch (direction)
                 {
                     case Direction.Vertical:
-                        control.Location = new Point(uControlCenterWidth - control.Size.Width / 2, uControlCenterHeight - totalControlsHeight / controls.Length + hOffset);
+                        //control.Location = new Point(uControlCenterWidth - control.ClientSize.Width / 2, uControlCenterHeight - totalControlsHeight / controls.Length + hOffset);
+                        control.Location = new Point(control.Location.X, uControlCenterHeight - totalControlsHeight / controls.Length + hOffset);
                         hOffset += control.Height + space;
                         break;
                     case Direction.Horizontal:
-                        control.Location = new Point(uControlCenterWidth - totalControlsWidth / controls.Length + wOffset, uControlCenterHeight - control.Size.Height / 2);
+                        //  control.Location = new Point(uControlCenterWidth - totalControlsWidth / controls.Length + wOffset, uControlCenterHeight - control.ClientSize.Height / 2);
+                        control.Location = new Point(uControlCenterWidth - totalControlsWidth / controls.Length + wOffset, control.Location.Y);
                         wOffset += control.Width + space;
                         break;
                     case Direction.Diagonal:
@@ -61,7 +69,6 @@ namespace Hospital_Management
                
             }
 
-            
         }
         
         public static void ResizeForm(Form fName, Control cName) // formu, usercontrol boyutuna getirir.
@@ -81,7 +88,6 @@ namespace Hospital_Management
 
             return result;
         }
-
 
     }
 }

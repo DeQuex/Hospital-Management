@@ -19,7 +19,7 @@ namespace Hospital_Management
 
         private void StaffInterface_SizeChanged(object sender, EventArgs e)
         {
-            Functions.CenterControl(this, Functions.Direction.Horizontal, 20, sidePanel, rightPanel);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, rightPanel);
         }
     }
 }

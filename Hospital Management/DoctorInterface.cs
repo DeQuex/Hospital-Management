@@ -19,9 +19,9 @@ namespace Hospital_Management
 
         private void DoctorInterface_Load(object sender, EventArgs e)
         {
-            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
-            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
-            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,9 +48,9 @@ namespace Hospital_Management
 
         private void DoctorInterface_SizeChanged(object sender, EventArgs e)
         {
-            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
-            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
-            Functions.CenterControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
         }
     }
 }
