@@ -16,5 +16,10 @@ namespace Hospital_Management
         {
             InitializeComponent();
         }
+
+        private void StaffInterface_SizeChanged(object sender, EventArgs e)
+        {
+            Functions.CenterControl(this, Functions.Direction.Horizontal, 20, sidePanel, rightPanel);
+        }
     }
 }
