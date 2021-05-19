@@ -17,6 +17,7 @@ namespace Hospital_Management
         readonly UserControl AdminUControl = new AdminInterface();
         readonly UserControl NurseUControl = new NurseInterface();
         readonly UserControl DoctorUControl = new DoctorInterface();
+        readonly UserControl staffUControl = new StaffInterface();
         private Control lastControl;
 
         public Form1()
@@ -24,11 +25,20 @@ namespace Hospital_Management
             InitializeComponent();
         }
 
+        private void CenterFormLocation()
+        {
+            var centerScreenHeight = Screen.PrimaryScreen.Bounds.Height / 2;
+            var centerScreenWidth = Screen.PrimaryScreen.Bounds.Width / 2;
+            var centerFormHeight = Size.Height / 2;
+            var centerFormWidth = Size.Width / 2;
+
+            Location = new Point(centerScreenWidth - centerFormWidth, centerScreenHeight - centerFormHeight);
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Controls.Add(loginUserControl);
-            Controls.Add(DoctorUControl);
-
+            Controls.Add(staffUControl);
+            CenterFormLocation();
         }
 
 
