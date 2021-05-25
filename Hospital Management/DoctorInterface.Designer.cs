@@ -98,6 +98,7 @@ namespace Hospital_Management
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -475,6 +476,7 @@ namespace Hospital_Management
             // operation
             // 
             this.operation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.operation.Controls.Add(this.button5);
             this.operation.Controls.Add(this.button4);
             this.operation.Controls.Add(this.label23);
             this.operation.Controls.Add(this.comboBox3);
@@ -504,7 +506,7 @@ namespace Hospital_Management
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 16;
-            this.button4.Text = "Kayıt";
+            this.button4.Text = "Reçete";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // label23
@@ -791,6 +793,15 @@ namespace Hospital_Management
             this.label33.TabIndex = 0;
             this.label33.Text = "Hasta Sıralaması";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(528, 403);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Kayıt";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // DoctorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -905,5 +916,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button button5;
     }
 }
