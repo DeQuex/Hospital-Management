@@ -31,11 +31,11 @@ namespace Hospital_Management
         {
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btn_signout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -66,6 +66,7 @@ namespace Hospital_Management
             this.panel6 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.operation = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
@@ -98,6 +99,22 @@ namespace Hospital_Management
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.panel32 = new System.Windows.Forms.Panel();
+            this.panel33 = new System.Windows.Forms.Panel();
+            this.label35 = new System.Windows.Forms.Label();
+            this.ajanda = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.sidePanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -114,11 +131,18 @@ namespace Hospital_Management
             this.panel23.SuspendLayout();
             this.panel26.SuspendLayout();
             this.panel27.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel29.SuspendLayout();
+            this.panel31.SuspendLayout();
+            this.panel32.SuspendLayout();
+            this.ajanda.SuspendLayout();
+            this.panel34.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.sidePanel.Controls.Add(this.panel34);
             this.sidePanel.Controls.Add(this.panel4);
             this.sidePanel.Controls.Add(this.panel3);
             this.sidePanel.Controls.Add(this.panel2);
@@ -133,57 +157,63 @@ namespace Hospital_Management
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.linkLabel3);
             this.panel4.Location = new System.Drawing.Point(3, 265);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(283, 43);
             this.panel4.TabIndex = 7;
             // 
-            // button3
+            // linkLabel3
             // 
-            this.button3.Location = new System.Drawing.Point(67, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 37);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Geçmiş Tetkitler";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.linkLabel3.AutoSize = true;
+            this.linkLabel3.LinkColor = System.Drawing.Color.White;
+            this.linkLabel3.Location = new System.Drawing.Point(99, 19);
+            this.linkLabel3.Name = "linkLabel3";
+            this.linkLabel3.Size = new System.Drawing.Size(80, 13);
+            this.linkLabel3.TabIndex = 2;
+            this.linkLabel3.TabStop = true;
+            this.linkLabel3.Text = "Geçmiş İşlemler";
+            this.linkLabel3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel3_LinkClicked);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button2);
+            this.panel3.Controls.Add(this.linkLabel2);
             this.panel3.Location = new System.Drawing.Point(3, 216);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(283, 43);
             this.panel3.TabIndex = 7;
             // 
-            // button2
+            // linkLabel2
             // 
-            this.button2.Location = new System.Drawing.Point(67, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 37);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Yapılıcak İşlemler";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.Color.White;
+            this.linkLabel2.Location = new System.Drawing.Point(89, 14);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(92, 13);
+            this.linkLabel2.TabIndex = 1;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Yapılacak İşlemler";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.linkLabel1);
             this.panel2.Location = new System.Drawing.Point(3, 167);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(283, 43);
             this.panel2.TabIndex = 6;
             // 
-            // button1
+            // linkLabel1
             // 
-            this.button1.Location = new System.Drawing.Point(67, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Hasta Bilgileri";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.White;
+            this.linkLabel1.Location = new System.Drawing.Point(99, 15);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(70, 13);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Hasta Bilgileri";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btn_signout
             // 
@@ -253,6 +283,7 @@ namespace Hospital_Management
             this.information.Name = "information";
             this.information.Size = new System.Drawing.Size(1018, 693);
             this.information.TabIndex = 10;
+            this.information.Visible = false;
             // 
             // label13
             // 
@@ -475,6 +506,7 @@ namespace Hospital_Management
             // operation
             // 
             this.operation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.operation.Controls.Add(this.button5);
             this.operation.Controls.Add(this.button4);
             this.operation.Controls.Add(this.label23);
             this.operation.Controls.Add(this.comboBox3);
@@ -498,13 +530,22 @@ namespace Hospital_Management
             this.operation.TabIndex = 15;
             this.operation.Visible = false;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(528, 403);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Kayıt";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(540, 515);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 16;
-            this.button4.Text = "Kayıt";
+            this.button4.Text = "Reçete";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // label23
@@ -791,11 +832,168 @@ namespace Hospital_Management
             this.label33.TabIndex = 0;
             this.label33.Text = "Hasta Sıralaması";
             // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.panel24.Controls.Add(this.panel29);
+            this.panel24.Controls.Add(this.label27);
+            this.panel24.Controls.Add(this.panel30);
+            this.panel24.Controls.Add(this.label28);
+            this.panel24.Controls.Add(this.panel31);
+            this.panel24.Controls.Add(this.label34);
+            this.panel24.Controls.Add(this.panel32);
+            this.panel24.Location = new System.Drawing.Point(342, 37);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(1018, 693);
+            this.panel24.TabIndex = 18;
+            this.panel24.Visible = false;
+            // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.label26);
+            this.panel29.Location = new System.Drawing.Point(365, 231);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(545, 219);
+            this.panel29.TabIndex = 12;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(160, 98);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(176, 13);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Geçmiş Tetkitler Burada Görünücek";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(611, 161);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(52, 13);
+            this.label27.TabIndex = 11;
+            this.label27.Text = "Hasta No";
+            // 
+            // panel30
+            // 
+            this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel30.Location = new System.Drawing.Point(565, 134);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(135, 24);
+            this.panel30.TabIndex = 7;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label28.Location = new System.Drawing.Point(597, 63);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(66, 13);
+            this.label28.TabIndex = 6;
+            this.label28.Text = "Gelen Hasta";
+            // 
+            // panel31
+            // 
+            this.panel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel31.Controls.Add(this.label29);
+            this.panel31.Location = new System.Drawing.Point(528, 79);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(200, 40);
+            this.panel31.TabIndex = 5;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label29.Location = new System.Drawing.Point(61, 15);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(74, 13);
+            this.label29.TabIndex = 0;
+            this.label29.Text = "İsim Yazılacak";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label34.Location = new System.Drawing.Point(78, 47);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(156, 13);
+            this.label34.TabIndex = 3;
+            this.label34.Text = "Hoşgeldiniz doktor serdar Cesur";
+            // 
+            // panel32
+            // 
+            this.panel32.Controls.Add(this.panel33);
+            this.panel32.Controls.Add(this.label35);
+            this.panel32.Location = new System.Drawing.Point(56, 130);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(211, 521);
+            this.panel32.TabIndex = 2;
+            // 
+            // panel33
+            // 
+            this.panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel33.Location = new System.Drawing.Point(15, 31);
+            this.panel33.Name = "panel33";
+            this.panel33.Size = new System.Drawing.Size(182, 475);
+            this.panel33.TabIndex = 1;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label35.Location = new System.Drawing.Point(62, 15);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(85, 13);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "Hasta Sıralaması";
+            // 
+            // ajanda
+            // 
+            this.ajanda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.ajanda.Controls.Add(this.label36);
+            this.ajanda.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ajanda.Location = new System.Drawing.Point(342, 37);
+            this.ajanda.Name = "ajanda";
+            this.ajanda.Size = new System.Drawing.Size(1018, 693);
+            this.ajanda.TabIndex = 19;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(484, 79);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(49, 13);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "AJANDA";
+            // 
+            // panel34
+            // 
+            this.panel34.Controls.Add(this.linkLabel4);
+            this.panel34.Location = new System.Drawing.Point(3, 314);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(283, 43);
+            this.panel34.TabIndex = 8;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.LinkColor = System.Drawing.Color.White;
+            this.linkLabel4.Location = new System.Drawing.Point(114, 17);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(40, 13);
+            this.linkLabel4.TabIndex = 2;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Ajanda";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
+            // 
             // DoctorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
+            this.Controls.Add(this.ajanda);
+            this.Controls.Add(this.panel24);
             this.Controls.Add(this.panel22);
             this.Controls.Add(this.operation);
             this.Controls.Add(this.information);
@@ -807,8 +1005,11 @@ namespace Hospital_Management
             this.sidePanel.ResumeLayout(false);
             this.sidePanel.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.information.ResumeLayout(false);
             this.information.PerformLayout();
@@ -831,6 +1032,18 @@ namespace Hospital_Management
             this.panel26.PerformLayout();
             this.panel27.ResumeLayout(false);
             this.panel27.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel29.ResumeLayout(false);
+            this.panel29.PerformLayout();
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
+            this.panel32.ResumeLayout(false);
+            this.panel32.PerformLayout();
+            this.ajanda.ResumeLayout(false);
+            this.ajanda.PerformLayout();
+            this.panel34.ResumeLayout(false);
+            this.panel34.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -842,11 +1055,8 @@ namespace Hospital_Management
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel information;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -905,5 +1115,25 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.Panel ajanda;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Panel panel32;
+        private System.Windows.Forms.Panel panel33;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.LinkLabel linkLabel3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Panel panel34;
+        private System.Windows.Forms.LinkLabel linkLabel4;
     }
 }

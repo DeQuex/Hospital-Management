@@ -31,6 +31,8 @@ namespace Hospital_Management
         {
             this.tcbox = new System.Windows.Forms.TextBox();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_login = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@ namespace Hospital_Management
             this.passbox = new System.Windows.Forms.TextBox();
             this.tcpanel = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.LoginPanel.SuspendLayout();
             this.passwordpanel.SuspendLayout();
             this.tcpanel.SuspendLayout();
@@ -74,6 +74,26 @@ namespace Hospital_Management
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(256, 262);
             this.LoginPanel.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(172, 236);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Register";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(40, 236);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Forgot password?";
             // 
             // label2
             // 
@@ -146,26 +166,6 @@ namespace Hospital_Management
             this.Logo.Name = "Logo";
             this.Logo.Size = new System.Drawing.Size(200, 100);
             this.Logo.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(40, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Forgot password?";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(172, 236);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Register";
             // 
             // Login
             // 
