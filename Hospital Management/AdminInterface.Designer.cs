@@ -41,12 +41,12 @@ namespace Hospital_Management
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.user_panel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_search_patient = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.patient_id_input = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btn_search_patient = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.confirmation_panel = new System.Windows.Forms.Panel();
             this.sidePanel.SuspendLayout();
@@ -191,14 +191,40 @@ namespace Hospital_Management
             this.user_panel.Size = new System.Drawing.Size(1030, 728);
             this.user_panel.TabIndex = 4;
             // 
-            // panel2
+            // btn_search_patient
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel2.Controls.Add(this.dataGridView1);
-            this.panel2.Location = new System.Drawing.Point(0, 174);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1030, 554);
-            this.panel2.TabIndex = 0;
+            this.btn_search_patient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(165)))), ((int)(((byte)(87)))));
+            this.btn_search_patient.FlatAppearance.BorderSize = 0;
+            this.btn_search_patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search_patient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btn_search_patient.Location = new System.Drawing.Point(587, 119);
+            this.btn_search_patient.Name = "btn_search_patient";
+            this.btn_search_patient.Size = new System.Drawing.Size(68, 30);
+            this.btn_search_patient.TabIndex = 8;
+            this.btn_search_patient.Text = "Bul";
+            this.btn_search_patient.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(326, 128);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(209, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label7.Location = new System.Drawing.Point(321, 99);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 25);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Bölüm";
             // 
             // patient_id_input
             // 
@@ -217,44 +243,18 @@ namespace Hospital_Management
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label6.Location = new System.Drawing.Point(41, 99);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(84, 25);
+            this.label6.Size = new System.Drawing.Size(47, 25);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Hasta İd";
+            this.label6.Text = "İsim";
             // 
-            // label7
+            // panel2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label7.Location = new System.Drawing.Point(321, 99);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 25);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Hasta İd";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(326, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // btn_search_patient
-            // 
-            this.btn_search_patient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(165)))), ((int)(((byte)(87)))));
-            this.btn_search_patient.FlatAppearance.BorderSize = 0;
-            this.btn_search_patient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_search_patient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btn_search_patient.Location = new System.Drawing.Point(587, 119);
-            this.btn_search_patient.Name = "btn_search_patient";
-            this.btn_search_patient.Size = new System.Drawing.Size(68, 30);
-            this.btn_search_patient.TabIndex = 8;
-            this.btn_search_patient.Text = "Bul";
-            this.btn_search_patient.UseVisualStyleBackColor = false;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Location = new System.Drawing.Point(0, 174);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1030, 554);
+            this.panel2.TabIndex = 0;
             // 
             // dataGridView1
             // 
