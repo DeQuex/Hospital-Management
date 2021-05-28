@@ -30,6 +30,8 @@ namespace Hospital_Management
         private void InitializeComponent()
         {
             this.sidePanel = new System.Windows.Forms.Panel();
+            this.panel34 = new System.Windows.Forms.Panel();
+            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -113,9 +115,8 @@ namespace Hospital_Management
             this.label35 = new System.Windows.Forms.Label();
             this.ajanda = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
-            this.panel34 = new System.Windows.Forms.Panel();
-            this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.sidePanel.SuspendLayout();
+            this.panel34.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -136,7 +137,6 @@ namespace Hospital_Management
             this.panel31.SuspendLayout();
             this.panel32.SuspendLayout();
             this.ajanda.SuspendLayout();
-            this.panel34.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -154,6 +154,26 @@ namespace Hospital_Management
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(286, 765);
             this.sidePanel.TabIndex = 9;
+            // 
+            // panel34
+            // 
+            this.panel34.Controls.Add(this.linkLabel4);
+            this.panel34.Location = new System.Drawing.Point(3, 314);
+            this.panel34.Name = "panel34";
+            this.panel34.Size = new System.Drawing.Size(283, 43);
+            this.panel34.TabIndex = 8;
+            // 
+            // linkLabel4
+            // 
+            this.linkLabel4.AutoSize = true;
+            this.linkLabel4.LinkColor = System.Drawing.Color.White;
+            this.linkLabel4.Location = new System.Drawing.Point(114, 17);
+            this.linkLabel4.Name = "linkLabel4";
+            this.linkLabel4.Size = new System.Drawing.Size(40, 13);
+            this.linkLabel4.TabIndex = 2;
+            this.linkLabel4.TabStop = true;
+            this.linkLabel4.Text = "Ajanda";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // panel4
             // 
@@ -193,7 +213,7 @@ namespace Hospital_Management
             this.linkLabel2.TabIndex = 1;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Yapılacak İşlemler";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked_1);
             // 
             // panel2
             // 
@@ -967,26 +987,6 @@ namespace Hospital_Management
             this.label36.TabIndex = 0;
             this.label36.Text = "AJANDA";
             // 
-            // panel34
-            // 
-            this.panel34.Controls.Add(this.linkLabel4);
-            this.panel34.Location = new System.Drawing.Point(3, 314);
-            this.panel34.Name = "panel34";
-            this.panel34.Size = new System.Drawing.Size(283, 43);
-            this.panel34.TabIndex = 8;
-            // 
-            // linkLabel4
-            // 
-            this.linkLabel4.AutoSize = true;
-            this.linkLabel4.LinkColor = System.Drawing.Color.White;
-            this.linkLabel4.Location = new System.Drawing.Point(114, 17);
-            this.linkLabel4.Name = "linkLabel4";
-            this.linkLabel4.Size = new System.Drawing.Size(40, 13);
-            this.linkLabel4.TabIndex = 2;
-            this.linkLabel4.TabStop = true;
-            this.linkLabel4.Text = "Ajanda";
-            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
-            // 
             // DoctorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1004,6 +1004,8 @@ namespace Hospital_Management
             this.SizeChanged += new System.EventHandler(this.DoctorInterface_SizeChanged);
             this.sidePanel.ResumeLayout(false);
             this.sidePanel.PerformLayout();
+            this.panel34.ResumeLayout(false);
+            this.panel34.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1042,8 +1044,6 @@ namespace Hospital_Management
             this.panel32.PerformLayout();
             this.ajanda.ResumeLayout(false);
             this.ajanda.PerformLayout();
-            this.panel34.ResumeLayout(false);
-            this.panel34.PerformLayout();
             this.ResumeLayout(false);
 
         }

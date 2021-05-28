@@ -19,38 +19,52 @@ namespace Hospital_Management
 
         private void DoctorInterface_Load(object sender, EventArgs e)
         {
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, information);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, operation);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, panel22);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, ajanda);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void DoctorInterface_SizeChanged(object sender, EventArgs e)
+        {
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, information);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, operation);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, panel22);
+            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, ajanda);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             information.Visible = true;
             operation.Visible = false;
             panel22.Visible = false;
+            ajanda.Visible = false;
         }
 
 
-        private void button2_Click(object sender, EventArgs e)
+        private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
         {
             information.Visible = false;
             operation.Visible = true;
             panel22.Visible = false;
+            ajanda.Visible = false;
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             information.Visible = false;
             operation.Visible = false;
             panel22.Visible = true;
+            ajanda.Visible = false;
         }
 
-        private void DoctorInterface_SizeChanged(object sender, EventArgs e)
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, information);
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, operation);
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 10, sidePanel, panel22);
+            information.Visible = false;
+            operation.Visible = false;
+            panel22.Visible = false;
+            ajanda.Visible = true;
         }
     }
 }
