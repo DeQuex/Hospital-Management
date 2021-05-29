@@ -49,6 +49,8 @@ namespace Hospital_Management
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.confirmation_panel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
@@ -56,6 +58,7 @@ namespace Hospital_Management
             this.user_panel.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.confirmation_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -210,10 +213,15 @@ namespace Hospital_Management
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Doctor",
+            "Nurse",
+            "Staff"});
             this.comboBox1.Location = new System.Drawing.Point(326, 128);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(209, 21);
             this.comboBox1.TabIndex = 7;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -272,21 +280,43 @@ namespace Hospital_Management
             // confirmation_panel
             // 
             this.confirmation_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.confirmation_panel.Controls.Add(this.panel3);
+            this.confirmation_panel.Controls.Add(this.label8);
             this.confirmation_panel.Location = new System.Drawing.Point(330, 37);
             this.confirmation_panel.Name = "confirmation_panel";
             this.confirmation_panel.Size = new System.Drawing.Size(1030, 728);
             this.confirmation_panel.TabIndex = 5;
             this.confirmation_panel.Visible = false;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
+            this.panel3.Location = new System.Drawing.Point(60, 99);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(967, 626);
+            this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label8.Location = new System.Drawing.Point(55, 35);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(284, 25);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Onay İçin Bekleyen Personeller";
+            // 
             // AdminInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
-            this.Controls.Add(this.user_panel);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.user_panel);
             this.Controls.Add(this.confirmation_panel);
             this.Name = "AdminInterface";
             this.Size = new System.Drawing.Size(1360, 765);
@@ -302,6 +332,8 @@ namespace Hospital_Management
             this.user_panel.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.confirmation_panel.ResumeLayout(false);
+            this.confirmation_panel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,5 +360,7 @@ namespace Hospital_Management
         private System.Windows.Forms.Button btn_search_patient;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel confirmation_panel;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label8;
     }
 }
