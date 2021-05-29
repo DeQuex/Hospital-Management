@@ -55,7 +55,7 @@ namespace Hospital_Management
                 try
                 {
                     connection.Open();
-                    var sql = $"update {table_name} set {columnKey} = {columnValue} where {whereKey} = {whereValue}";
+                    var sql = $"update {table_name} set {columnKey} = {columnValue} where {whereKey} = {whereValue};";
                     var edit = new MySqlCommand(sql, connection);
                     edit.ExecuteReader();
                     connection.Close();
@@ -66,44 +66,60 @@ namespace Hospital_Management
                 }
             }
 
-            public static string ReadValue(string table_name, string columnKey, string whereKey, string whereValue)
+            public static List<string> ReadValue(string table_name, string columnKey, string whereKey, string whereValue)
             {
                 var connection = new MySqlConnection(connectionString);
+                var values = new List<string>();
                 try
                 {
                     connection.Open();
-                    var sql = $"select {columnKey} from {table_name} where {whereKey} = {whereValue}";
+                    var sql = $"select {columnKey} from sas.{table_name} where {whereKey} = '{whereValue}';";
                     var data = new MySqlCommand(sql, connection);
-                    
                     var reader = data.ExecuteReader();
-                    return reader.ToString();
+                    
+                    var i = 0;
+                    while (reader.Read())
+                    {
+                        values.Add(reader.GetString(i));
+                        i++;
+                    }
 
+                    connection.Close();
+                    return values;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-                return Empty;
+                return null;
             }
 
-            public static string Read(string table_name, string whereKey, string whereValue)
+            public static List<string> Read(string table_name, string whereKey, string whereValue)
             {
                 var connection = new MySqlConnection(connectionString);
+                var values = new List<string>();
                 try
                 {
                     connection.Open();
-                    var sql = $"select * from {table_name} where {whereKey} = {whereValue}";
+                    var sql = $"select * from {table_name} where {whereKey} = {whereValue};";
                     var data = new MySqlCommand(sql, connection);
-
                     var reader = data.ExecuteReader();
-                    return reader.ToString();
 
+                    var i = 0;
+                    while (reader.Read())
+                    {
+                        values.Add(reader.GetString(i));
+                        i++;
+                    }
+
+                    connection.Close();
+                    return values;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-                return Empty;
+                return null;
             }
         }
 
