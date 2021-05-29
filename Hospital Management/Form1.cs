@@ -39,7 +39,7 @@ namespace Hospital_Management
         {
             Controls.Add(DoctorUControl);
             CenterFormLocation();
-            Functions.MySQL.Add("users", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
+            Functions.MySQL.Add("test", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
         }
 
 

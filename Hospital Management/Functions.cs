@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using Google.Protobuf;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using static System.String;
 
 namespace Hospital_Management
 {
@@ -46,9 +47,64 @@ namespace Hospital_Management
                 {
                     MessageBox.Show(ex.ToString());
                 }
-
             }
 
+            public static void Edit(string table_name, string columnKey, string columnValue, string whereKey, string whereValue)
+            {
+                var connection = new MySqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    var sql = $"update {table_name} set {columnKey} = {columnValue} where {whereKey} = {whereValue}";
+                    var edit = new MySqlCommand(sql, connection);
+                    edit.ExecuteReader();
+                    connection.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+            public static string ReadValue(string table_name, string columnKey, string whereKey, string whereValue)
+            {
+                var connection = new MySqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    var sql = $"select {columnKey} from {table_name} where {whereKey} = {whereValue}";
+                    var data = new MySqlCommand(sql, connection);
+                    
+                    var reader = data.ExecuteReader();
+                    return reader.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                return Empty;
+            }
+
+            public static string Read(string table_name, string whereKey, string whereValue)
+            {
+                var connection = new MySqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    var sql = $"select * from {table_name} where {whereKey} = {whereValue}";
+                    var data = new MySqlCommand(sql, connection);
+
+                    var reader = data.ExecuteReader();
+                    return reader.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                return Empty;
+            }
         }
 
         public static void CenterUserControl(Form fName, Control name) // usercontrolu forma gore ortalar.
@@ -62,7 +118,6 @@ namespace Hospital_Management
             Horizontal,
             Diagonal
         }
-
 
         public static void OrderControl(UserControl userControlName, Direction direction, int space = 0, params Control[] controls) // Controlleri usercontrole gore ortalar.
         {
