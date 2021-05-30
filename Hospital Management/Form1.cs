@@ -38,7 +38,7 @@ namespace Hospital_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Controls.Add(registerUserControl);
+            Controls.Add(AdminUControl);
             CenterFormLocation();
             // Functions.MySQL.Add("users", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
 

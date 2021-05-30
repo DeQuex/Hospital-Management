@@ -184,13 +184,11 @@ namespace Hospital_Management
                 {
                     res.Append(valid[rnd.Next(valid.Length)]);
                 }
-           
-
-        }
 
                 if (res.ToString().StartsWith("0")) continue;
                 return res.ToString();
             }
+
         }
 
         public static void sendMail(string pwd, string mail, string ad)
@@ -337,7 +335,7 @@ namespace Hospital_Management
             try
             {
                 connection.Open();
-                string Query = $"SELECT * FROM sas.test WHERE testcol = '{first_name}' AND testcol3 = '{department_name}';";
+                string Query = $"SELECT * FROM sas.test WHERE tc = '{first_name}' AND testcol3 = '{department_name}';";
                 var insert = new MySqlCommand(Query, connection);
                 var reader= insert.ExecuteReader();
                 string result = "";
@@ -353,8 +351,6 @@ namespace Hospital_Management
                 connection.Close();
 
                 return result;
-
-
 
             }
             catch (Exception e)
@@ -373,7 +369,7 @@ namespace Hospital_Management
             try
             {
                 connection.Open();
-                string Query = $"update sas.test set testcol = 'Savaş' where testcol3 = 'deneme';";
+                string Query = $"update sas.test set tc = 'Savaş' where testcol3 = 'deneme';";
                 var insert = new MySqlCommand(Query, connection);
                 var reader = insert.ExecuteReader();
                 connection.Close();

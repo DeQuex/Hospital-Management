@@ -53,9 +53,6 @@ namespace Hospital_Management
             this.patient_name_input = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.confirmation_panel = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,14 +62,17 @@ namespace Hospital_Management
             this.departmentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.approveStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staff_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.confirmation_panel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.user_panel.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.confirmation_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.confirmation_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -287,50 +287,6 @@ namespace Hospital_Management
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1030, 554);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // confirmation_panel
-            // 
-            this.confirmation_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.confirmation_panel.Controls.Add(this.panel3);
-            this.confirmation_panel.Controls.Add(this.label8);
-            this.confirmation_panel.Location = new System.Drawing.Point(330, 37);
-            this.confirmation_panel.Name = "confirmation_panel";
-            this.confirmation_panel.Size = new System.Drawing.Size(1030, 728);
-            this.confirmation_panel.TabIndex = 5;
-            this.confirmation_panel.Visible = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
-            this.panel3.Location = new System.Drawing.Point(60, 99);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(967, 626);
-            this.panel3.TabIndex = 1;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label8.Location = new System.Drawing.Point(55, 35);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(284, 25);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Onay İçin Bekleyen Personeller";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -356,7 +312,7 @@ namespace Hospital_Management
             this.staff_id});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Scheherazade", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -432,6 +388,37 @@ namespace Hospital_Management
             this.staff_id.Name = "staff_id";
             this.staff_id.ReadOnly = true;
             // 
+            // confirmation_panel
+            // 
+            this.confirmation_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.confirmation_panel.Controls.Add(this.panel3);
+            this.confirmation_panel.Controls.Add(this.label8);
+            this.confirmation_panel.Location = new System.Drawing.Point(330, 37);
+            this.confirmation_panel.Name = "confirmation_panel";
+            this.confirmation_panel.Size = new System.Drawing.Size(1030, 728);
+            this.confirmation_panel.TabIndex = 5;
+            this.confirmation_panel.Visible = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
+            this.panel3.Location = new System.Drawing.Point(60, 99);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(967, 626);
+            this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label8.Location = new System.Drawing.Point(55, 35);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(284, 25);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Onay İçin Bekleyen Personeller";
+            // 
             // AdminInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,9 +442,9 @@ namespace Hospital_Management
             this.user_panel.ResumeLayout(false);
             this.user_panel.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.confirmation_panel.ResumeLayout(false);
             this.confirmation_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
