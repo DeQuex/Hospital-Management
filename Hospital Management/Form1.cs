@@ -14,6 +14,7 @@ namespace Hospital_Management
     public partial class Form1 : Form
     {
         readonly UserControl loginUserControl = new Login();
+        readonly UserControl registerUserControl = new Register();
         readonly UserControl AdminUControl = new AdminInterface();
         readonly UserControl NurseUControl = new NurseInterface();
         readonly UserControl DoctorUControl = new DoctorInterface();
@@ -37,13 +38,12 @@ namespace Hospital_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Controls.Add(AdminUControl);
+            Controls.Add(registerUserControl);
             CenterFormLocation();
             // Functions.MySQL.Add("users", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
 
             Functions.editUser();
         }
-
 
         private void Form1_SizeChanged(object sender, EventArgs e)
         {
