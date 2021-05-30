@@ -49,6 +49,8 @@ namespace Hospital_Management
 
             }
 
+           
+
         }
 
         public static void CenterUserControl(Form fName, Control name) // usercontrolu forma gore ortalar.
@@ -119,6 +121,69 @@ namespace Hospital_Management
         {
             cName.ClientSize = new Size(fName.Size.Width, fName.Size.Height);
         }
+
+
+        // admin panel kullanıcı bulma
+        public static string findUser(string first_name, string department_name)
+        {
+            string connectionString = "server=213.238.178.36;user=sasadmin;database=sas;port=3306;password=YcX8KqHbW3LmW3jF";
+            var connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                string Query = $"SELECT * FROM sas.test WHERE testcol = '{first_name}' AND testcol3 = '{department_name}';";
+                var insert = new MySqlCommand(Query, connection);
+                var reader= insert.ExecuteReader();
+                string result = "";
+                while(reader.Read())
+                {
+                    for (int i= 0; i < 5;i++)
+                    {
+                        result += reader.GetString(i) + " ";
+                        Console.WriteLine(result);
+                    }
+                    
+                }
+                connection.Close();
+
+                return result;
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+            return null;
+        }
+
+        public static void editUser()
+        {
+            string connectionString = "server=213.238.178.36;user=sasadmin;database=sas;port=3306;password=YcX8KqHbW3LmW3jF";
+            var connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                string Query = $"update sas.test set testcol = 'Savaş' where testcol3 = 'deneme';";
+                var insert = new MySqlCommand(Query, connection);
+                var reader = insert.ExecuteReader();
+                connection.Close();
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+        }
+
+
 
     }
 }

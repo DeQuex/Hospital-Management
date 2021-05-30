@@ -20,7 +20,7 @@ namespace Hospital_Management
         
         private void AdminInterface_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -49,6 +49,24 @@ namespace Hospital_Management
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_search_patient_Click(object sender, EventArgs e)
+        {
+            var patient_name = patient_name_input.Text;
+            var depart = department.Text;
+            if (patient_name == "" && depart == "")
+            {
+                MessageBox.Show("Değer girmediniz");
+            }
+            else
+            {
+                var result = Functions.findUser(patient_name, depart);
+                Console.WriteLine(result);
+                var addQuery = result.Split(' ');
+                dataGridView1.Rows.Add(addQuery);
+            }
+            
         }
     }
 }
