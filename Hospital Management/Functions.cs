@@ -123,6 +123,33 @@ namespace Hospital_Management
                 return null;
             }
 
+            public static List<string> ReadAll(string table_name)
+            {
+                var connection = new MySqlConnection(connectionString);
+                var values = new List<string>();
+                try
+                {
+                    connection.Open();
+                    var sql = $"select * from {table_name};";
+                    var data = new MySqlCommand(sql, connection);
+                    var reader = data.ExecuteReader();
+
+                    var i = 0;
+                    while (reader.Read())
+                    {
+                        values.Add(reader.GetString(i));
+                        i++;
+                    }
+
+                    connection.Close();
+                    return values;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                return null;
+            }
             public static bool check_connection()
             {
                 var result = false;
@@ -341,7 +368,7 @@ namespace Hospital_Management
                 string result = "";
                 while(reader.Read())
                 {
-                    for (int i= 0; i < 5;i++)
+                    for (var i= 0; i < 5;i++)
                     {
                         result += reader.GetString(i) + " ";
                         Console.WriteLine(result);
