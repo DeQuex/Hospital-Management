@@ -8,6 +8,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Account_Management;
 using MySql.Data.MySqlClient;
 
 namespace Hospital_Management
@@ -50,13 +51,16 @@ namespace Hospital_Management
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            var liste = Functions.MySQL.ReadAll("users");
-            var a = liste.DataSet;
-            foreach (var x in a.DefaultViewManager)
+            var liste = new AccountList();
+            var data = Functions.MySQL.ReadAllDataSource("users");
+            foreach (DataRow xRow in data.Rows)
             {
-                MessageBox.Show(x.ToString());
-                
+                liste.addAccount(new Account(xRow["id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(),
+                    xRow["staff_tc"].ToString(), xRow["password"].ToString(), xRow["mail"].ToString(),
+                    xRow["department"].ToString(), xRow["approve_status"].ToString(), xRow["staff_id"].ToString()));
             }
+
+            MessageBox.Show("done");
         }
     }
 }

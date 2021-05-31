@@ -20,7 +20,7 @@ namespace Hospital_Management
         readonly UserControl DoctorUControl = new DoctorInterface();
         readonly UserControl staffUControl = new StaffInterface();
         private Control lastControl;
-
+        
         public Form1()
         {
             InitializeComponent();

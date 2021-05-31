@@ -185,5 +185,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Account Management\Account Management.csproj">
+      <Project>{6feac73e-c378-4f09-9358-c2d4284f801c}</Project>
+      <Name>Account Management</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,8 +20,8 @@ namespace Hospital_Management
         
         private void AdminInterface_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Functions.MySQL.ReadAll("users");
-            dataGridView1.DataMember = Functions.MySQL.ReadAll("users").TableName;
+            dataGridView1.DataSource = Functions.MySQL.ReadAllDataSource("users");
+            dataGridView1.DataMember = Functions.MySQL.ReadAllDataSource("users").TableName;
 
         }
 

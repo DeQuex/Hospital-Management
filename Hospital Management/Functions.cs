@@ -124,25 +124,19 @@ namespace Hospital_Management
                 return null;
             }
 
-            public static DataTable ReadAll(string table_name)
+            public static DataTable ReadAllDataSource(string table_name)
             {
                 var connection = new MySqlConnection(connectionString);
                 DataTable dataTable = new DataTable();
                 var values = new List<string>();
                 try
                 {
-                    
                     var sql = $"select * from sas.{table_name};";
                     var data = new MySqlCommand(sql, connection);
 
                     connection.Open();
-
                     var da = new MySqlDataAdapter(data);
                     da.Fill(dataTable);
-                    
-
-
-
                     connection.Close();
                     return dataTable;
                 }
@@ -201,7 +195,6 @@ namespace Hospital_Management
                 return builder.ToString();
             }
         }
-
         public static string CreateId(int length)
         {
             while (true)
@@ -219,7 +212,6 @@ namespace Hospital_Management
             }
 
         }
-
         public static void sendMail(string pwd, string mail, string ad)
         {
             var Client = new SmtpClient()
@@ -247,7 +239,6 @@ namespace Hospital_Management
             Message.To.Add(ToEmail);
             Client.Send(Message);
         }
-
         public static bool sendMailCheck()
         {
             var result = false;
@@ -290,14 +281,12 @@ namespace Hospital_Management
         {
              name.Location = new Point(fName.Size.Width / 2 - name.Size.Width / 2, fName.Size.Height / 2 - name.Size.Height / 2);
         }
-
         public enum Direction
         {
             Vertical,
             Horizontal,
             Diagonal
         }
-
         public static void OrderControl(UserControl userControlName, Direction direction, int space = 0, params Control[] controls) // Controlleri usercontrole gore ortalar.
         {
             var uControlCenterWidth = userControlName.ClientSize.Width / 2;
@@ -343,12 +332,10 @@ namespace Hospital_Management
                 }
             }
         }
-        
         public static void ResizeForm(Form fName, Control cName) // formu, usercontrol boyutuna getirir.
         {
             fName.ClientSize = new Size(cName.Size.Width, cName.Size.Height );
         }
-
         public static void ResizeUserControl(Form fName, Control cName) // usercontrolu, form boyutuna getirir.
         {
             cName.ClientSize = new Size(fName.Size.Width, fName.Size.Height);
@@ -375,18 +362,14 @@ namespace Hospital_Management
                         result += reader.GetString(i) + " ";
                         Console.WriteLine(result);
                     }
-                    
                 }
                 connection.Close();
-
                 return result;
-
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.ToString());
             }
-
             return null;
         }
 
