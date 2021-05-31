@@ -8,45 +8,29 @@ namespace Account_Management
 {
     public class Account
     {
-        private string account_type;
-        private string account_username;
-        private string account_password;
 
-        public Account(string uAccountType, string uAccountUsername, string uAccountPassword)
+        private string id;
+        private string name;
+        private string surname;
+        private string staff_tc;
+        private string password;
+        private string mail;
+        private string deparment;
+        private string approve_status;
+        private string staff_id;
+        public Account(string uId, string uName, string uSurname, string uStaffTc, string uPassword, string uMail, string uDeparment, string uApproveStatus, string uStaffİd)
         {
-            account_type = uAccountType;
-            account_username = uAccountUsername;
-            account_password = uAccountPassword;
+            id = uId;
+            name = uName;
+            surname = uSurname;
+            staff_tc = uStaffTc;
+            password = uPassword;
+            mail = uMail;
+            deparment = uDeparment;
+            approve_status = uApproveStatus;
+            staff_id = uStaffİd;
         }
 
-        public string GetAccountType()
-        {
-            return account_type;
-        }
 
-        public string GetAccountUsername()
-        {
-            return account_username;
-        }
-
-        public string GetAccountPassword()
-        {
-            return account_password;
-        }
-
-        public void SetAccountType(string type)
-        {
-            account_type = type;
-        }
-
-        public void SetAccountUsername(string username)
-        {
-            account_username = username;
-        }
-
-        public void SetAccountPassword(string password)
-        {
-            account_password = password;
-        }
     }
 }

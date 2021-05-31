@@ -50,21 +50,12 @@ namespace Hospital_Management
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            var deneme = "";
-            while (true)
+            var liste = Functions.MySQL.ReadAll("users");
+            var a = liste.DataSet;
+            foreach (var x in a.DefaultViewManager)
             {
-                deneme = Functions.CreateId(11);
-                if (deneme.StartsWith("0"))
-                {
-                    MessageBox.Show(deneme);
-                    break;
-                }
-
-
-            }
-            if (deneme.StartsWith("0"))
-            {
-                MessageBox.Show("degistirildi");
+                MessageBox.Show(x.ToString());
+                
             }
         }
     }
