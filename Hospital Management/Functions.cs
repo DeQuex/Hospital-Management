@@ -152,6 +152,37 @@ namespace Hospital_Management
                 }
                 return null;
             }
+            /*public static updateUser()
+            { 
+            }*/
+            public static DataTable ReadUApproved(string table_name)
+            {
+                var connection = new MySqlConnection(connectionString);
+                DataTable dataTable = new DataTable();
+                var values = new List<string>();
+                try
+                {
+
+                    var sql = $"select id,name,surname,staff_tc,mail,department,approve_status,staff_id from sas.{table_name} where approve_status = '0';";
+                    var data = new MySqlCommand(sql, connection);
+
+                    connection.Open();
+
+                    var da = new MySqlDataAdapter(data);
+                    da.Fill(dataTable);
+
+
+
+
+                    connection.Close();
+                    return dataTable;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                return null;
+            }
             public static bool check_connection()
             {
                 var result = false;
