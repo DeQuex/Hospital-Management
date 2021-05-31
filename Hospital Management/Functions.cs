@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -56,7 +57,7 @@ namespace Hospital_Management
                 try
                 {
                     connection.Open();
-                    var sql = $"update {table_name} set {columnKey} = {columnValue} where {whereKey} = '{whereValue}';";
+                    var sql = $"update sas.{table_name} set {columnKey} = {columnValue} where {whereKey} = '{whereValue}';";
                     var edit = new MySqlCommand(sql, connection);
                     edit.ExecuteReader();
                     connection.Close();
@@ -102,7 +103,7 @@ namespace Hospital_Management
                 try
                 {
                     connection.Open();
-                    var sql = $"select * from {table_name} where {whereKey} = '{whereValue}';";
+                    var sql = $"select * from sas.{table_name} where {whereKey} = '{whereValue}';";
                     var data = new MySqlCommand(sql, connection);
                     var reader = data.ExecuteReader();
 
@@ -123,26 +124,27 @@ namespace Hospital_Management
                 return null;
             }
 
-            public static List<string> ReadAll(string table_name)
+            public static DataTable ReadAll(string table_name)
             {
                 var connection = new MySqlConnection(connectionString);
+                DataTable dataTable = new DataTable();
                 var values = new List<string>();
                 try
                 {
-                    connection.Open();
-                    var sql = $"select * from {table_name};";
+                    
+                    var sql = $"select * from sas.{table_name};";
                     var data = new MySqlCommand(sql, connection);
-                    var reader = data.ExecuteReader();
 
-                    var i = 0;
-                    while (reader.Read())
-                    {
-                        values.Add(reader.GetString(i));
-                        i++;
-                    }
+                    connection.Open();
+
+                    var da = new MySqlDataAdapter(data);
+                    da.Fill(dataTable);
+                    
+
+
 
                     connection.Close();
-                    return values;
+                    return dataTable;
                 }
                 catch (Exception ex)
                 {

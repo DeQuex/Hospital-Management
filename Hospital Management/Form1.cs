@@ -38,11 +38,11 @@ namespace Hospital_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Controls.Add(AdminUControl);
+            Controls.Add(registerUserControl);
             CenterFormLocation();
             // Functions.MySQL.Add("users", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
 
-            Functions.editUser();
+            //Functions.editUser();
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)

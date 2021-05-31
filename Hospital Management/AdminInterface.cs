@@ -20,7 +20,9 @@ namespace Hospital_Management
         
         private void AdminInterface_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.DataSource = Functions.MySQL.ReadAll("users");
+            dataGridView1.DataMember = Functions.MySQL.ReadAll("users").TableName;
+
         }
 
         private void label5_Click(object sender, EventArgs e)
