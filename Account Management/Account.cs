@@ -31,6 +31,45 @@ namespace Account_Management
             staff_id = uStaffİd;
         }
 
+        public string GetId()
+        {
+            return id;
+        }
 
+        public string[] GetNameSurname()
+        {
+            string[] str = {name, surname};
+            return str;
+        }
+
+        public string GetStaffTc()
+        {
+            return staff_tc;
+        }
+
+        public string GetPassword()
+        {
+            return password;
+        }
+
+        public string GetMail()
+        {
+            return mail;
+        }
+
+        public string GetDepartment()
+        {
+            return deparment;
+        }
+
+        public string GetApproveStatus()
+        {
+            return approve_status;
+        }
+
+        public string GetStaffId()
+        {
+            return staff_id;
+        }
     }
 }

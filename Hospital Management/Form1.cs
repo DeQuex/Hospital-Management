@@ -20,7 +20,7 @@ namespace Hospital_Management
         readonly UserControl DoctorUControl = new DoctorInterface();
         readonly UserControl staffUControl = new StaffInterface();
         private Control lastControl;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -41,7 +41,6 @@ namespace Hospital_Management
             Controls.Add(AdminUControl);
             CenterFormLocation();
             // Functions.MySQL.Add("users", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
-
             //Functions.editUser();
         }
 
