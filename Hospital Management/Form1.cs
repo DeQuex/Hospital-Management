@@ -41,7 +41,6 @@ namespace Hospital_Management
             Controls.Add(registerUserControl);
             CenterFormLocation();
             // Functions.MySQL.Add("users", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
-
             //Functions.editUser();
         }
 
