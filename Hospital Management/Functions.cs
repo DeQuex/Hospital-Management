@@ -361,6 +361,40 @@ namespace Hospital_Management
             return null;
         }
 
+        public static string unapprovedUsers()
+        {
+            string connectionString = "server=213.238.178.36;user=sasadmin;database=sas;port=3306;password=YcX8KqHbW3LmW3jF";
+            var connection = new MySqlConnection(connectionString);
+
+            try
+            {
+                connection.Open();
+                string Query = $"SELECT * FROM sas.users WHERE approve_status = '0' ;";
+                var insert = new MySqlCommand(Query, connection);
+                var reader = insert.ExecuteReader();
+                string result = "";
+                while (reader.Read())
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        result += reader.GetString(i) + " ";
+                        Console.WriteLine(result);
+                    }
+
+                }
+                connection.Close();
+
+                return result;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+
+            return null;
+        }
+
         public static void editUser()
         {
             string connectionString = "server=213.238.178.36;user=sasadmin;database=sas;port=3306;password=YcX8KqHbW3LmW3jF";

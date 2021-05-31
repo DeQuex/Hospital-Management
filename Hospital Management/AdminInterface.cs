@@ -30,6 +30,13 @@ namespace Hospital_Management
                 user_panel.Hide();
                 confirmation_panel.Show();
             }
+
+            var result = Functions.unapprovedUsers();
+            Console.WriteLine(result);
+            var addQuery = result.Split(' ');
+            dataGridView2.Rows.Add(addQuery);
+
+            
         }
 
         private void label4_Click(object sender, EventArgs e)

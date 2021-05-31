@@ -35,6 +35,7 @@ namespace Hospital_Management
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.sidePanel = new System.Windows.Forms.Panel();
@@ -65,6 +66,15 @@ namespace Hospital_Management
             this.confirmation_panel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.id_col_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_col_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surname_col_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staff_tc_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mail_col_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.department_col_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approved_col_btn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.staff_id_col_btn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
@@ -73,6 +83,8 @@ namespace Hospital_Management
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.confirmation_panel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -402,6 +414,7 @@ namespace Hospital_Management
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
+            this.panel3.Controls.Add(this.dataGridView2);
             this.panel3.Location = new System.Drawing.Point(60, 99);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(967, 626);
@@ -419,6 +432,91 @@ namespace Hospital_Management
             this.label8.TabIndex = 0;
             this.label8.Text = "Onay İçin Bekleyen Personeller";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_col_btn,
+            this.name_col_btn,
+            this.surname_col_btn,
+            this.staff_tc_btn,
+            this.mail_col_btn,
+            this.department_col_btn,
+            this.approved_col_btn,
+            this.staff_id_col_btn});
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(967, 626);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // id_col_btn
+            // 
+            this.id_col_btn.HeaderText = "ID";
+            this.id_col_btn.Name = "id_col_btn";
+            this.id_col_btn.ReadOnly = true;
+            this.id_col_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.id_col_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // name_col_btn
+            // 
+            this.name_col_btn.HeaderText = "Name";
+            this.name_col_btn.Name = "name_col_btn";
+            this.name_col_btn.ReadOnly = true;
+            this.name_col_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.name_col_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // surname_col_btn
+            // 
+            this.surname_col_btn.HeaderText = "Surname";
+            this.surname_col_btn.Name = "surname_col_btn";
+            this.surname_col_btn.ReadOnly = true;
+            this.surname_col_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.surname_col_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // staff_tc_btn
+            // 
+            this.staff_tc_btn.HeaderText = "Staff TC";
+            this.staff_tc_btn.Name = "staff_tc_btn";
+            this.staff_tc_btn.ReadOnly = true;
+            this.staff_tc_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.staff_tc_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // mail_col_btn
+            // 
+            this.mail_col_btn.HeaderText = "Mail";
+            this.mail_col_btn.Name = "mail_col_btn";
+            this.mail_col_btn.ReadOnly = true;
+            this.mail_col_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.mail_col_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // department_col_btn
+            // 
+            this.department_col_btn.HeaderText = "Department";
+            this.department_col_btn.Name = "department_col_btn";
+            this.department_col_btn.ReadOnly = true;
+            this.department_col_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.department_col_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // approved_col_btn
+            // 
+            this.approved_col_btn.HeaderText = "Approved";
+            this.approved_col_btn.Name = "approved_col_btn";
+            this.approved_col_btn.ReadOnly = true;
+            // 
+            // staff_id_col_btn
+            // 
+            this.staff_id_col_btn.HeaderText = "Staff ID";
+            this.staff_id_col_btn.Name = "staff_id_col_btn";
+            this.staff_id_col_btn.ReadOnly = true;
+            this.staff_id_col_btn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.staff_id_col_btn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // AdminInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,8 +525,8 @@ namespace Hospital_Management
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.user_panel);
             this.Controls.Add(this.confirmation_panel);
+            this.Controls.Add(this.user_panel);
             this.Name = "AdminInterface";
             this.Size = new System.Drawing.Size(1360, 765);
             this.Load += new System.EventHandler(this.AdminInterface_Load);
@@ -445,6 +543,8 @@ namespace Hospital_Management
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.confirmation_panel.ResumeLayout(false);
             this.confirmation_panel.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -481,5 +581,14 @@ namespace Hospital_Management
         private System.Windows.Forms.DataGridViewTextBoxColumn departmentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn approveStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn staff_id;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_col_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_col_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surname_col_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_tc_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mail_col_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn department_col_btn;
+        private System.Windows.Forms.DataGridViewButtonColumn approved_col_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staff_id_col_btn;
     }
 }
