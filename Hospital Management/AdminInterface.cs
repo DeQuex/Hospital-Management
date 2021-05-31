@@ -20,8 +20,18 @@ namespace Hospital_Management
         
         private void AdminInterface_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Functions.MySQL.ReadAllDataSource("users");
-            dataGridView1.DataMember = Functions.MySQL.ReadAllDataSource("users").TableName;
+
+            //dataGridView1.DataSource = Functions.MySQL.ReadAllDataSource("users");
+            //dataGridView1.DataMember = Functions.MySQL.ReadAllDataSource("users").TableName;
+            dataGridView1.ColumnCount = 8;
+            dataGridView1.Columns[0].Name = "Id";
+            dataGridView1.Columns[1].Name = "Name";
+            dataGridView1.Columns[2].Name = "Surname";
+            dataGridView1.Columns[3].Name = "Staff TC";
+            dataGridView1.Columns[4].Name = "Mail";
+            dataGridView1.Columns[5].Name = "Department";
+            dataGridView1.Columns[6].Name = "Approve Status";
+            dataGridView1.Columns[7].Name = "Staff ID";
 
         }
 
@@ -65,18 +75,13 @@ namespace Hospital_Management
 
         private void btn_search_patient_Click(object sender, EventArgs e)
         {
-            var patient_name = patient_name_input.Text;
-            var depart = department.Text;
-            if (patient_name == "" && depart == "")
+            dataGridView1.Rows.Clear();
+            var users = Functions.MySQL.GetUsers();
+            foreach (var account in users.FindStaff(patient_name_input.Text, department.SelectedItem.ToString()))
             {
-                MessageBox.Show("Değer girmediniz");
-            }
-            else
-            {
-                var result = Functions.findUser(patient_name, depart);
-                Console.WriteLine(result);
-                var addQuery = result.Split(' ');
-                dataGridView1.Rows.Add(addQuery);
+                dataGridView1.Rows.Add(account.GetId(), account.GetNameSurname()[0], account.GetNameSurname()[1],
+                    account.GetStaffTc(), account.GetMail(), account.GetDepartment(), account.GetApproveStatus(),
+                    account.GetStaffId());
             }
             
         }
@@ -114,5 +119,7 @@ namespace Hospital_Management
                 }
             }
         }
+
+
     }
 }

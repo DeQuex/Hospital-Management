@@ -30,5 +30,28 @@ namespace Hospital_Management
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 e.Handled = true;
         }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            var users = Functions.MySQL.GetUsers();
+            var account_type = users.AccountType(tcbox.Text);
+
+            switch (account_type)
+            {
+                case "hemsire":
+                    Form1.ActiveForm.Controls.Add(new NurseInterface());
+                    break;
+                case "doktor":
+                    Form1.ActiveForm.Controls.Add(new DoctorInterface());
+                    break;
+                case "admin":
+                    Form1.ActiveForm.Controls.Add(new AdminInterface());
+                    break;
+                case "hizmetli":
+                    Form1.ActiveForm.Controls.Add(new StaffInterface());
+                    break;
+            }
+            Hide();
+        }
     }
 }

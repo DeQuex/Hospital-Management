@@ -51,16 +51,13 @@ namespace Hospital_Management
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            var liste = new AccountList();
-            var data = Functions.MySQL.ReadAllDataSource("users");
-            foreach (DataRow xRow in data.Rows)
-            {
-                liste.addAccount(new Account(xRow["id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(),
-                    xRow["staff_tc"].ToString(), xRow["password"].ToString(), xRow["mail"].ToString(),
-                    xRow["department"].ToString(), xRow["approve_status"].ToString(), xRow["staff_id"].ToString()));
-            }
+            var liste = Functions.MySQL.GetUsers();
 
-            MessageBox.Show("done");
+            
+            foreach (var x in liste.GetList())
+            {
+                MessageBox.Show($"{x.GetId()} {x.GetNameSurname()[0]} {x.GetNameSurname()[1]}");
+            }
         }
     }
 }

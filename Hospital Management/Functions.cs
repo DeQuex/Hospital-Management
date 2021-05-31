@@ -10,6 +10,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Account_Management;
 using Google.Protobuf;
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -146,9 +147,22 @@ namespace Hospital_Management
                 }
                 return null;
             }
-            /*public static updateUser()
-            { 
-            }*/
+
+            public static AccountList GetUsers()
+            {
+                var liste = new AccountList();
+                var data = ReadAllDataSource("users");
+                foreach (DataRow xRow in data.Rows)
+                {
+                    liste.addAccount(new Account(xRow["id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(),
+                        xRow["staff_tc"].ToString(), xRow["password"].ToString(), xRow["mail"].ToString(),
+                        xRow["department"].ToString(), xRow["approve_status"].ToString(), xRow["staff_id"].ToString()));
+                }
+
+                return liste;
+            }
+
+
             public static DataTable ReadUApproved(string table_name)
             {
                 var connection = new MySqlConnection(connectionString);
