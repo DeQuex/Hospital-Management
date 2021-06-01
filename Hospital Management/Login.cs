@@ -36,7 +36,6 @@ namespace Hospital_Management
         {
             var users = Functions.MySQL.GetUsers();
             var userpass = false;
-            var approve = false;
 
             foreach (var x in users.GetList().Where(x => x.GetPassword() == Functions.ComputeSha256Hash(passbox.Text) && x.GetStaffTc() == tcbox.Text))
             {
