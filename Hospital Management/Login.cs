@@ -35,9 +35,13 @@ namespace Hospital_Management
         private void btn_login_Click(object sender, EventArgs e)
         {
             var users = Functions.MySQL.GetUsers();
+            var userpass = false;
+            var approve = false;
 
-            if (users.GetList().Any(x => x.GetPassword() == Functions.ComputeSha256Hash(passbox.Text) && x.GetStaffTc() == tcbox.Text && x.GetApproveStatus() == "1"))
+            foreach (var x in users.GetList().Where(x => x.GetPassword() == Functions.ComputeSha256Hash(passbox.Text) && x.GetStaffTc() == tcbox.Text))
             {
+                userpass = true;
+                if (x.GetApproveStatus() != "1") continue;
                 var account_type = users.AccountType(tcbox.Text);
                 switch (account_type)
                 {
@@ -55,13 +59,14 @@ namespace Hospital_Management
                         break;
                 }
                 Form.ActiveForm?.Controls.Remove(this);
+                return;
+
             }
-            else
-            {
+            if (!userpass)
                 MessageBox.Show("tc or password is wrong.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
-        }
+            else
+                MessageBox.Show("You are not approved.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }   
 
         private void lbl_register_Click(object sender, EventArgs e)
         {
