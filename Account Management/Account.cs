@@ -31,10 +31,7 @@ namespace Account_Management
             staff_id = uStaffİd;
         }
 
-        public string GetId()
-        {
-            return id;
-        }
+        public string GetId() => id;
 
         public string[] GetNameSurname()
         {
@@ -42,34 +39,16 @@ namespace Account_Management
             return str;
         }
 
-        public string GetStaffTc()
-        {
-            return staff_tc;
-        }
+        public string GetStaffTc() => staff_tc;
 
-        public string GetPassword()
-        {
-            return password;
-        }
+        public string GetPassword() => password;
 
-        public string GetMail()
-        {
-            return mail;
-        }
+        public string GetMail() => mail;
 
-        public string GetDepartment()
-        {
-            return deparment;
-        }
+        public string GetDepartment() => deparment;
 
-        public string GetApproveStatus()
-        {
-            return approve_status;
-        }
+        public string GetApproveStatus() => approve_status;
 
-        public string GetStaffId()
-        {
-            return staff_id;
-        }
+        public string GetStaffId() => staff_id;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Hospital_Management
 {
     public partial class Login : UserControl
@@ -34,24 +35,38 @@ namespace Hospital_Management
         private void btn_login_Click(object sender, EventArgs e)
         {
             var users = Functions.MySQL.GetUsers();
-            var account_type = users.AccountType(tcbox.Text);
 
-            switch (account_type)
+            if (users.GetList().Any(x => x.GetPassword() == Functions.ComputeSha256Hash(passbox.Text) && x.GetStaffTc() == tcbox.Text && x.GetApproveStatus() == "1"))
             {
-                case "hemsire":
-                    Form1.ActiveForm.Controls.Add(new NurseInterface());
-                    break;
-                case "doktor":
-                    Form1.ActiveForm.Controls.Add(new DoctorInterface());
-                    break;
-                case "admin":
-                    Form1.ActiveForm.Controls.Add(new AdminInterface());
-                    break;
-                case "hizmetli":
-                    Form1.ActiveForm.Controls.Add(new StaffInterface());
-                    break;
+                var account_type = users.AccountType(tcbox.Text);
+                switch (account_type)
+                {
+                    case "hemsire":
+                        Form.ActiveForm?.Controls.Add(new NurseInterface());
+                        break;
+                    case "doktor":
+                        Form.ActiveForm?.Controls.Add(new DoctorInterface());
+                        break;
+                    case "admin":
+                        Form.ActiveForm?.Controls.Add(new AdminInterface());
+                        break;
+                    case "hizmetli":
+                        Form.ActiveForm?.Controls.Add(new StaffInterface());
+                        break;
+                }
+                Form.ActiveForm?.Controls.Remove(this);
             }
-            Hide();
+            else
+            {
+                MessageBox.Show("tc or password is wrong.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+
+        private void lbl_register_Click(object sender, EventArgs e)
+        {
+            Form.ActiveForm?.Controls.Add(new Register());
+            Form.ActiveForm?.Controls.Remove(this);
         }
     }
 }

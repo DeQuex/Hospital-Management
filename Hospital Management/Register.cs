@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,10 @@ namespace Hospital_Management
                         new[] { "mail", mailbox.Text }, new[] { "department", sectionbox.SelectedItem.ToString() },
                         new[] { "approve_status", "0" }, new[] { "staff_id", Functions.CreateId(11) });
                     Functions.sendMail(new_password, mailbox.Text, name.Text);
+                    MessageBox.Show("Kayit basarili sifreniz mail adresinize gonderildi.", "SAS Project",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Form.ActiveForm?.Controls.Add(new Login());
+                    Form.ActiveForm?.Controls.Remove(this);
                 }
                 catch (MySqlException exception)
                 {
@@ -44,20 +49,17 @@ namespace Hospital_Management
             }
             else
             {
-                MessageBox.Show("Bir hata olustu");
+                MessageBox.Show("Bir hata olustu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            var liste = Functions.MySQL.GetUsers();
-
-            
-            foreach (var x in liste.GetList())
-            {
-                MessageBox.Show($"{x.GetId()} {x.GetNameSurname()[0]} {x.GetNameSurname()[1]}");
-            }
+            name.Text = String.Empty;
+            surname.Text = String.Empty;
+            mailbox.Text = String.Empty;
+            tcbox.Text = String.Empty;
         }
     }
 }

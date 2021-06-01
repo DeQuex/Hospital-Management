@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Security.AccessControl;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,20 +13,11 @@ namespace Account_Management
     {
         private List<Account> accounts;
 
-        public AccountList()
-        {
-            accounts = new List<Account>();
-        }
+        public AccountList() => accounts = new List<Account>();
 
-        public void addAccount(Account account)
-        {
-            accounts.Add(account);
-        }
+        public void addAccount(Account account) => accounts.Add(account);
 
-        public void delAccount(Account account)
-        {
-            accounts.Remove(account);
-        }
+        public void delAccount(Account account) => accounts.Remove(account);
 
         public bool filterByName(string name)
         {
@@ -50,10 +42,7 @@ namespace Account_Management
         {
             return accounts.Where(x => x.GetNameSurname()[0] == name && x.GetDepartment() == department).ToList();
         }
-        
-        public List<Account> GetList()
-        {
-            return accounts;
-        }
+
+        public List<Account> GetList() => accounts;
     }
 }

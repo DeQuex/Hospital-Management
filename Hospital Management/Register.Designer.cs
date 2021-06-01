@@ -166,6 +166,8 @@ namespace Hospital_Management
             // 
             this.sectionbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             this.sectionbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sectionbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.sectionbox.ForeColor = System.Drawing.SystemColors.Window;
             this.sectionbox.FormattingEnabled = true;
             this.sectionbox.Items.AddRange(new object[] {
             "doktor",
@@ -173,7 +175,7 @@ namespace Hospital_Management
             "hizmetli"});
             this.sectionbox.Location = new System.Drawing.Point(3, 16);
             this.sectionbox.Name = "sectionbox";
-            this.sectionbox.Size = new System.Drawing.Size(206, 21);
+            this.sectionbox.Size = new System.Drawing.Size(206, 24);
             this.sectionbox.TabIndex = 0;
             // 
             // panel3
