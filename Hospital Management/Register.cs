@@ -22,8 +22,8 @@ namespace Hospital_Management
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-            //if (Functions.sendMailCheck() && Functions.MySQL.check_connection())
-            //{
+            if (Functions.sendMailCheck() && Functions.MySQL.check_connection())
+            {
                 var new_password = Functions.GeneratePassword();
                 try
                 {
@@ -41,12 +41,12 @@ namespace Hospital_Management
                 {
                     MessageBox.Show(exception.Message);
                 }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Bir hata olustu");
-            //}
-                
+            }
+            else
+            {
+                MessageBox.Show("Bir hata olustu");
+            }
+
         }
 
         private void btn_clear_Click(object sender, EventArgs e)

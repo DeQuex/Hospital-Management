@@ -269,10 +269,10 @@ namespace Hospital_Management
                 Credentials = new NetworkCredential()
                 {
                     UserName = "sasproject@ataberkozturk.com",
-                    Password = "t-wY3Nv:H=Mj681_"
+                    Password = "YcX8KqHbW3LmW3jF"
                 }
             };
-            var messageText = $"Sayın {ad}, rastgele oluşturulmuş şifreniz: {pwd} dir";
+            var messageText = $"Sayın {ad}, rastgele oluşturulmuş şifreniz: {pwd}";
             var FromEmail = new MailAddress("sasproject@ataberkozturk.com", "SAS Project");
             var ToEmail = new MailAddress(mail, "Sayın " + ad);
             var Message = new MailMessage()
@@ -297,12 +297,12 @@ namespace Hospital_Management
                 Credentials = new NetworkCredential()
                 {
                     UserName = "sasproject@ataberkozturk.com",
-                    Password = "t-wY3Nv:H=Mj681_"
+                    Password = "YcX8KqHbW3LmW3jF"
                 }
             };
             var messageText = $"Connection test";
-            var FromEmail = new MailAddress("sasproject@ataberkozturk.com", "Sas Hastane");
-            var ToEmail = new MailAddress("sasproject@ataberkozturk.com", "Connection test");
+            var FromEmail = new MailAddress("sasproject@ataberkozturk.com", "SAS Project");
+            var ToEmail = new MailAddress("sasproject@ataberkozturk.com", "SAS Project");
             var Message = new MailMessage()
             {
                 From = FromEmail,
