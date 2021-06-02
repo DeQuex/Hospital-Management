@@ -42,18 +42,19 @@ namespace Hospital_Management
                 userpass = true;
                 if (x.GetApproveStatus() != "1") continue;
                 var account_type = users.AccountType(tcbox.Text);
+                Form1.loginName = $"{x.GetNameSurname()[0]} {x.GetNameSurname()[1]}";
                 switch (account_type)
                 {
-                    case "hemsire":
+                    case "nurse":
                         Form.ActiveForm?.Controls.Add(new NurseInterface());
                         break;
-                    case "doktor":
+                    case "doctor":
                         Form.ActiveForm?.Controls.Add(new DoctorInterface());
                         break;
                     case "admin":
                         Form.ActiveForm?.Controls.Add(new AdminInterface());
                         break;
-                    case "hizmetli":
+                    case "staff":
                         Form.ActiveForm?.Controls.Add(new StaffInterface());
                         break;
                 }

@@ -33,6 +33,8 @@ namespace Hospital_Management
             {
                 dataGridView1.Rows.Add(x.getName(), x.getAmount());
             }
+
+            label1.Text = Form1.loginName;
         }
     }
 }
