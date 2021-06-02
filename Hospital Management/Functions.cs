@@ -158,10 +158,8 @@ namespace Hospital_Management
                         xRow["staff_tc"].ToString(), xRow["password"].ToString(), xRow["mail"].ToString(),
                         xRow["department"].ToString(), xRow["approve_status"].ToString(), xRow["staff_id"].ToString()));
                 }
-
                 return liste;
             }
-
 
             public static DataTable ReadUApproved(string table_name)
             {
@@ -170,18 +168,11 @@ namespace Hospital_Management
                 var values = new List<string>();
                 try
                 {
-
                     var sql = $"select id,name,surname,staff_tc,mail,department,approve_status,staff_id from sas.{table_name} where approve_status = '0';";
                     var data = new MySqlCommand(sql, connection);
-
                     connection.Open();
-
                     var da = new MySqlDataAdapter(data);
                     da.Fill(dataTable);
-
-
-
-
                     connection.Close();
                     return dataTable;
                 }

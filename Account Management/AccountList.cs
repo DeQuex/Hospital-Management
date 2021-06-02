@@ -12,7 +12,6 @@ namespace Account_Management
     public class AccountList
     {
         private List<Account> accounts;
-
         public AccountList() => accounts = new List<Account>();
 
         public void addAccount(Account account) => accounts.Add(account);
