@@ -46,13 +46,11 @@ namespace Hospital_Management
             this.patient_tc_input = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.storage_panel = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.patient_panel.SuspendLayout();
-            this.storage_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -235,32 +233,20 @@ namespace Hospital_Management
             // storage_panel
             // 
             this.storage_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.storage_panel.Controls.Add(this.label5);
             this.storage_panel.Location = new System.Drawing.Point(319, 24);
             this.storage_panel.Name = "storage_panel";
             this.storage_panel.Size = new System.Drawing.Size(1018, 693);
             this.storage_panel.TabIndex = 6;
             this.storage_panel.Visible = false;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.label5.Location = new System.Drawing.Point(327, 123);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 39);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "storage";
-            // 
             // NurseInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
-            this.Controls.Add(this.patient_panel);
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.storage_panel);
+            this.Controls.Add(this.patient_panel);
             this.Name = "NurseInterface";
             this.Size = new System.Drawing.Size(1360, 765);
             this.sidePanel.ResumeLayout(false);
@@ -272,8 +258,6 @@ namespace Hospital_Management
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.patient_panel.ResumeLayout(false);
             this.patient_panel.PerformLayout();
-            this.storage_panel.ResumeLayout(false);
-            this.storage_panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -297,6 +281,5 @@ namespace Hospital_Management
         private System.Windows.Forms.TextBox patient_tc_input;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel storage_panel;
-        private System.Windows.Forms.Label label5;
     }
 }

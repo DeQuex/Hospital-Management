@@ -39,10 +39,8 @@ namespace Hospital_Management
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Controls.Add(loginUserControl);
+            Controls.Add(staffUControl);
             CenterFormLocation();
-            // Functions.MySQL.Add("users", new []{"name", "ataberk"}, new []{"surname", "ozturk"});
-            //Functions.editUser();
         }
 
         private void Form1_SizeChanged(object sender, EventArgs e)
@@ -50,7 +48,6 @@ namespace Hospital_Management
             if (lastControl == null) return;
             Functions.ResizeUserControl(this, lastControl);
             Functions.CenterUserControl(this, lastControl);
-
         }
 
         private void Form1_ControlAdded(object sender, ControlEventArgs e)

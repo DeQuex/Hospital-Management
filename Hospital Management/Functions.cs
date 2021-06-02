@@ -395,7 +395,7 @@ namespace Hospital_Management
                 Client.Send(Message);
                 result = true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 result = false;
             }

@@ -151,6 +151,7 @@ namespace Hospital_Management
             this.passbox.PasswordChar = '*';
             this.passbox.Size = new System.Drawing.Size(169, 26);
             this.passbox.TabIndex = 1;
+            this.passbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tcpanel
             // 
