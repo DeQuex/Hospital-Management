@@ -36,10 +36,6 @@ namespace Hospital_Management
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.btn_login = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
@@ -47,6 +43,8 @@ namespace Hospital_Management
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.rightPanel.SuspendLayout();
@@ -111,11 +109,9 @@ namespace Hospital_Management
             // rightPanel
             // 
             this.rightPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.rightPanel.Controls.Add(this.textBox1);
+            this.rightPanel.Controls.Add(this.label2);
             this.rightPanel.Controls.Add(this.btn_login);
-            this.rightPanel.Controls.Add(this.comboBox3);
-            this.rightPanel.Controls.Add(this.label8);
-            this.rightPanel.Controls.Add(this.comboBox2);
-            this.rightPanel.Controls.Add(this.label7);
             this.rightPanel.Controls.Add(this.comboBox1);
             this.rightPanel.Controls.Add(this.label6);
             this.rightPanel.Controls.Add(this.panel23);
@@ -131,56 +127,22 @@ namespace Hospital_Management
             this.btn_login.FlatAppearance.BorderSize = 0;
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btn_login.Location = new System.Drawing.Point(557, 288);
+            this.btn_login.Location = new System.Drawing.Point(553, 242);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(95, 36);
             this.btn_login.TabIndex = 21;
             this.btn_login.Text = "Kayit";
             this.btn_login.UseVisualStyleBackColor = false;
             // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(592, 223);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 20;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(453, 226);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 13);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Temizlik Malzemeleri";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(592, 174);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 18;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(453, 177);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Temizlik Malzemeleri";
-            // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "elektrikli supurge",
+            "bez",
+            "deterjan"});
             this.comboBox1.Location = new System.Drawing.Point(592, 127);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -191,9 +153,10 @@ namespace Hospital_Management
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(453, 130);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 13);
+            this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 15;
-            this.label6.Text = "Temizlik Malzemeleri";
+            this.label6.Text = "Kullanılarn Malzeme";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel23
             // 
@@ -240,6 +203,24 @@ namespace Hospital_Management
             this.label33.TabIndex = 0;
             this.label33.Text = "Hizmetli Isimleri";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(462, 197);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Kullanım Miktarı";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.textBox1.Location = new System.Drawing.Point(592, 194);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(38, 20);
+            this.textBox1.TabIndex = 23;
+            // 
             // StaffInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,13 +257,11 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
