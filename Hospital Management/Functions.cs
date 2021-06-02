@@ -150,15 +150,104 @@ namespace Hospital_Management
 
             public static AccountList GetUsers()
             {
-                var liste = new AccountList();
+                var accountList = new AccountList();
                 var data = ReadAllDataSource("users");
                 foreach (DataRow xRow in data.Rows)
                 {
-                    liste.addAccount(new Account(xRow["id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(),
+                    accountList.addAccount(new Account(xRow["id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(),
                         xRow["staff_tc"].ToString(), xRow["password"].ToString(), xRow["mail"].ToString(),
                         xRow["department"].ToString(), xRow["approve_status"].ToString(), xRow["staff_id"].ToString()));
                 }
-                return liste;
+                return accountList;
+            }
+
+            public static InventoryList GetInventory()
+            {
+                var inventoryList = new InventoryList();
+                var data = ReadAllDataSource("inventory");
+                foreach (DataRow xRow in data.Rows)
+                {
+                    inventoryList.Add(new Inventory(xRow["type"].ToString(), xRow["id"].ToString(), xRow["name"].ToString(),
+                        Convert.ToInt32(xRow["amount"]), xRow["description"].ToString()));
+                }
+
+                return inventoryList;
+            }
+
+            public static PatientList GetPatients()
+            {
+                var patientList = new PatientList();
+                var data = ReadAllDataSource("patient");
+                foreach (DataRow xRow in data.Rows)
+                {
+                    patientList.Add(new Patient(xRow["patient_id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(), xRow["mail"].ToString(), xRow["tc"].ToString(), xRow["password"].ToString()));
+                }
+
+                return patientList;
+            }
+
+            public static ExaminationList GetExaminations()
+            {
+                var examinationList = new ExaminationList();
+                var patientList = GetPatients();
+                var examData = ReadAllDataSource("examination");
+
+                foreach (DataRow xRow in examData.Rows)
+                {
+                    foreach (var x in patientList.GetList())
+                    {
+                        if (x.GetPatientId() == xRow["patient_id"].ToString() &&
+                            x.GetTc() == xRow["patient_tc"].ToString())
+                        {
+                            examinationList.Add(new Examination(
+                                new Patient(x.GetPatientId(), x.GetNameSurname()[0], x.GetNameSurname()[1], x.GetMail(),
+                                    x.GetTc(), x.GetPassword()), xRow["ill_definition"].ToString(),
+                                xRow["treatment"].ToString(), xRow["result"].ToString(), xRow["id"].ToString()));
+                            break;
+                        }
+                    }
+                }
+
+                return examinationList;
+            }
+
+            public static AppointmentList GetAppointments()
+            {
+                var appointmentList = new AppointmentList();
+                var patientList = GetPatients();
+                var accountList = GetUsers();
+                var appointData = ReadAllDataSource("appointments");
+
+                foreach (DataRow xRow in appointData.Rows)
+                {
+                    Patient patientnew = null;
+                    Account accountnew = null;
+                    foreach (var x in patientList.GetList())
+                    {
+                        if (x.GetPatientId() == xRow["patient_id"].ToString())
+                        {
+                            patientnew = new Patient(x.GetPatientId(), x.GetNameSurname()[0], x.GetNameSurname()[1], x.GetMail(), x.GetTc(), x.GetPassword());
+                            break;
+                        }
+                    }
+
+                    foreach (var x in accountList.GetList())
+                    {
+                        if (x.GetStaffId() == xRow["doctor_id"].ToString() && x.GetDepartment() == "doctor")
+                        {
+                            accountnew = new Account(x.GetId(), x.GetNameSurname()[0], x.GetNameSurname()[1], x.GetStaffTc(), x.GetPassword(), x.GetMail(), x.GetDepartment(), x.GetApproveStatus(), x.GetStaffId());
+                            break;
+                        }
+                    }
+
+                    if (patientnew != null && accountnew != null)
+                    {
+                        appointmentList.Add(new Appointment(patientnew, accountnew, xRow["appointment_date"].ToString(), xRow["clinic"].ToString(), xRow["inspection"].ToString()));
+                    }
+                }
+
+                return appointmentList;
+
             }
 
             public static DataTable ReadUApproved(string table_name)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Account_Management
 {
-    class Examination
+    public class Examination
     {
         private Patient patient;
         private string ill_definition;

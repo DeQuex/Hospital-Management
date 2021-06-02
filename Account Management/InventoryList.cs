@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Account_Management
 {
-    class InventoryList
+    public class InventoryList
     {
         private List<Inventory> list;
         public InventoryList() => list = new List<Inventory>();
@@ -16,5 +16,10 @@ namespace Account_Management
         public void Remove(Inventory item) => list.Remove(item);
 
         public List<Inventory> GetList() => list;
+
+        public List<Inventory> GetByType(string type)
+        {
+            return list.Where(x => x.getType() == type).ToList();
+        }
     }
 }

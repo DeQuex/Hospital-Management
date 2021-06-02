@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Account_Management
 {
-    class ExaminationList
+    public class ExaminationList
     {
         private List<Examination> list;
 

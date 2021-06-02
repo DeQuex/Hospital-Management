@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Account_Management
 {
-    class Inventory
+    public class Inventory
     {
         private string type;
         private string id;

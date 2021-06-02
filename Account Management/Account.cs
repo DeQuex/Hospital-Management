@@ -8,7 +8,6 @@ namespace Account_Management
 {
     public class Account
     {
-
         private string id;
         private string name;
         private string surname;

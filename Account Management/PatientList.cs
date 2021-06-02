@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Account_Management
 {
-    class PatientList
+    public class PatientList
     {
         private List<Patient> list;
 

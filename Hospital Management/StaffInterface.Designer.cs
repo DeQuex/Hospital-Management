@@ -35,6 +35,7 @@ namespace Hospital_Management
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rightPanel = new System.Windows.Forms.Panel();
+            this.btn_login = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -45,17 +46,17 @@ namespace Hospital_Management
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel23 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
             this.label33 = new System.Windows.Forms.Label();
-            this.btn_login = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel23.SuspendLayout();
             this.panel27.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -129,6 +130,19 @@ namespace Hospital_Management
             this.rightPanel.Name = "rightPanel";
             this.rightPanel.Size = new System.Drawing.Size(981, 765);
             this.rightPanel.TabIndex = 18;
+            // 
+            // btn_login
+            // 
+            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.btn_login.FlatAppearance.BorderSize = 0;
+            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btn_login.Location = new System.Drawing.Point(557, 288);
+            this.btn_login.Name = "btn_login";
+            this.btn_login.Size = new System.Drawing.Size(95, 36);
+            this.btn_login.TabIndex = 21;
+            this.btn_login.Text = "Kayit";
+            this.btn_login.UseVisualStyleBackColor = false;
             // 
             // comboBox3
             // 
@@ -219,20 +233,11 @@ namespace Hospital_Management
             // panel23
             // 
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel23.Controls.Add(this.label24);
+            this.panel23.Controls.Add(this.dataGridView1);
             this.panel23.Location = new System.Drawing.Point(333, 432);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(545, 219);
             this.panel23.TabIndex = 12;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(231, 99);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Kayitlar";
             // 
             // panel27
             // 
@@ -261,18 +266,13 @@ namespace Hospital_Management
             this.label33.TabIndex = 0;
             this.label33.Text = "Hizmetli Isimleri";
             // 
-            // btn_login
+            // dataGridView1
             // 
-            this.btn_login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.btn_login.FlatAppearance.BorderSize = 0;
-            this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btn_login.Location = new System.Drawing.Point(557, 288);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(95, 36);
-            this.btn_login.TabIndex = 21;
-            this.btn_login.Text = "Kayit";
-            this.btn_login.UseVisualStyleBackColor = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(539, 213);
+            this.dataGridView1.TabIndex = 0;
             // 
             // StaffInterface
             // 
@@ -283,6 +283,7 @@ namespace Hospital_Management
             this.Controls.Add(this.sidePanel);
             this.Name = "StaffInterface";
             this.Size = new System.Drawing.Size(1307, 765);
+            this.Load += new System.EventHandler(this.StaffInterface_Load);
             this.SizeChanged += new System.EventHandler(this.StaffInterface_SizeChanged);
             this.sidePanel.ResumeLayout(false);
             this.sidePanel.PerformLayout();
@@ -292,9 +293,9 @@ namespace Hospital_Management
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             this.panel27.ResumeLayout(false);
             this.panel27.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,7 +309,6 @@ namespace Hospital_Management
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Panel panel27;
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.Label label33;
@@ -322,5 +322,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btn_login;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

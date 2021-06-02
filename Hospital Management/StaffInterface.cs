@@ -21,5 +21,18 @@ namespace Hospital_Management
         {
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, rightPanel);
         }
+
+        private void StaffInterface_Load(object sender, EventArgs e)
+        {
+            dataGridView1.ColumnCount = 2;
+            dataGridView1.Columns[0].Name = "Name";
+            dataGridView1.Columns[1].Name = "Amount";
+            dataGridView1.Rows.Clear();
+            var inventory = Functions.MySQL.GetInventory();
+            foreach (var x in inventory.GetByType("material"))
+            {
+                dataGridView1.Rows.Add(x.getName(), x.getAmount());
+            }
+        }
     }
 }
