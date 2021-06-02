@@ -11,9 +11,9 @@ namespace Account_Management
         private List<Inventory> list;
         public InventoryList() => list = new List<Inventory>();
 
-        public void addItem(Inventory item) => list.Add(item);
+        public void Add(Inventory item) => list.Add(item);
 
-        public void removeItem(Inventory item) => list.Remove(item);
+        public void Remove(Inventory item) => list.Remove(item);
 
         public List<Inventory> GetList() => list;
     }
