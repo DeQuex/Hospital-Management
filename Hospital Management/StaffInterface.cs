@@ -54,7 +54,7 @@ namespace Hospital_Management
         private void GetStaff()
         {
             dataGridView2.Rows.Clear();
-            var staff = Functions.MySQL.GetUsers().GetList().Select(x => x.GetNameSurname());
+            var staff = Functions.MySQL.GetUsers().GetList().Where(x => x.GetDepartment() == "staff").Select(x => x.GetNameSurname());
             foreach (var x in staff)
             {
                 dataGridView2.Rows.Add(x[0], x[1]);

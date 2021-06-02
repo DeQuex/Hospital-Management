@@ -170,9 +170,9 @@ namespace Hospital_Management
             this.sectionbox.ForeColor = System.Drawing.SystemColors.Window;
             this.sectionbox.FormattingEnabled = true;
             this.sectionbox.Items.AddRange(new object[] {
-            "doktor",
-            "hemsire",
-            "hizmetli"});
+            "doctor",
+            "nurse",
+            "staff"});
             this.sectionbox.Location = new System.Drawing.Point(3, 16);
             this.sectionbox.Name = "sectionbox";
             this.sectionbox.Size = new System.Drawing.Size(206, 24);

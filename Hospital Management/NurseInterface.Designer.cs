@@ -46,11 +46,28 @@ namespace Hospital_Management
             this.patient_tc_input = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.storage_panel = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btn_use = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label33 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.patient_panel.SuspendLayout();
+            this.storage_panel.SuspendLayout();
+            this.panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel27.SuspendLayout();
+            this.panel28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -233,11 +250,127 @@ namespace Hospital_Management
             // storage_panel
             // 
             this.storage_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.storage_panel.Controls.Add(this.textBox1);
+            this.storage_panel.Controls.Add(this.label4);
+            this.storage_panel.Controls.Add(this.btn_use);
+            this.storage_panel.Controls.Add(this.comboBox1);
+            this.storage_panel.Controls.Add(this.label6);
+            this.storage_panel.Controls.Add(this.panel23);
+            this.storage_panel.Controls.Add(this.panel27);
             this.storage_panel.Location = new System.Drawing.Point(319, 24);
             this.storage_panel.Name = "storage_panel";
             this.storage_panel.Size = new System.Drawing.Size(1018, 693);
             this.storage_panel.TabIndex = 6;
             this.storage_panel.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.textBox1.Location = new System.Drawing.Point(634, 151);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(38, 20);
+            this.textBox1.TabIndex = 30;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(504, 154);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Kullanım Miktarı";
+            // 
+            // btn_use
+            // 
+            this.btn_use.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.btn_use.FlatAppearance.BorderSize = 0;
+            this.btn_use.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_use.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btn_use.Location = new System.Drawing.Point(595, 199);
+            this.btn_use.Name = "btn_use";
+            this.btn_use.Size = new System.Drawing.Size(95, 36);
+            this.btn_use.TabIndex = 28;
+            this.btn_use.Text = "Kullan";
+            this.btn_use.UseVisualStyleBackColor = false;
+            this.btn_use.Click += new System.EventHandler(this.btn_use_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox1.ForeColor = System.Drawing.SystemColors.Window;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(634, 84);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.Window;
+            this.label6.Location = new System.Drawing.Point(495, 87);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Kullanılarn Malzeme";
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel23.Controls.Add(this.dataGridView1);
+            this.panel23.Location = new System.Drawing.Point(485, 374);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(349, 219);
+            this.panel23.TabIndex = 25;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(343, 213);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // panel27
+            // 
+            this.panel27.Controls.Add(this.panel28);
+            this.panel27.Controls.Add(this.label33);
+            this.panel27.Location = new System.Drawing.Point(50, 87);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(257, 521);
+            this.panel27.TabIndex = 24;
+            // 
+            // panel28
+            // 
+            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel28.Controls.Add(this.dataGridView2);
+            this.panel28.Location = new System.Drawing.Point(22, 31);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(220, 475);
+            this.panel28.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(214, 469);
+            this.dataGridView2.TabIndex = 24;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.label33.Location = new System.Drawing.Point(80, 15);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(106, 13);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "Sağlık Görevli Isimleri";
             // 
             // NurseInterface
             // 
@@ -249,6 +382,7 @@ namespace Hospital_Management
             this.Controls.Add(this.patient_panel);
             this.Name = "NurseInterface";
             this.Size = new System.Drawing.Size(1360, 765);
+            this.Load += new System.EventHandler(this.NurseInterface_Load);
             this.sidePanel.ResumeLayout(false);
             this.sidePanel.PerformLayout();
             this.selection2_panel.ResumeLayout(false);
@@ -258,6 +392,14 @@ namespace Hospital_Management
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.patient_panel.ResumeLayout(false);
             this.patient_panel.PerformLayout();
+            this.storage_panel.ResumeLayout(false);
+            this.storage_panel.PerformLayout();
+            this.panel23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
+            this.panel28.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -281,5 +423,16 @@ namespace Hospital_Management
         private System.Windows.Forms.TextBox patient_tc_input;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel storage_panel;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btn_use;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label33;
     }
 }
