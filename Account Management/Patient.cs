@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Account_Management
+﻿namespace Account_Management
 {
     public class Patient
     {
@@ -29,7 +23,7 @@ namespace Account_Management
 
         public string[] GetNameSurname()
         {
-            string[] str = {name, surname};
+            string[] str = { name, surname };
             return str;
         }
 

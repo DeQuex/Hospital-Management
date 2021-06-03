@@ -343,7 +343,6 @@ namespace Hospital_Management
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(967, 626);
             this.panel3.TabIndex = 1;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // dataGridView2
             // 

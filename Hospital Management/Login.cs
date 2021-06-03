@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -23,7 +18,7 @@ namespace Hospital_Management
         }
         private void Login_SizeChanged(object sender, EventArgs e)
         {
-            Functions.OrderControl(this, Functions.Direction.Vertical,0, Logo, LoginPanel);
+            Functions.OrderControl(this, Functions.Direction.Vertical, 0, Logo, LoginPanel);
         }
 
         private void tcbox_KeyPress(object sender, KeyPressEventArgs e)
@@ -67,7 +62,7 @@ namespace Hospital_Management
                 return;
             }
             Functions.MessageBox.Error(!userpass ? "TC or Password is wrong." : "You are not approved.");
-        }   
+        }
 
         private void lbl_register_Click(object sender, EventArgs e)
         {

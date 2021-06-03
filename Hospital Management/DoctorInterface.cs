@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Account_Management;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Account_Management;
 
 namespace Hospital_Management
 {
@@ -123,7 +118,7 @@ namespace Hospital_Management
             {
                 dataGridView3.Rows.Add(selectedPatient.GetPatientId(), selectedPatient.GetTc(), x.GetIllDefinition(), x.GetTreatment(), x.GetResult());
             }
-            
+
 
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -141,7 +136,7 @@ namespace Hospital_Management
             var patient = Functions.MySQL.GetPatients().GetList().Where(x =>
                 x.GetNameSurname()[0] == dataGridView1.SelectedRows[0].Cells["Name"].Value.ToString() &&
                 x.GetNameSurname()[1] == dataGridView1.SelectedRows[0].Cells["Surname"].Value.ToString());
-            
+
             foreach (var x in patient)
             {
                 selectedPatient = x;
@@ -189,7 +184,7 @@ namespace Hospital_Management
                 Functions.MessageBox.Error("Bir hata olustu. Detay icin konsol komutlarina bak");
                 Console.WriteLine(exception);
             }
-            
+
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)

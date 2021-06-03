@@ -1,20 +1,15 @@
-﻿using System;
+﻿using Account_Management;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Account_Management;
-using Google.Protobuf;
-using MySql.Data;
-using MySql.Data.MySqlClient;
-using static System.String;
 
 namespace Hospital_Management
 {
@@ -36,7 +31,6 @@ namespace Hospital_Management
                 for (var i = 0; i < data.Length; i++)
                 {
                     colums += data[i][0];
-
                     values += '"';
                     values += data[i][1];
                     values += '"';
@@ -78,7 +72,7 @@ namespace Hospital_Management
                     var sql = $"select {columnKey} from sas.{table_name} where {whereKey} = '{whereValue}';";
                     var data = new MySqlCommand(sql, connection);
                     var reader = data.ExecuteReader();
-                    
+
                     var i = 0;
                     while (reader.Read())
                     {
@@ -403,7 +397,7 @@ namespace Hospital_Management
         }
         public static void CenterUserControl(Form fName, Control name) // usercontrolu forma gore ortalar.
         {
-             name.Location = new Point(fName.Size.Width / 2 - name.Size.Width / 2, fName.Size.Height / 2 - name.Size.Height / 2);
+            name.Location = new Point(fName.Size.Width / 2 - name.Size.Width / 2, fName.Size.Height / 2 - name.Size.Height / 2);
         }
         public enum Direction
         {
@@ -458,7 +452,7 @@ namespace Hospital_Management
         }
         public static void ResizeForm(Form fName, Control cName) // formu, usercontrol boyutuna getirir.
         {
-            fName.ClientSize = new Size(cName.Size.Width, cName.Size.Height );
+            fName.ClientSize = new Size(cName.Size.Width, cName.Size.Height);
         }
         public static void ResizeUserControl(Form fName, Control cName) // usercontrolu, form boyutuna getirir.
         {

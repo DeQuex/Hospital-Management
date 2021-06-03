@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hospital_Management
@@ -14,10 +7,10 @@ namespace Hospital_Management
     {
         public AdminInterface()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
-        
+
         private void AdminInterface_Load(object sender, EventArgs e)
         {
 
@@ -63,11 +56,6 @@ namespace Hospital_Management
             }
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
 
         private void btn_search_patient_Click(object sender, EventArgs e)
         {
@@ -90,7 +78,7 @@ namespace Hospital_Management
 
             if (e.ColumnIndex == 6 && dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString() == "0")
             {
-                var dialogResult = MessageBox.Show(name +" Adlı kullanıcıyı onaylamak istediğinize emin minisiniz?", "Kullanıcı Onayla", MessageBoxButtons.YesNo);
+                var dialogResult = MessageBox.Show(name + " Adlı kullanıcıyı onaylamak istediğinize emin minisiniz?", "Kullanıcı Onayla", MessageBoxButtons.YesNo);
                 switch (dialogResult)
                 {
                     case DialogResult.Yes:
@@ -101,7 +89,8 @@ namespace Hospital_Management
                         //do something else
                         break;
                 }
-            }else if (e.ColumnIndex == 6 && dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString() == "1")
+            }
+            else if (e.ColumnIndex == 6 && dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString() == "1")
             {
                 var dialogResult = MessageBox.Show(name + " Adlı kullanıcının onayını kaldırmak istediğinize emin minisiniz?", "Onay Kaldır?", MessageBoxButtons.YesNo);
                 switch (dialogResult)

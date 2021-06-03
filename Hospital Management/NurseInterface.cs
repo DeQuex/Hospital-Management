@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Hospital_Management
@@ -116,7 +111,7 @@ namespace Hospital_Management
                 Functions.MessageBox.Error("User not found.");
                 Console.WriteLine("User not found.");
             }
-            
+
         }
 
         private void btn_signout_Click(object sender, EventArgs e)
