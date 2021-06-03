@@ -146,6 +146,7 @@ namespace Hospital_Management
             this.passbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.passbox.ForeColor = System.Drawing.Color.White;
             this.passbox.Location = new System.Drawing.Point(3, 12);
+            this.passbox.MaxLength = 255;
             this.passbox.Multiline = true;
             this.passbox.Name = "passbox";
             this.passbox.PasswordChar = '*';

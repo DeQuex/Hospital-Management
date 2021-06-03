@@ -218,7 +218,7 @@ namespace Hospital_Management
             this.mailbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.mailbox.ForeColor = System.Drawing.Color.White;
             this.mailbox.Location = new System.Drawing.Point(3, 12);
-            this.mailbox.MaxLength = 32000;
+            this.mailbox.MaxLength = 255;
             this.mailbox.Multiline = true;
             this.mailbox.Name = "mailbox";
             this.mailbox.Size = new System.Drawing.Size(206, 26);
@@ -241,7 +241,7 @@ namespace Hospital_Management
             this.surname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.surname.ForeColor = System.Drawing.Color.White;
             this.surname.Location = new System.Drawing.Point(3, 12);
-            this.surname.MaxLength = 32000;
+            this.surname.MaxLength = 255;
             this.surname.Multiline = true;
             this.surname.Name = "surname";
             this.surname.Size = new System.Drawing.Size(206, 26);
@@ -264,7 +264,7 @@ namespace Hospital_Management
             this.name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.name.ForeColor = System.Drawing.Color.White;
             this.name.Location = new System.Drawing.Point(3, 12);
-            this.name.MaxLength = 32000;
+            this.name.MaxLength = 255;
             this.name.Multiline = true;
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(206, 26);

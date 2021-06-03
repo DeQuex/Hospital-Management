@@ -36,7 +36,7 @@ namespace Hospital_Management
         {
             if (tcbox.Text.Length != 11)
             {
-                Functions.MessageBox.Warn("TC lenght must be 11");
+                Functions.MessageBox.Warn("TC length must be 11 digits.");
                 return;
             }
             var users = Functions.MySQL.GetUsers();

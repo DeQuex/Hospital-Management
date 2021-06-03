@@ -25,7 +25,16 @@ namespace Hospital_Management
         {
             if (tcbox.Text.Length != 11)
             {
-                Functions.MessageBox.Warn("TC lenght must be 11");
+                Functions.MessageBox.Warn("TC length must be 11 digits.");
+                return;
+            }
+            try
+            {
+                var eMailValidator = new System.Net.Mail.MailAddress(mailbox.Text);
+            }
+            catch (FormatException)
+            {
+                Functions.MessageBox.Error("Wrong e-mail.");
                 return;
             }
             if (Functions.sendMailCheck() && Functions.MySQL.check_connection())
@@ -38,7 +47,7 @@ namespace Hospital_Management
                         new[] { "mail", mailbox.Text }, new[] { "department", sectionbox.SelectedItem.ToString() },
                         new[] { "approve_status", "0" }, new[] { "staff_id", Functions.CreateId(11) });
                     Functions.sendMail(new_password, mailbox.Text, name.Text);
-                    Functions.MessageBox.Info("Kayit basarili sifreniz mail adresinize gonderildi.");
+                    Functions.MessageBox.Info("Register successfully, your password sent to your mail.");
                     Form.ActiveForm?.Controls.Add(new Login());
                     Form.ActiveForm?.Controls.Remove(this);
                 }
@@ -53,7 +62,7 @@ namespace Hospital_Management
             }
             else
             {
-                Functions.MessageBox.Error("An error occured.");
+                Functions.MessageBox.Error("An error occurred.");
             }
 
         }

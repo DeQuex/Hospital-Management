@@ -79,7 +79,6 @@ namespace Hospital_Management
                     account.GetStaffTc(), account.GetMail(), account.GetDepartment(), account.GetApproveStatus(),
                     account.GetStaffId());
             }
-            
         }
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
