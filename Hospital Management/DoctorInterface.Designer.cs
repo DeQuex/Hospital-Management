@@ -29,6 +29,7 @@ namespace Hospital_Management
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
@@ -55,28 +56,17 @@ namespace Hospital_Management
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.panel29 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.panel30 = new System.Windows.Forms.Panel();
             this.label28 = new System.Windows.Forms.Label();
@@ -85,6 +75,7 @@ namespace Hospital_Management
             this.label34 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label35 = new System.Windows.Forms.Label();
             this.mySqlCommand1 = new MySqlConnector.MySqlCommand();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -111,22 +102,29 @@ namespace Hospital_Management
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.information = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.sidePanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.operation.SuspendLayout();
+            this.panel20.SuspendLayout();
+            this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel16.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel27.SuspendLayout();
+            this.panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel24.SuspendLayout();
             this.panel29.SuspendLayout();
+            this.panel30.SuspendLayout();
             this.panel31.SuspendLayout();
             this.panel32.SuspendLayout();
+            this.panel33.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -137,6 +135,7 @@ namespace Hospital_Management
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.information.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -283,7 +282,7 @@ namespace Hospital_Management
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(528, 403);
+            this.button5.Location = new System.Drawing.Point(542, 527);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 17;
@@ -292,7 +291,7 @@ namespace Hospital_Management
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(540, 515);
+            this.button4.Location = new System.Drawing.Point(542, 567);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 16;
@@ -311,6 +310,11 @@ namespace Hospital_Management
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "",
+            "Röntgen",
+            "Tahlil",
+            "Emar"});
             this.comboBox3.Location = new System.Drawing.Point(508, 357);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
@@ -319,6 +323,11 @@ namespace Hospital_Management
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "",
+            "Röntgen",
+            "Tahlil",
+            "Emar"});
             this.comboBox2.Location = new System.Drawing.Point(508, 291);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
@@ -327,6 +336,11 @@ namespace Hospital_Management
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "",
+            "Röntgen",
+            "Tahlil",
+            "Emar"});
             this.comboBox1.Location = new System.Drawing.Point(508, 228);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
@@ -344,7 +358,7 @@ namespace Hospital_Management
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(462, 479);
+            this.label21.Location = new System.Drawing.Point(464, 446);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(24, 13);
             this.label21.TabIndex = 11;
@@ -380,7 +394,7 @@ namespace Hospital_Management
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel21.Location = new System.Drawing.Point(508, 468);
+            this.panel21.Location = new System.Drawing.Point(508, 435);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(135, 24);
             this.panel21.TabIndex = 6;
@@ -388,6 +402,7 @@ namespace Hospital_Management
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel20.Controls.Add(this.richTextBox1);
             this.panel20.Location = new System.Drawing.Point(735, 220);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(211, 281);
@@ -396,10 +411,21 @@ namespace Hospital_Management
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel19.Controls.Add(this.label24);
             this.panel19.Location = new System.Drawing.Point(565, 134);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(135, 24);
             this.panel19.TabIndex = 7;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(50, 5);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(41, 13);
+            this.label24.TabIndex = 18;
+            this.label24.Text = "label24";
+            this.label24.Visible = false;
             // 
             // label16
             // 
@@ -429,6 +455,7 @@ namespace Hospital_Management
             this.label17.Size = new System.Drawing.Size(74, 13);
             this.label17.TabIndex = 0;
             this.label17.Text = "İsim Yazılacak";
+            this.label17.Visible = false;
             // 
             // label14
             // 
@@ -452,10 +479,23 @@ namespace Hospital_Management
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel17.Location = new System.Drawing.Point(15, 31);
+            this.panel17.Controls.Add(this.dataGridView4);
+            this.panel17.Location = new System.Drawing.Point(4, 31);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(182, 475);
+            this.panel17.Size = new System.Drawing.Size(201, 484);
             this.panel17.TabIndex = 1;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(195, 478);
+            this.dataGridView4.TabIndex = 0;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             // 
             // label15
             // 
@@ -466,122 +506,6 @@ namespace Hospital_Management
             this.label15.Size = new System.Drawing.Size(85, 13);
             this.label15.TabIndex = 0;
             this.label15.Text = "Hasta Sıralaması";
-            // 
-            // panel22
-            // 
-            this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
-            this.panel22.Controls.Add(this.panel23);
-            this.panel22.Controls.Add(this.label25);
-            this.panel22.Controls.Add(this.panel25);
-            this.panel22.Controls.Add(this.label30);
-            this.panel22.Controls.Add(this.panel26);
-            this.panel22.Controls.Add(this.label32);
-            this.panel22.Controls.Add(this.panel27);
-            this.panel22.Location = new System.Drawing.Point(342, 37);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(1018, 693);
-            this.panel22.TabIndex = 17;
-            this.panel22.Visible = false;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.label24);
-            this.panel23.Location = new System.Drawing.Point(365, 231);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(545, 219);
-            this.panel23.TabIndex = 12;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(160, 98);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(176, 13);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Geçmiş Tetkitler Burada Görünücek";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(611, 161);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(52, 13);
-            this.label25.TabIndex = 11;
-            this.label25.Text = "Hasta No";
-            // 
-            // panel25
-            // 
-            this.panel25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel25.Location = new System.Drawing.Point(565, 134);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(135, 24);
-            this.panel25.TabIndex = 7;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label30.Location = new System.Drawing.Point(597, 63);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(66, 13);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Gelen Hasta";
-            // 
-            // panel26
-            // 
-            this.panel26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel26.Controls.Add(this.label31);
-            this.panel26.Location = new System.Drawing.Point(528, 79);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(200, 40);
-            this.panel26.TabIndex = 5;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label31.Location = new System.Drawing.Point(61, 15);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(74, 13);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "İsim Yazılacak";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label32.Location = new System.Drawing.Point(78, 47);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(156, 13);
-            this.label32.TabIndex = 3;
-            this.label32.Text = "Hoşgeldiniz doktor serdar Cesur";
-            // 
-            // panel27
-            // 
-            this.panel27.Controls.Add(this.panel28);
-            this.panel27.Controls.Add(this.label33);
-            this.panel27.Location = new System.Drawing.Point(56, 130);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(211, 521);
-            this.panel27.TabIndex = 2;
-            // 
-            // panel28
-            // 
-            this.panel28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel28.Location = new System.Drawing.Point(15, 31);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(182, 475);
-            this.panel28.TabIndex = 1;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label33.Location = new System.Drawing.Point(62, 15);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(85, 13);
-            this.label33.TabIndex = 0;
-            this.label33.Text = "Hasta Sıralaması";
             // 
             // panel24
             // 
@@ -601,20 +525,11 @@ namespace Hospital_Management
             // 
             // panel29
             // 
-            this.panel29.Controls.Add(this.label26);
+            this.panel29.Controls.Add(this.dataGridView3);
             this.panel29.Location = new System.Drawing.Point(365, 231);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(545, 219);
             this.panel29.TabIndex = 12;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(160, 98);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(176, 13);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Geçmiş Tetkitler Burada Görünücek";
             // 
             // label27
             // 
@@ -628,6 +543,7 @@ namespace Hospital_Management
             // panel30
             // 
             this.panel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel30.Controls.Add(this.label25);
             this.panel30.Location = new System.Drawing.Point(565, 134);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(135, 24);
@@ -684,10 +600,22 @@ namespace Hospital_Management
             // panel33
             // 
             this.panel33.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel33.Location = new System.Drawing.Point(15, 31);
+            this.panel33.Controls.Add(this.dataGridView2);
+            this.panel33.Location = new System.Drawing.Point(7, 31);
             this.panel33.Name = "panel33";
-            this.panel33.Size = new System.Drawing.Size(182, 475);
+            this.panel33.Size = new System.Drawing.Size(198, 487);
             this.panel33.TabIndex = 1;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(192, 481);
+            this.dataGridView2.TabIndex = 0;
             // 
             // label35
             // 
@@ -785,6 +713,7 @@ namespace Hospital_Management
             this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "İsim Yazılacak";
+            this.label5.Visible = false;
             // 
             // label4
             // 
@@ -813,6 +742,7 @@ namespace Hospital_Management
             this.label7.Size = new System.Drawing.Size(35, 13);
             this.label7.TabIndex = 0;
             this.label7.Text = "label7";
+            this.label7.Visible = false;
             // 
             // panel12
             // 
@@ -820,17 +750,18 @@ namespace Hospital_Management
             this.panel12.Controls.Add(this.label8);
             this.panel12.Location = new System.Drawing.Point(623, 164);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(135, 24);
+            this.panel12.Size = new System.Drawing.Size(161, 24);
             this.panel12.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(50, 5);
+            this.label8.Location = new System.Drawing.Point(5, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 1;
             this.label8.Text = "label8";
+            this.label8.Visible = false;
             // 
             // panel13
             // 
@@ -844,11 +775,12 @@ namespace Hospital_Management
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(50, 4);
+            this.label9.Location = new System.Drawing.Point(32, 4);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
             this.label9.TabIndex = 2;
             this.label9.Text = "label9";
+            this.label9.Visible = false;
             // 
             // panel14
             // 
@@ -867,6 +799,7 @@ namespace Hospital_Management
             this.label36.Size = new System.Drawing.Size(41, 13);
             this.label36.TabIndex = 3;
             this.label36.Text = "label36";
+            this.label36.Visible = false;
             // 
             // panel15
             // 
@@ -950,16 +883,49 @@ namespace Hospital_Management
             this.information.TabIndex = 10;
             this.information.Visible = false;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(50, 5);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(41, 13);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "label25";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(205, 275);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(539, 213);
+            this.dataGridView3.TabIndex = 0;
+            // 
             // DoctorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
             this.Controls.Add(this.sidePanel);
-            this.Controls.Add(this.information);
             this.Controls.Add(this.panel24);
-            this.Controls.Add(this.panel22);
             this.Controls.Add(this.operation);
+            this.Controls.Add(this.information);
             this.Name = "DoctorInterface";
             this.Size = new System.Drawing.Size(1360, 765);
             this.Load += new System.EventHandler(this.DoctorInterface_Load);
@@ -975,26 +941,26 @@ namespace Hospital_Management
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.operation.ResumeLayout(false);
             this.operation.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
             this.panel18.ResumeLayout(false);
             this.panel18.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
-            this.panel27.ResumeLayout(false);
-            this.panel27.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
+            this.panel30.ResumeLayout(false);
+            this.panel30.PerformLayout();
             this.panel31.ResumeLayout(false);
             this.panel31.PerformLayout();
             this.panel32.ResumeLayout(false);
             this.panel32.PerformLayout();
+            this.panel33.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -1012,6 +978,7 @@ namespace Hospital_Management
             this.panel14.PerformLayout();
             this.information.ResumeLayout(false);
             this.information.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1046,22 +1013,9 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Panel panel30;
         private System.Windows.Forms.Label label28;
@@ -1099,5 +1053,12 @@ namespace Hospital_Management
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
