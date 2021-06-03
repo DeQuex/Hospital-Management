@@ -38,7 +38,6 @@ namespace Hospital_Management
             dataGridView4.Columns[0].Name = "Name";
             dataGridView4.Columns[1].Name = "Surname";
 
-            GetPatients();
             GetPatientsByAppointment();
 
             label3.Text = Form1.loginName;
@@ -81,28 +80,20 @@ namespace Hospital_Management
             panel24.Visible = false;
         }
 
-        private void GetPatients()
+        private void GetPatientsByAppointment()
         {
             dataGridView1.Rows.Clear();
             dataGridView2.Rows.Clear();
             dataGridView4.Rows.Clear();
-            var doctor = Functions.MySQL.GetPatients().GetList().Select(x => x.GetNameSurname());
-            foreach (var x in doctor)
-            {
-                dataGridView2.Rows.Add(x[0], x[1]);
-                dataGridView4.Rows.Add(x[0], x[1]);
-            }
-        }
-
-        private void GetPatientsByAppointment()
-        {
-            dataGridView1.Rows.Clear();
             var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
             foreach (var x in appointments)
             {
                 dataGridView1.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);
+                dataGridView2.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);
+                dataGridView4.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);
             }
         }
+
         private void getInfo()
         {
             label7.Text = selectedPatient.GetPatientId();
