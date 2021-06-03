@@ -378,8 +378,8 @@ namespace Hospital_Management
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
             this.Controls.Add(this.sidePanel);
-            this.Controls.Add(this.storage_panel);
             this.Controls.Add(this.patient_panel);
+            this.Controls.Add(this.storage_panel);
             this.Name = "NurseInterface";
             this.Size = new System.Drawing.Size(1360, 765);
             this.Load += new System.EventHandler(this.NurseInterface_Load);

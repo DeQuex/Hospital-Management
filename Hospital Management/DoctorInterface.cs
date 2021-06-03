@@ -22,7 +22,12 @@ namespace Hospital_Management
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, information);
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, operation);
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, panel22);
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, ajanda);
+
+            dataGridView1.ColumnCount = 2;
+            dataGridView1.Columns[0].Name = "Name";
+            dataGridView1.Columns[1].Name = "Surname";
+
+            GetDoctors();
         }
 
 
@@ -31,7 +36,6 @@ namespace Hospital_Management
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, information);
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, operation);
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, panel22);
-            Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, ajanda);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -39,7 +43,6 @@ namespace Hospital_Management
             information.Visible = true;
             operation.Visible = false;
             panel22.Visible = false;
-            ajanda.Visible = false;
         }
 
 
@@ -48,7 +51,6 @@ namespace Hospital_Management
             information.Visible = false;
             operation.Visible = true;
             panel22.Visible = false;
-            ajanda.Visible = false;
         }
 
         private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -56,7 +58,6 @@ namespace Hospital_Management
             information.Visible = false;
             operation.Visible = false;
             panel22.Visible = true;
-            ajanda.Visible = false;
         }
 
         private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -64,7 +65,29 @@ namespace Hospital_Management
             information.Visible = false;
             operation.Visible = false;
             panel22.Visible = false;
-            ajanda.Visible = true;
+        }
+        private void GetDoctors()
+        {
+            dataGridView1.Rows.Clear();
+            var doctor = Functions.MySQL.GetPatients().GetList().Select(x => x.GetNameSurname());
+            foreach (var x in doctor)
+            {
+                dataGridView1.Rows.Add(x[0], x[1]);
+            }
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows != null) 
+            {
+                var patient = Functions.MySQL.GetPatients().GetList().Where(x => x.GetNameSurname()[0] == dataGridView1.SelectedRows[0].Cells[0].Value.ToString() && x.GetNameSurname()[1] == dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
+
+                foreach (var x in patient)
+                {
+                    label7.Text = x.GetPatientId();
+                    break;
+                }
+            }
         }
     }
 }
