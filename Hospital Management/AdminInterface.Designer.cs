@@ -351,6 +351,7 @@ namespace Hospital_Management
             this.dataGridView2.AllowUserToDeleteRows = false;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F);
             this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -361,6 +362,7 @@ namespace Hospital_Management
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -387,8 +389,8 @@ namespace Hospital_Management
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.user_panel);
             this.Controls.Add(this.confirmation_panel);
+            this.Controls.Add(this.user_panel);
             this.Name = "AdminInterface";
             this.Size = new System.Drawing.Size(1350, 765);
             this.Load += new System.EventHandler(this.AdminInterface_Load);

@@ -54,7 +54,7 @@ namespace Hospital_Management
                 Functions.MessageBox.Warn("TC length must be 11 digits.");
                 return;
             }
-            if (sectionbox.SelectedItem.ToString() == "")
+            if (sectionbox.SelectedItem == null)
             {
                 Functions.MessageBox.Error("You have to select section.");
                 return;

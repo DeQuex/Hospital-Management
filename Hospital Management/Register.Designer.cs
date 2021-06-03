@@ -165,6 +165,7 @@ namespace Hospital_Management
             // sectionbox
             // 
             this.sectionbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.sectionbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sectionbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sectionbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.sectionbox.ForeColor = System.Drawing.SystemColors.Window;

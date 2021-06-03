@@ -37,7 +37,7 @@ namespace Hospital_Management
 
         private void label5_Click(object sender, EventArgs e)
         {
-            if (user_panel.Visible == true && confirmation_panel.Visible == false)
+            if (user_panel.Visible && confirmation_panel.Visible == false)
             {
                 user_panel.Hide();
                 confirmation_panel.Show();
