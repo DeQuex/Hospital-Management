@@ -26,6 +26,7 @@ namespace Hospital_Management
             dataGridView1.Columns[6].Name = "Approve Status";
             dataGridView1.Columns[7].Name = "Staff ID";
 
+            label1.Text = Form1.loginName;
         }
 
         private void label5_Click(object sender, EventArgs e)
