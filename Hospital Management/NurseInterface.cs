@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Org.BouncyCastle.Asn1.Crmf;
 
 namespace Hospital_Management
 {
@@ -82,6 +83,12 @@ namespace Hospital_Management
             dataGridView2.Columns[0].Name = "Name";
             dataGridView2.Columns[1].Name = "Surname";
 
+            dataGridView3.ColumnCount = 4;
+            dataGridView3.Columns[0].Name = "Name";
+            dataGridView3.Columns[1].Name = "Surname";
+            dataGridView3.Columns[2].Name = "Ill Definition";
+            dataGridView3.Columns[3].Name = "Treatment";
+
             GetMaterials();
 
             label1.Text = Form1.loginName;
@@ -94,6 +101,27 @@ namespace Hospital_Management
         {
             UseMaterial(comboBox1.SelectedItem.ToString(), Convert.ToInt32(textBox1.Text));
             GetMaterials();
+        }
+
+        private void btn_search_patient_Click(object sender, EventArgs e)
+        {
+            if (patient_tc_input.Text == null || patient_id_input.Text == null) return;
+            try
+            {
+                var examinatons = Functions.MySQL.GetExaminations().GetList()
+                    .Where(x => x.GetPatient().GetPatientId() == patient_id_input.Text && x.GetPatient().GetTc() == patient_tc_input.Text);
+                foreach (var x in examinatons)
+                {
+                    dataGridView3.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1],
+                        x.GetIllDefinition(), x.GetTreatment());
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Kullanici bulunamadi.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("Kullanici bulunamadi.");
+            }
+            
         }
     }
 }

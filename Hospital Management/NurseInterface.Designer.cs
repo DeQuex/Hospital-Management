@@ -57,17 +57,20 @@ namespace Hospital_Management
             this.panel28 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label33 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.patient_panel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.storage_panel.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel27.SuspendLayout();
             this.panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -187,6 +190,7 @@ namespace Hospital_Management
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.panel2.Controls.Add(this.dataGridView3);
             this.panel2.Location = new System.Drawing.Point(327, 193);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(691, 500);
@@ -204,6 +208,7 @@ namespace Hospital_Management
             this.btn_search_patient.TabIndex = 6;
             this.btn_search_patient.Text = "Bul";
             this.btn_search_patient.UseVisualStyleBackColor = false;
+            this.btn_search_patient.Click += new System.EventHandler(this.btn_search_patient_Click);
             // 
             // patient_id_input
             // 
@@ -372,6 +377,19 @@ namespace Hospital_Management
             this.label33.TabIndex = 0;
             this.label33.Text = "Sağlık Görevli Isimleri";
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView3.Location = new System.Drawing.Point(22, 19);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(646, 464);
+            this.dataGridView3.TabIndex = 0;
+            // 
             // NurseInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,6 +410,7 @@ namespace Hospital_Management
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.patient_panel.ResumeLayout(false);
             this.patient_panel.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.storage_panel.ResumeLayout(false);
             this.storage_panel.PerformLayout();
             this.panel23.ResumeLayout(false);
@@ -400,6 +419,7 @@ namespace Hospital_Management
             this.panel27.PerformLayout();
             this.panel28.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -434,5 +454,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel28;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }
