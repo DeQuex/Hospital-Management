@@ -471,6 +471,31 @@ namespace Hospital_Management
             Form.ActiveForm?.Controls.Remove(control);
             Form.ActiveForm?.Controls.Add(new Login());
         }
+
+        internal class MessageBox
+        {
+            private const string Caption = "SAS Project";
+
+            public void Warn(string text)
+            {
+                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            public void Error(string text)
+            {
+                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            public void Info(string text)
+            {
+                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            public void Exclamation(string text)
+            {
+                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Exclamation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
         // admin panel kullanıcı bulma
         public static string findUser(string first_name, string department_name)
         {
