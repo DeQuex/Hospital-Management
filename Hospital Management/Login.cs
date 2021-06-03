@@ -67,7 +67,6 @@ namespace Hospital_Management
                 return;
             }
             Functions.MessageBox.Error(!userpass ? "TC or Password is wrong." : "You are not approved.");
-
         }   
 
         private void lbl_register_Click(object sender, EventArgs e)

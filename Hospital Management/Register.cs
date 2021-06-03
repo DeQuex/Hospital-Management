@@ -23,11 +23,17 @@ namespace Hospital_Management
 
         private void btn_register_Click(object sender, EventArgs e)
         {
-            if (tcbox.Text.Length != 11)
+            if (name.Text.Length < 3)
             {
-                Functions.MessageBox.Warn("TC length must be 11 digits.");
+                Functions.MessageBox.Warn("Name length must be higher than 2.");
                 return;
             }
+            if (surname.Text.Length < 3)
+            {
+                Functions.MessageBox.Warn("Surname length must be higher than 2.");
+                return;
+            }
+
             try
             {
                 var eMailValidator = new System.Net.Mail.MailAddress(mailbox.Text);
@@ -35,6 +41,22 @@ namespace Hospital_Management
             catch (FormatException)
             {
                 Functions.MessageBox.Error("Wrong e-mail.");
+                return;
+            }
+            catch (ArgumentException)
+            {
+                Functions.MessageBox.Error("Email can't be empty.");
+                return;
+            }
+
+            if (tcbox.Text.Length != 11)
+            {
+                Functions.MessageBox.Warn("TC length must be 11 digits.");
+                return;
+            }
+            if (sectionbox.SelectedItem.ToString() == "")
+            {
+                Functions.MessageBox.Error("You have to select section.");
                 return;
             }
             if (Functions.sendMailCheck() && Functions.MySQL.check_connection())
