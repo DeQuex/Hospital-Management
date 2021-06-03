@@ -97,11 +97,10 @@ namespace Hospital_Management
         private void GetPatientsByAppointment()
         {
             dataGridView1.Rows.Clear();
-            var appointments = Functions.MySQL.GetAppointments().GetList()
-                .Where(x => x.GetPatient().GetPatientId() == selectedPatient.GetPatientId());
+            var appointments = Functions.MySQL.GetAppointments().GetList();
             foreach (var x in appointments)
             {
-                dataGridView1.Rows.Add(selectedPatient.GetNameSurname()[0], selectedPatient.GetNameSurname()[1]);
+                dataGridView1.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);
             }
         }
         private void getInfo()
