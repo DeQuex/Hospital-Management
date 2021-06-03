@@ -476,22 +476,22 @@ namespace Hospital_Management
         {
             private const string Caption = "SAS Project";
 
-            public void Warn(string text)
+            public static void Warn(string text)
             {
                 System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            public void Error(string text)
+            public static void Error(string text)
             {
                 System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            public void Info(string text)
+            public static void Info(string text)
             {
                 System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            public void Exclamation(string text)
+            public static void Exclamation(string text)
             {
                 System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Exclamation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
