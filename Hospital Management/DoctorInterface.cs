@@ -39,6 +39,7 @@ namespace Hospital_Management
             dataGridView4.Columns[1].Name = "Surname";
 
             GetPatients();
+            GetPatientsByAppointment();
 
             label3.Text = Form1.loginName;
         }
@@ -88,12 +89,21 @@ namespace Hospital_Management
             var doctor = Functions.MySQL.GetPatients().GetList().Select(x => x.GetNameSurname());
             foreach (var x in doctor)
             {
-                dataGridView1.Rows.Add(x[0], x[1]);
                 dataGridView2.Rows.Add(x[0], x[1]);
                 dataGridView4.Rows.Add(x[0], x[1]);
             }
         }
 
+        private void GetPatientsByAppointment()
+        {
+            dataGridView1.Rows.Clear();
+            var appointments = Functions.MySQL.GetAppointments().GetList()
+                .Where(x => x.GetPatient().GetPatientId() == selectedPatient.GetPatientId());
+            foreach (var x in appointments)
+            {
+                dataGridView1.Rows.Add(selectedPatient.GetNameSurname()[0], selectedPatient.GetNameSurname()[1]);
+            }
+        }
         private void getInfo()
         {
             label7.Text = selectedPatient.GetPatientId();
@@ -109,6 +119,8 @@ namespace Hospital_Management
             var examination = Functions.MySQL.GetExaminations().GetList().Where(x =>
                 x.GetPatient().GetPatientId() == selectedPatient.GetPatientId() &&
                 x.GetPatient().GetTc() == selectedPatient.GetTc());
+            
+
             dataGridView3.Rows.Clear();
             foreach (var x in examination)
             {
@@ -132,6 +144,7 @@ namespace Hospital_Management
             var patient = Functions.MySQL.GetPatients().GetList().Where(x =>
                 x.GetNameSurname()[0] == dataGridView1.SelectedRows[0].Cells["Name"].Value.ToString() &&
                 x.GetNameSurname()[1] == dataGridView1.SelectedRows[0].Cells["Surname"].Value.ToString());
+
 
             foreach (var x in patient)
             {

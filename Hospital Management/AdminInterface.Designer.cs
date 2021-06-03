@@ -388,8 +388,8 @@ namespace Hospital_Management
             this.Controls.Add(this.sidePanel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.confirmation_panel);
             this.Controls.Add(this.user_panel);
+            this.Controls.Add(this.confirmation_panel);
             this.Name = "AdminInterface";
             this.Size = new System.Drawing.Size(1350, 765);
             this.Load += new System.EventHandler(this.AdminInterface_Load);
