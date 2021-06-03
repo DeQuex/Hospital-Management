@@ -54,6 +54,7 @@ namespace Hospital_Management
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel19 = new System.Windows.Forms.Panel();
@@ -106,7 +107,6 @@ namespace Hospital_Management
             this.label13 = new System.Windows.Forms.Label();
             this.information = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.sidePanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -404,6 +404,13 @@ namespace Hospital_Management
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(135, 24);
             this.panel21.TabIndex = 6;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(132, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // panel20
             // 
@@ -926,22 +933,15 @@ namespace Hospital_Management
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 20);
-            this.textBox1.TabIndex = 0;
-            // 
             // DoctorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
             this.Controls.Add(this.sidePanel);
+            this.Controls.Add(this.information);
             this.Controls.Add(this.panel24);
             this.Controls.Add(this.operation);
-            this.Controls.Add(this.information);
             this.Name = "DoctorInterface";
             this.Size = new System.Drawing.Size(1360, 765);
             this.Load += new System.EventHandler(this.DoctorInterface_Load);

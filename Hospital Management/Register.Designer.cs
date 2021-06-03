@@ -200,6 +200,7 @@ namespace Hospital_Management
             this.tcbox.Size = new System.Drawing.Size(206, 26);
             this.tcbox.TabIndex = 1;
             this.tcbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tcbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tcbox_KeyPress);
             // 
             // panel2
             // 

@@ -61,5 +61,11 @@ namespace Hospital_Management
             mailbox.Text = String.Empty;
             tcbox.Text = String.Empty;
         }
+
+        private void tcbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                e.Handled = true;
+        }
     }
 }

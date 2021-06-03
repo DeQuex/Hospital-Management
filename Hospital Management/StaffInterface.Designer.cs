@@ -239,8 +239,8 @@ namespace Hospital_Management
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
-            this.Controls.Add(this.rightPanel);
             this.Controls.Add(this.sidePanel);
+            this.Controls.Add(this.rightPanel);
             this.Name = "StaffInterface";
             this.Size = new System.Drawing.Size(1307, 765);
             this.Load += new System.EventHandler(this.StaffInterface_Load);

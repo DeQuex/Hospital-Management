@@ -40,6 +40,7 @@ namespace Hospital_Management
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.patient_panel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btn_search_patient = new System.Windows.Forms.Button();
             this.patient_id_input = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,20 +58,19 @@ namespace Hospital_Management
             this.panel28 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label33 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.sidePanel.SuspendLayout();
             this.selection2_panel.SuspendLayout();
             this.selection1_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.patient_panel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.storage_panel.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel27.SuspendLayout();
             this.panel28.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // sidePanel
@@ -197,6 +197,19 @@ namespace Hospital_Management
             this.panel2.Size = new System.Drawing.Size(691, 500);
             this.panel2.TabIndex = 7;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView3.Location = new System.Drawing.Point(22, 19);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(646, 464);
+            this.dataGridView3.TabIndex = 0;
+            // 
             // btn_search_patient
             // 
             this.btn_search_patient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(165)))), ((int)(((byte)(87)))));
@@ -220,6 +233,7 @@ namespace Hospital_Management
             this.patient_id_input.Name = "patient_id_input";
             this.patient_id_input.Size = new System.Drawing.Size(209, 23);
             this.patient_id_input.TabIndex = 3;
+            this.patient_id_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patient_id_input_KeyPress);
             // 
             // label3
             // 
@@ -241,6 +255,7 @@ namespace Hospital_Management
             this.patient_tc_input.Name = "patient_tc_input";
             this.patient_tc_input.Size = new System.Drawing.Size(209, 23);
             this.patient_tc_input.TabIndex = 1;
+            this.patient_tc_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.patient_tc_input_KeyPress);
             // 
             // label2
             // 
@@ -277,6 +292,7 @@ namespace Hospital_Management
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(38, 20);
             this.textBox1.TabIndex = 30;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label4
             // 
@@ -378,19 +394,6 @@ namespace Hospital_Management
             this.label33.TabIndex = 0;
             this.label33.Text = "Sağlık Görevli Isimleri";
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.dataGridView3.Location = new System.Drawing.Point(22, 19);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(646, 464);
-            this.dataGridView3.TabIndex = 0;
-            // 
             // NurseInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,6 +415,7 @@ namespace Hospital_Management
             this.patient_panel.ResumeLayout(false);
             this.patient_panel.PerformLayout();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.storage_panel.ResumeLayout(false);
             this.storage_panel.PerformLayout();
             this.panel23.ResumeLayout(false);
@@ -420,7 +424,6 @@ namespace Hospital_Management
             this.panel27.PerformLayout();
             this.panel28.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
 
         }
