@@ -39,6 +39,8 @@ namespace Hospital_Management
             dataGridView4.Columns[1].Name = "Surname";
 
             GetPatients();
+
+            label3.Text = Form1.loginName;
         }
 
 
