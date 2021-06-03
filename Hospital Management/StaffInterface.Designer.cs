@@ -44,8 +44,8 @@ namespace Hospital_Management
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel27 = new System.Windows.Forms.Panel();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.label33 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label33 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.rightPanel.SuspendLayout();
@@ -80,6 +80,7 @@ namespace Hospital_Management
             this.btn_signout.TabIndex = 5;
             this.btn_signout.Text = "Oturumu Kapat";
             this.btn_signout.UseVisualStyleBackColor = false;
+            this.btn_signout.Click += new System.EventHandler(this.btn_signout_Click);
             // 
             // panel1
             // 
@@ -214,6 +215,15 @@ namespace Hospital_Management
             this.panel28.Size = new System.Drawing.Size(182, 475);
             this.panel28.TabIndex = 1;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(176, 469);
+            this.dataGridView2.TabIndex = 24;
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -223,15 +233,6 @@ namespace Hospital_Management
             this.label33.Size = new System.Drawing.Size(77, 13);
             this.label33.TabIndex = 0;
             this.label33.Text = "Hizmetli Isimleri";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(176, 469);
-            this.dataGridView2.TabIndex = 24;
             // 
             // StaffInterface
             // 

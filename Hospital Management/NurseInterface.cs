@@ -19,7 +19,7 @@ namespace Hospital_Management
 
         private void storage_label_Click(object sender, EventArgs e)
         {
-            if(patient_panel.Visible == true && storage_panel.Visible == false)
+            if(patient_panel.Visible && storage_panel.Visible == false)
             {
                 patient_panel.Hide();
                 storage_panel.Show();
@@ -121,6 +121,11 @@ namespace Hospital_Management
                 Console.WriteLine("Kullanici bulunamadi.");
             }
             
+        }
+
+        private void btn_signout_Click(object sender, EventArgs e)
+        {
+            Functions.LogOut(this);
         }
     }
 }

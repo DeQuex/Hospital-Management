@@ -84,5 +84,10 @@ namespace Hospital_Management
             UseMaterial(comboBox1.SelectedItem.ToString(), Convert.ToInt32(textBox1.Text));
             GetMaterials();
         }
+
+        private void btn_signout_Click(object sender, EventArgs e)
+        {
+            Functions.LogOut(this);
+        }
     }
 }

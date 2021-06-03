@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Account_Management;
 
 namespace Hospital_Management
 {
     public partial class DoctorInterface : UserControl
     {
+        private Patient selectedPatient;
         public DoctorInterface()
         {
             InitializeComponent();
@@ -30,6 +32,13 @@ namespace Hospital_Management
             dataGridView2.ColumnCount = 2;
             dataGridView2.Columns[0].Name = "Name";
             dataGridView2.Columns[1].Name = "Surname";
+
+            dataGridView3.ColumnCount = 5;
+            dataGridView3.Columns[0].Name = "ID";
+            dataGridView3.Columns[1].Name = "TC";
+            dataGridView3.Columns[2].Name = "Ill Definition";
+            dataGridView3.Columns[3].Name = "Treatment";
+            dataGridView3.Columns[4].Name = "Result";
 
             dataGridView4.ColumnCount = 2;
             dataGridView4.Columns[0].Name = "Name";
@@ -94,26 +103,49 @@ namespace Hospital_Management
             }
         }
 
+        private void getInfo()
+        {
+            label7.Text = selectedPatient.GetPatientId();
+            label8.Text = selectedPatient.GetMail();
+            label9.Text = selectedPatient.GetTc();
+            label5.Text = selectedPatient.GetNameSurname()[0] + " " + selectedPatient.GetNameSurname()[1];
+            label17.Text = selectedPatient.GetNameSurname()[0] + " " + selectedPatient.GetNameSurname()[1];
+            label24.Text = selectedPatient.GetPatientId();
+            label25.Text = selectedPatient.GetPatientId();
+            label29.Text = selectedPatient.GetNameSurname()[0] + " " + selectedPatient.GetNameSurname()[1];
+
+
+            var examination = Functions.MySQL.GetExaminations().GetList().Where(x =>
+                x.GetPatient().GetPatientId() == selectedPatient.GetPatientId() &&
+                x.GetPatient().GetTc() == selectedPatient.GetTc());
+            dataGridView3.Rows.Clear();
+            foreach (var x in examination)
+            {
+                dataGridView3.Rows.Add(selectedPatient.GetPatientId(), selectedPatient.GetTc(), x.GetIllDefinition(), x.GetTreatment(), x.GetResult());
+            }
+            
+
+        }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             label5.Visible = true;
             label7.Visible = true;
             label8.Visible = true;
             label9.Visible = true;
+            label24.Visible = true;
+            label17.Visible = true;
+            label25.Visible = true;
+            label29.Visible = true;
 
             if (dataGridView1.SelectedRows[0].Cells["Name"].Value == null) return;
             var patient = Functions.MySQL.GetPatients().GetList().Where(x =>
                 x.GetNameSurname()[0] == dataGridView1.SelectedRows[0].Cells["Name"].Value.ToString() &&
                 x.GetNameSurname()[1] == dataGridView1.SelectedRows[0].Cells["Surname"].Value.ToString());
-
+            
             foreach (var x in patient)
             {
-                label7.Text = x.GetPatientId();
-                label8.Text = x.GetMail();
-                label9.Text = x.GetTc();
-                label5.Text = x.GetNameSurname()[0] + " " + x.GetNameSurname()[1];
-                label24.Text = x.GetPatientId();
-                label25.Text = x.GetPatientId();
+                selectedPatient = x;
+                getInfo();
                 break;
             }
         }
@@ -126,6 +158,8 @@ namespace Hospital_Management
             label9.Visible = true;
             label24.Visible = true;
             label17.Visible = true;
+            label25.Visible = true;
+            label29.Visible = true;
 
             if (dataGridView4.SelectedRows[0].Cells["Name"].Value == null) return;
             var patient = Functions.MySQL.GetPatients().GetList().Where(x =>
@@ -134,15 +168,57 @@ namespace Hospital_Management
 
             foreach (var x in patient)
             {
-                label7.Text = x.GetPatientId();
-                label8.Text = x.GetMail();
-                label9.Text = x.GetTc();
-                label5.Text = x.GetNameSurname()[0] + " " + x.GetNameSurname()[1];
-                label17.Text = x.GetNameSurname()[0] + " " + x.GetNameSurname()[1];
-                label24.Text = x.GetPatientId();
-                label25.Text = x.GetPatientId();
+                selectedPatient = x;
+                getInfo();
                 break;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var str = $"{comboBox1.SelectedItem},{comboBox2.SelectedItem},{comboBox3.SelectedItem}";
+            try
+            {
+                Functions.MySQL.Add("examination", new[] { "patient_id", selectedPatient.GetPatientId() },
+                    new[] { "patient_tc", selectedPatient.GetTc() }, new[] { "ill_definition", richTextBox1.Text },
+                    new[] { "treatment", str }, new[] { "result", textBox1.Text });
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Bir hata olustu. Detay icin konsol komutlarina bak");
+                Console.WriteLine(exception);
+            }
+            
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            label5.Visible = true;
+            label7.Visible = true;
+            label8.Visible = true;
+            label9.Visible = true;
+            label24.Visible = true;
+            label17.Visible = true;
+            label25.Visible = true;
+            label29.Visible = true;
+
+            if (dataGridView2.SelectedRows[0].Cells["Name"].Value == null) return;
+            var patient = Functions.MySQL.GetPatients().GetList().Where(x =>
+                x.GetNameSurname()[0] == dataGridView2.SelectedRows[0].Cells["Name"].Value.ToString() &&
+                x.GetNameSurname()[1] == dataGridView2.SelectedRows[0].Cells["Surname"].Value.ToString());
+
+            foreach (var x in patient)
+            {
+                selectedPatient = x;
+                getInfo();
+                break;
+            }
+        }
+
+        private void btn_signout_Click(object sender, EventArgs e)
+        {
+            Functions.LogOut(this);
         }
     }
 }

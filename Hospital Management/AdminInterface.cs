@@ -120,6 +120,9 @@ namespace Hospital_Management
             }
         }
 
-
+        private void btn_signout_Click(object sender, EventArgs e)
+        {
+            Functions.LogOut(this);
+        }
     }
 }

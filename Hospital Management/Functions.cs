@@ -466,7 +466,11 @@ namespace Hospital_Management
             cName.ClientSize = new Size(fName.Size.Width, fName.Size.Height);
         }
 
-
+        public static void LogOut(UserControl control)
+        {
+            Form.ActiveForm?.Controls.Remove(control);
+            Form.ActiveForm?.Controls.Add(new Login());
+        }
         // admin panel kullanıcı bulma
         public static string findUser(string first_name, string department_name)
         {

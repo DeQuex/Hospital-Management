@@ -161,6 +161,7 @@ namespace Hospital_Management
             this.btn_signout.TabIndex = 5;
             this.btn_signout.Text = "Oturumu Kapat";
             this.btn_signout.UseVisualStyleBackColor = false;
+            this.btn_signout.Click += new System.EventHandler(this.btn_signout_Click);
             // 
             // panel1
             // 
