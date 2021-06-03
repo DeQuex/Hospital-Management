@@ -76,17 +76,17 @@ namespace Hospital_Management
             }
         }
 
-        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.Rows != null) 
-            {
-                var patient = Functions.MySQL.GetPatients().GetList().Where(x => x.GetNameSurname()[0] == dataGridView1.SelectedRows[0].Cells[0].Value.ToString() && x.GetNameSurname()[1] == dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
+            if (dataGridView1.SelectedRows[0].Cells["Name"].Value == null) return;
+            var patient = Functions.MySQL.GetPatients().GetList().Where(x =>
+                x.GetNameSurname()[0] == dataGridView1.SelectedRows[0].Cells["Name"].Value.ToString() &&
+                x.GetNameSurname()[1] == dataGridView1.SelectedRows[0].Cells["Surname"].Value.ToString());
 
-                foreach (var x in patient)
-                {
-                    label7.Text = x.GetPatientId();
-                    break;
-                }
+            foreach (var x in patient)
+            {
+                label7.Text = x.GetPatientId();
+                break;
             }
         }
     }
