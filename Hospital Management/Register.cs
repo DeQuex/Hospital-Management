@@ -23,6 +23,11 @@ namespace Hospital_Management
 
         private void btn_register_Click(object sender, EventArgs e)
         {
+            if (tcbox.Text.Length != 11)
+            {
+                Functions.MessageBox.Warn("TC lenght must be 11");
+                return;
+            }
             if (Functions.sendMailCheck() && Functions.MySQL.check_connection())
             {
                 var new_password = Functions.GeneratePassword();
@@ -33,33 +38,32 @@ namespace Hospital_Management
                         new[] { "mail", mailbox.Text }, new[] { "department", sectionbox.SelectedItem.ToString() },
                         new[] { "approve_status", "0" }, new[] { "staff_id", Functions.CreateId(11) });
                     Functions.sendMail(new_password, mailbox.Text, name.Text);
-                    MessageBox.Show("Kayit basarili sifreniz mail adresinize gonderildi.", "SAS Project",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Functions.MessageBox.Info("Kayit basarili sifreniz mail adresinize gonderildi.");
                     Form.ActiveForm?.Controls.Add(new Login());
                     Form.ActiveForm?.Controls.Remove(this);
                 }
                 catch (MySqlException exception)
                 {
-                    MessageBox.Show(exception.Number == 1062 ? "boyle bir uye zaten var" : exception.Message);
+                    Functions.MessageBox.Error(exception.Number == 1062 ? "Already registered with this information!" : exception.Message);
                 }
                 catch (SmtpException exception)
                 {
-                    MessageBox.Show(exception.Message);
+                    Functions.MessageBox.Error(exception.Message);
                 }
             }
             else
             {
-                MessageBox.Show("Bir hata olustu.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Functions.MessageBox.Error("An error occured.");
             }
 
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            name.Text = String.Empty;
-            surname.Text = String.Empty;
-            mailbox.Text = String.Empty;
-            tcbox.Text = String.Empty;
+            name.Text = string.Empty;
+            surname.Text = string.Empty;
+            mailbox.Text = string.Empty;
+            tcbox.Text = string.Empty;
         }
 
         private void tcbox_KeyPress(object sender, KeyPressEventArgs e)

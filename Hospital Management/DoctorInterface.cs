@@ -186,7 +186,7 @@ namespace Hospital_Management
             }
             catch (Exception exception)
             {
-                MessageBox.Show("Bir hata olustu. Detay icin konsol komutlarina bak");
+                Functions.MessageBox.Error("Bir hata olustu. Detay icin konsol komutlarina bak");
                 Console.WriteLine(exception);
             }
             

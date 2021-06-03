@@ -19,20 +19,16 @@ namespace Hospital_Management
 
         private void storage_label_Click(object sender, EventArgs e)
         {
-            if(patient_panel.Visible && storage_panel.Visible == false)
-            {
-                patient_panel.Hide();
-                storage_panel.Show();
-            }
+            if (!patient_panel.Visible || storage_panel.Visible) return;
+            patient_panel.Hide();
+            storage_panel.Show();
         }
 
         private void patientInfo_label_Click(object sender, EventArgs e)
         {
-            if (patient_panel.Visible == false && storage_panel.Visible == true)
-            {
-                patient_panel.Show();
-                storage_panel.Hide();
-            }
+            if (patient_panel.Visible || storage_panel.Visible != true) return;
+            patient_panel.Show();
+            storage_panel.Hide();
         }
         private void UseMaterial(string name, int amount)
         {
@@ -47,7 +43,7 @@ namespace Hospital_Management
                 }
                 else
                 {
-                    MessageBox.Show("Yeteri kadar materyal yok");
+                    Functions.MessageBox.Warn("There is no material enough.");
                 }
                 break;
             }
@@ -115,10 +111,10 @@ namespace Hospital_Management
                         x.GetIllDefinition(), x.GetTreatment());
                 }
             }
-            catch (Exception exception)
+            catch (Exception)
             {
-                MessageBox.Show("Kullanici bulunamadi.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine("Kullanici bulunamadi.");
+                Functions.MessageBox.Error("User not found.");
+                Console.WriteLine("User not found.");
             }
             
         }

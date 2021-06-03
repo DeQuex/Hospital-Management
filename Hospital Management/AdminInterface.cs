@@ -68,10 +68,6 @@ namespace Hospital_Management
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_search_patient_Click(object sender, EventArgs e)
         {
@@ -88,34 +84,36 @@ namespace Hospital_Management
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            MessageBox.Show("Tıkladığın hücre " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            Functions.MessageBox.Info("Tıkladığın hücre " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
             var name = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
             var surname = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
             var tc = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
 
             if (e.ColumnIndex == 6 && dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString() == "0")
             {
-                DialogResult dialogResult = MessageBox.Show(name +" Adlı kullanıcıyı onaylamak istediğinize emin minisiniz?", "Kullanıcı Onayla", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                var dialogResult = MessageBox.Show(name +" Adlı kullanıcıyı onaylamak istediğinize emin minisiniz?", "Kullanıcı Onayla", MessageBoxButtons.YesNo);
+                switch (dialogResult)
                 {
-                    Functions.MySQL.Edit("users", "approve_status", "1", "staff_tc", tc);
-                    dataGridView2.Rows[e.RowIndex].Cells[6].Value = "1";
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
+                    case DialogResult.Yes:
+                        Functions.MySQL.Edit("users", "approve_status", "1", "staff_tc", tc);
+                        dataGridView2.Rows[e.RowIndex].Cells[6].Value = "1";
+                        break;
+                    case DialogResult.No:
+                        //do something else
+                        break;
                 }
             }else if (e.ColumnIndex == 6 && dataGridView2.Rows[e.RowIndex].Cells[6].Value.ToString() == "1")
             {
-                DialogResult dialogResult = MessageBox.Show(name + " Adlı kullanıcının onayını kaldırmak istediğinize emin minisiniz?", "Onay Kaldır?", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                var dialogResult = MessageBox.Show(name + " Adlı kullanıcının onayını kaldırmak istediğinize emin minisiniz?", "Onay Kaldır?", MessageBoxButtons.YesNo);
+                switch (dialogResult)
                 {
-                    Functions.MySQL.Edit("users", "approve_status", "0", "staff_tc", tc);
-                    dataGridView2.Rows[e.RowIndex].Cells[6].Value = "0";
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    //do something else
+                    case DialogResult.Yes:
+                        Functions.MySQL.Edit("users", "approve_status", "0", "staff_tc", tc);
+                        dataGridView2.Rows[e.RowIndex].Cells[6].Value = "0";
+                        break;
+                    case DialogResult.No:
+                        //do something else
+                        break;
                 }
             }
         }

@@ -49,7 +49,6 @@ namespace Hospital_Management
                 var insert = new MySqlCommand(sql, connection);
                 insert.ExecuteReader();
                 connection.Close();
-
             }
 
             public static void Edit(string table_name, string columnKey, string columnValue, string whereKey, string whereValue)
@@ -65,7 +64,7 @@ namespace Hospital_Management
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Error(ex.ToString());
                 }
             }
 
@@ -92,7 +91,7 @@ namespace Hospital_Management
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Error(ex.ToString());
                 }
                 return null;
             }
@@ -120,7 +119,7 @@ namespace Hospital_Management
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Error(ex.ToString());
                 }
                 return null;
             }
@@ -143,7 +142,7 @@ namespace Hospital_Management
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Error(ex.ToString());
                 }
                 return null;
             }
@@ -267,7 +266,7 @@ namespace Hospital_Management
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Error(ex.ToString());
                 }
                 return null;
             }
@@ -496,95 +495,6 @@ namespace Hospital_Management
                 System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Exclamation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
-        // admin panel kullanıcı bulma
-        public static string findUser(string first_name, string department_name)
-        {
-            string connectionString = "server=213.238.178.36;user=sasadmin;database=sas;port=3306;password=YcX8KqHbW3LmW3jF";
-            var connection = new MySqlConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-                string Query = $"SELECT * FROM sas.test WHERE tc = '{first_name}' AND testcol3 = '{department_name}';";
-                var insert = new MySqlCommand(Query, connection);
-                var reader= insert.ExecuteReader();
-                string result = "";
-                while(reader.Read())
-                {
-                    for (var i= 0; i < 5;i++)
-                    {
-                        result += reader.GetString(i) + " ";
-                        Console.WriteLine(result);
-                    }
-                }
-                connection.Close();
-                return result;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-            return null;
-        }
-
-        public static string unapprovedUsers()
-        {
-            string connectionString = "server=213.238.178.36;user=sasadmin;database=sas;port=3306;password=YcX8KqHbW3LmW3jF";
-            var connection = new MySqlConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-                string Query = $"SELECT * FROM sas.users WHERE approve_status = '0' ;";
-                var insert = new MySqlCommand(Query, connection);
-                var reader = insert.ExecuteReader();
-                string result = "";
-                while (reader.Read())
-                {
-                    for (int i = 0; i < 7; i++)
-                    {
-                        result += reader.GetString(i) + " ";
-                        Console.WriteLine(result);
-                    }
-
-                }
-                connection.Close();
-
-                return result;
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-
-            return null;
-        }
-
-        public static void editUser()
-        {
-            string connectionString = "server=213.238.178.36;user=sasadmin;database=sas;port=3306;password=YcX8KqHbW3LmW3jF";
-            var connection = new MySqlConnection(connectionString);
-
-            try
-            {
-                connection.Open();
-                string Query = $"update sas.test set tc = 'Savaş' where testcol3 = 'deneme';";
-                var insert = new MySqlCommand(Query, connection);
-                var reader = insert.ExecuteReader();
-                connection.Close();
-
-
-
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-            }
-
-        }
-
-
 
     }
 }
