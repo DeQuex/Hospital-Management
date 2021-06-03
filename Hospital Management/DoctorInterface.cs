@@ -8,6 +8,7 @@ namespace Hospital_Management
     public partial class DoctorInterface : UserControl
     {
         private Patient selectedPatient;
+        private Appointment selectedAppointment;
         public DoctorInterface()
         {
             InitializeComponent();
@@ -19,13 +20,15 @@ namespace Hospital_Management
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, operation);
             Functions.OrderControl(this, Functions.Direction.Horizontal, 20, sidePanel, panel24);
 
-            dataGridView1.ColumnCount = 2;
+            dataGridView1.ColumnCount = 3;
             dataGridView1.Columns[0].Name = "Name";
             dataGridView1.Columns[1].Name = "Surname";
+            dataGridView1.Columns[2].Name = "Id";
 
-            dataGridView2.ColumnCount = 2;
+            dataGridView2.ColumnCount = 3;
             dataGridView2.Columns[0].Name = "Name";
             dataGridView2.Columns[1].Name = "Surname";
+            dataGridView2.Columns[2].Name = "Id";
 
             dataGridView3.ColumnCount = 5;
             dataGridView3.Columns[0].Name = "ID";
@@ -34,9 +37,11 @@ namespace Hospital_Management
             dataGridView3.Columns[3].Name = "Treatment";
             dataGridView3.Columns[4].Name = "Result";
 
-            dataGridView4.ColumnCount = 2;
+            dataGridView4.ColumnCount = 3;
             dataGridView4.Columns[0].Name = "Name";
             dataGridView4.Columns[1].Name = "Surname";
+            dataGridView4.Columns[2].Name = "Id";
+
 
             GetPatientsByAppointment();
 
@@ -88,13 +93,26 @@ namespace Hospital_Management
             var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
             foreach (var x in appointments)
             {
-                dataGridView1.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);
-                dataGridView2.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);
-                dataGridView4.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);
+                dataGridView1.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1], x.GetAppointmentId());
+                dataGridView2.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1], x.GetAppointmentId());
+                dataGridView4.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1], x.GetAppointmentId());
             }
         }
 
-        private void getInfo()
+        private void EditInspection(Appointment appointment, string text)
+        {
+            try
+            {
+                Functions.MySQL.Edit("appointments", "inspection", text, "id", appointment.GetAppointmentId());
+            }
+            catch (Exception e)
+            {
+                Functions.MessageBox.Error("An error occurred.");
+                Console.WriteLine(e);
+            }
+        }
+
+        private void GetInfo()
         {
             label7.Text = selectedPatient.GetPatientId();
             label8.Text = selectedPatient.GetMail();
@@ -104,7 +122,7 @@ namespace Hospital_Management
             label24.Text = selectedPatient.GetPatientId();
             label25.Text = selectedPatient.GetPatientId();
             label29.Text = selectedPatient.GetNameSurname()[0] + " " + selectedPatient.GetNameSurname()[1];
-
+            richTextBox2.Text = selectedAppointment.GetInspection();
 
             var examination = Functions.MySQL.GetExaminations().GetList().Where(x =>
                 x.GetPatient().GetPatientId() == selectedPatient.GetPatientId() &&
@@ -116,7 +134,6 @@ namespace Hospital_Management
             {
                 dataGridView3.Rows.Add(selectedPatient.GetPatientId(), selectedPatient.GetTc(), x.GetIllDefinition(), x.GetTreatment(), x.GetResult());
             }
-
 
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -134,14 +151,23 @@ namespace Hospital_Management
             var patient = Functions.MySQL.GetPatients().GetList().Where(x =>
                 x.GetNameSurname()[0] == dataGridView1.SelectedRows[0].Cells["Name"].Value.ToString() &&
                 x.GetNameSurname()[1] == dataGridView1.SelectedRows[0].Cells["Surname"].Value.ToString());
-
-
             foreach (var x in patient)
             {
                 selectedPatient = x;
-                getInfo();
                 break;
             }
+
+            var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
+            foreach (var x in appointments)
+            {
+                if (x.GetAppointmentId() == dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString())
+                {
+                    selectedAppointment = x;
+                    break;
+                }
+            }
+
+            GetInfo();
         }
 
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -163,9 +189,20 @@ namespace Hospital_Management
             foreach (var x in patient)
             {
                 selectedPatient = x;
-                getInfo();
                 break;
             }
+
+            var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
+            foreach (var x in appointments)
+            {
+                if (x.GetAppointmentId() == dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString())
+                {
+                    selectedAppointment = x;
+                    break;
+                }
+            }
+
+            GetInfo();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -205,14 +242,30 @@ namespace Hospital_Management
             foreach (var x in patient)
             {
                 selectedPatient = x;
-                getInfo();
                 break;
             }
+
+            var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
+            foreach (var x in appointments)
+            {
+                if (x.GetAppointmentId() == dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString())
+                {
+                    selectedAppointment = x;
+                    break;
+                }
+            }
+            GetInfo();
         }
 
         private void btn_signout_Click(object sender, EventArgs e)
         {
             Functions.LogOut(this);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (selectedAppointment != null)
+                EditInspection(selectedAppointment, richTextBox2.Text);
         }
     }
 }

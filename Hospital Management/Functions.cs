@@ -235,7 +235,7 @@ namespace Hospital_Management
 
                     if (patientnew != null && accountnew != null)
                     {
-                        appointmentList.Add(new Appointment(patientnew, accountnew, xRow["appointment_date"].ToString(), xRow["clinic"].ToString(), xRow["inspection"].ToString()));
+                        appointmentList.Add(new Appointment(patientnew, accountnew, xRow["appointment_date"].ToString(), xRow["clinic"].ToString(), xRow["inspection"].ToString(), xRow["id"].ToString()));
                     }
                 }
 

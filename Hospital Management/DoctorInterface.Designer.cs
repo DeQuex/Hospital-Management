@@ -96,7 +96,6 @@ namespace Hospital_Management
             this.label9 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.label36 = new System.Windows.Forms.Label();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -104,6 +103,8 @@ namespace Hospital_Management
             this.label13 = new System.Windows.Forms.Label();
             this.information = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidePanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -282,22 +283,30 @@ namespace Hospital_Management
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.SystemColors.Window;
             this.button5.Location = new System.Drawing.Point(542, 527);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 17;
             this.button5.Text = "Kayıt";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.Window;
             this.button4.Location = new System.Drawing.Point(542, 567);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 16;
             this.button4.Text = "Reçete";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // label23
             // 
@@ -824,14 +833,6 @@ namespace Hospital_Management
             this.label36.Text = "label36";
             this.label36.Visible = false;
             // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel15.Location = new System.Drawing.Point(447, 375);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(463, 87);
-            this.panel15.TabIndex = 6;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -885,12 +886,13 @@ namespace Hospital_Management
             // information
             // 
             this.information.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.information.Controls.Add(this.button1);
+            this.information.Controls.Add(this.richTextBox2);
             this.information.Controls.Add(this.label13);
             this.information.Controls.Add(this.label12);
             this.information.Controls.Add(this.label11);
             this.information.Controls.Add(this.label10);
             this.information.Controls.Add(this.label6);
-            this.information.Controls.Add(this.panel15);
             this.information.Controls.Add(this.panel14);
             this.information.Controls.Add(this.panel13);
             this.information.Controls.Add(this.panel12);
@@ -910,15 +912,40 @@ namespace Hospital_Management
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.richTextBox2.Location = new System.Drawing.Point(463, 374);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(404, 87);
+            this.richTextBox2.TabIndex = 15;
+            this.richTextBox2.Text = "";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.Window;
+            this.button1.Location = new System.Drawing.Point(887, 408);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Degistir";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DoctorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
             this.Controls.Add(this.sidePanel);
-            this.Controls.Add(this.operation);
             this.Controls.Add(this.information);
             this.Controls.Add(this.panel24);
+            this.Controls.Add(this.operation);
             this.Name = "DoctorInterface";
             this.Size = new System.Drawing.Size(1360, 765);
             this.Load += new System.EventHandler(this.DoctorInterface_Load);
@@ -1033,7 +1060,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
-        private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -1053,5 +1079,7 @@ namespace Hospital_Management
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button button1;
     }
 }
