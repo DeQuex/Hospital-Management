@@ -8,11 +8,6 @@ namespace Hospital_Management
     public partial class Form1 : Form
     {
         readonly UserControl loginUserControl = new Login();
-        readonly UserControl registerUserControl = new Register();
-        readonly UserControl AdminUControl = new AdminInterface();
-        readonly UserControl NurseUControl = new NurseInterface();
-        readonly UserControl DoctorUControl = new DoctorInterface();
-        readonly UserControl staffUControl = new StaffInterface();
         private Control lastControl;
         public static string loginName;
 

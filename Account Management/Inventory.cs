@@ -17,13 +17,13 @@
             this.description = description;
         }
 
-        public string getType() => type;
+        public new string GetType() => type;
 
-        public string getId() => id;
+        public string GetId() => id;
 
-        public string getName() => name;
+        public string GetName() => name;
 
-        public int getAmount() => amount;
-        private string getDescription() => description;
+        public int GetAmount() => amount;
+        private string GetDescription() => description;
     }
 }

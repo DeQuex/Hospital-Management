@@ -22,10 +22,10 @@ namespace Hospital_Management
             var materials = Functions.MySQL.GetInventory().GetByType("material");
             foreach (var x in materials)
             {
-                if (x.getName() != name) continue;
-                if (x.getAmount() >= amount && amount > 0)
+                if (x.GetName() != name) continue;
+                if (x.GetAmount() >= amount && amount > 0)
                 {
-                    var newvalue = x.getAmount() - amount;
+                    var newvalue = x.GetAmount() - amount;
                     Functions.MySQL.Edit("inventory", "amount", newvalue.ToString(), "name", name);
                 }
                 else
@@ -42,7 +42,7 @@ namespace Hospital_Management
             var inventory = Functions.MySQL.GetInventory();
             foreach (var x in inventory.GetByType("material"))
             {
-                dataGridView1.Rows.Add(x.getName(), x.getAmount());
+                dataGridView1.Rows.Add(x.GetName(), x.GetAmount());
             }
         }
 
@@ -70,7 +70,7 @@ namespace Hospital_Management
 
             label1.Text = Form1.loginName;
 
-            comboBox1.DataSource = Functions.MySQL.GetInventory().GetByType("material").Select(x => x.getName()).ToList();
+            comboBox1.DataSource = Functions.MySQL.GetInventory().GetByType("material").Select(x => x.GetName()).ToList();
             GetStaff();
         }
 

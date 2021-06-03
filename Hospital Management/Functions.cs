@@ -24,7 +24,7 @@ namespace Hospital_Management
                 var connection = new MySqlConnection(connectionString);
 
                 connection.Open();
-                string sql = null;
+                string sql;
 
                 var colums = "";
                 var values = "";
@@ -147,7 +147,7 @@ namespace Hospital_Management
                 var data = ReadAllDataSource("users");
                 foreach (DataRow xRow in data.Rows)
                 {
-                    accountList.addAccount(new Account(xRow["id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(),
+                    accountList.AddAccount(new Account(xRow["id"].ToString(), xRow["name"].ToString(), xRow["surname"].ToString(),
                         xRow["staff_tc"].ToString(), xRow["password"].ToString(), xRow["mail"].ToString(),
                         xRow["department"].ToString(), xRow["approve_status"].ToString(), xRow["staff_id"].ToString()));
                 }
@@ -266,7 +266,7 @@ namespace Hospital_Management
             }
             public static bool check_connection()
             {
-                var result = false;
+                bool result;
                 var connection = new MySqlConnection(connectionString);
                 try
                 {
@@ -359,7 +359,7 @@ namespace Hospital_Management
         }
         public static bool sendMailCheck()
         {
-            var result = false;
+            bool result;
             var Client = new SmtpClient()
             {
                 Host = "mail.ataberkozturk.com",
@@ -413,7 +413,7 @@ namespace Hospital_Management
             var totalControlsWidth = 0;
             var hOffset = 0;
             var wOffset = 0;
-            var spaceOffset = 0;
+            int spaceOffset;
             spaceOffset = space * (controls.Length - 1);
 
             foreach (var x in controls)
@@ -471,22 +471,22 @@ namespace Hospital_Management
 
             public static void Warn(string text)
             {
-                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                System.Windows.Forms.MessageBox.Show(text, $@"{Caption} - Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             public static void Error(string text)
             {
-                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                System.Windows.Forms.MessageBox.Show(text, $@"{Caption} - Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             public static void Info(string text)
             {
-                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Windows.Forms.MessageBox.Show(text, $@"{Caption} - Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             public static void Exclamation(string text)
             {
-                System.Windows.Forms.MessageBox.Show(text, $"{Caption} - Exclamation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                System.Windows.Forms.MessageBox.Show(text, $@"{Caption} - Exclamation", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

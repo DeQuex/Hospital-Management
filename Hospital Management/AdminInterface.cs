@@ -49,7 +49,7 @@ namespace Hospital_Management
 
         private void label4_Click(object sender, EventArgs e)
         {
-            if (user_panel.Visible == false && confirmation_panel.Visible == true)
+            if (user_panel.Visible == false && confirmation_panel.Visible)
             {
                 user_panel.Show();
                 confirmation_panel.Hide();
@@ -71,7 +71,7 @@ namespace Hospital_Management
 
         private void dataGridView2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Functions.MessageBox.Info("Tıkladığın hücre " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+            Functions.MessageBox.Info("Tıkladığın hücre " + dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
             var name = dataGridView2.Rows[e.RowIndex].Cells[1].Value.ToString();
             var surname = dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
             var tc = dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();

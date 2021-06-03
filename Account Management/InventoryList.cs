@@ -16,7 +16,7 @@ namespace Account_Management
 
         public List<Inventory> GetByType(string type)
         {
-            return list.Where(x => x.getType() == type).ToList();
+            return list.Where(x => x.GetType() == type).ToList();
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Account_Management;
 using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -78,6 +77,7 @@ namespace Hospital_Management
             operation.Visible = false;
             panel24.Visible = false;
         }
+
         private void GetPatients()
         {
             dataGridView1.Rows.Clear();
@@ -87,13 +87,7 @@ namespace Hospital_Management
             foreach (var x in doctor)
             {
                 dataGridView1.Rows.Add(x[0], x[1]);
-            }
-            foreach (var x in doctor)
-            {
                 dataGridView2.Rows.Add(x[0], x[1]);
-            }
-            foreach (var x in doctor)
-            {
                 dataGridView4.Rows.Add(x[0], x[1]);
             }
         }
