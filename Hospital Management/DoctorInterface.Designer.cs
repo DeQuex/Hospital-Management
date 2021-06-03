@@ -62,7 +62,6 @@ namespace Hospital_Management
             this.label16 = new System.Windows.Forms.Label();
             this.panel18 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -76,7 +75,6 @@ namespace Hospital_Management
             this.label28 = new System.Windows.Forms.Label();
             this.panel31 = new System.Windows.Forms.Panel();
             this.label29 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
             this.panel32 = new System.Windows.Forms.Panel();
             this.panel33 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -86,7 +84,6 @@ namespace Hospital_Management
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -276,7 +273,6 @@ namespace Hospital_Management
             this.operation.Controls.Add(this.panel19);
             this.operation.Controls.Add(this.label16);
             this.operation.Controls.Add(this.panel18);
-            this.operation.Controls.Add(this.label14);
             this.operation.Controls.Add(this.panel16);
             this.operation.Location = new System.Drawing.Point(342, 37);
             this.operation.Name = "operation";
@@ -306,6 +302,7 @@ namespace Hospital_Management
             // label23
             // 
             this.label23.AutoSize = true;
+            this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label23.Location = new System.Drawing.Point(808, 201);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(54, 13);
@@ -354,6 +351,7 @@ namespace Hospital_Management
             // label22
             // 
             this.label22.AutoSize = true;
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label22.Location = new System.Drawing.Point(597, 160);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(52, 13);
@@ -363,6 +361,7 @@ namespace Hospital_Management
             // label21
             // 
             this.label21.AutoSize = true;
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label21.Location = new System.Drawing.Point(464, 446);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(24, 13);
@@ -372,6 +371,7 @@ namespace Hospital_Management
             // label20
             // 
             this.label20.AutoSize = true;
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label20.Location = new System.Drawing.Point(389, 365);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(68, 13);
@@ -381,6 +381,7 @@ namespace Hospital_Management
             // label19
             // 
             this.label19.AutoSize = true;
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label19.Location = new System.Drawing.Point(389, 299);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(68, 13);
@@ -390,6 +391,7 @@ namespace Hospital_Management
             // label18
             // 
             this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label18.Location = new System.Drawing.Point(389, 231);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(68, 13);
@@ -444,6 +446,7 @@ namespace Hospital_Management
             // label24
             // 
             this.label24.AutoSize = true;
+            this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label24.Location = new System.Drawing.Point(50, 5);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(41, 13);
@@ -480,16 +483,6 @@ namespace Hospital_Management
             this.label17.TabIndex = 0;
             this.label17.Text = "İsim Yazılacak";
             this.label17.Visible = false;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label14.Location = new System.Drawing.Point(78, 47);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(156, 13);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Hoşgeldiniz doktor serdar Cesur";
             // 
             // panel16
             // 
@@ -539,7 +532,6 @@ namespace Hospital_Management
             this.panel24.Controls.Add(this.panel30);
             this.panel24.Controls.Add(this.label28);
             this.panel24.Controls.Add(this.panel31);
-            this.panel24.Controls.Add(this.label34);
             this.panel24.Controls.Add(this.panel32);
             this.panel24.Location = new System.Drawing.Point(342, 37);
             this.panel24.Name = "panel24";
@@ -567,6 +559,7 @@ namespace Hospital_Management
             // label27
             // 
             this.label27.AutoSize = true;
+            this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label27.Location = new System.Drawing.Point(611, 161);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(52, 13);
@@ -585,6 +578,7 @@ namespace Hospital_Management
             // label25
             // 
             this.label25.AutoSize = true;
+            this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label25.Location = new System.Drawing.Point(50, 5);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(41, 13);
@@ -621,16 +615,6 @@ namespace Hospital_Management
             this.label29.TabIndex = 0;
             this.label29.Text = "İsim Yazılacak";
             this.label29.Visible = false;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label34.Location = new System.Drawing.Point(78, 47);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(156, 13);
-            this.label34.TabIndex = 3;
-            this.label34.Text = "Hoşgeldiniz doktor serdar Cesur";
             // 
             // panel32
             // 
@@ -722,16 +706,6 @@ namespace Hospital_Management
             this.label2.TabIndex = 0;
             this.label2.Text = "Hasta Sıralaması";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label1.Location = new System.Drawing.Point(79, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(156, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Hoşgeldiniz doktor serdar Cesur";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(350, 145);
@@ -782,6 +756,7 @@ namespace Hospital_Management
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label7.Location = new System.Drawing.Point(50, 5);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 13);
@@ -801,6 +776,7 @@ namespace Hospital_Management
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label8.Location = new System.Drawing.Point(5, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
@@ -820,6 +796,7 @@ namespace Hospital_Management
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label9.Location = new System.Drawing.Point(32, 4);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(35, 13);
@@ -839,6 +816,7 @@ namespace Hospital_Management
             // label36
             // 
             this.label36.AutoSize = true;
+            this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.label36.Location = new System.Drawing.Point(50, 4);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(41, 13);
@@ -920,7 +898,6 @@ namespace Hospital_Management
             this.information.Controls.Add(this.label4);
             this.information.Controls.Add(this.panel7);
             this.information.Controls.Add(this.pictureBox1);
-            this.information.Controls.Add(this.label1);
             this.information.Controls.Add(this.panel5);
             this.information.Location = new System.Drawing.Point(342, 37);
             this.information.Name = "information";
@@ -1027,7 +1004,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Label label15;
@@ -1039,7 +1015,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Panel panel32;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Label label35;
@@ -1050,7 +1025,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label5;
