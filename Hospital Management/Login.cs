@@ -43,6 +43,7 @@ namespace Hospital_Management
                 if (x.GetApproveStatus() != "1") continue;
                 var account_type = users.AccountType(tcbox.Text);
                 Form1.loginName = $"{x.GetNameSurname()[0]} {x.GetNameSurname()[1]}";
+                Form1.LoginedAccount = x;
                 switch (account_type)
                 {
                     case "nurse":

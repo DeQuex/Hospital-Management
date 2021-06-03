@@ -97,7 +97,7 @@ namespace Hospital_Management
         private void GetPatientsByAppointment()
         {
             dataGridView1.Rows.Clear();
-            var appointments = Functions.MySQL.GetAppointments().GetList();
+            var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
             foreach (var x in appointments)
             {
                 dataGridView1.Rows.Add(x.GetPatient().GetNameSurname()[0], x.GetPatient().GetNameSurname()[1]);

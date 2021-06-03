@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Account_Management;
 
 
 namespace Hospital_Management
@@ -10,6 +11,7 @@ namespace Hospital_Management
         readonly UserControl loginUserControl = new Login();
         private Control lastControl;
         public static string loginName;
+        public static Account LoginedAccount;
 
         public Form1()
         {
