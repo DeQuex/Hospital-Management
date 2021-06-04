@@ -98,6 +98,7 @@ namespace Hospital_Management
             if (patient_tc_input.Text == null || patient_id_input.Text == null) return;
             try
             {
+                dataGridView3.Rows.Clear();
                 var examinatons = Functions.MySQL.GetExaminations().GetList()
                     .Where(x => x.GetPatient().GetPatientId() == patient_id_input.Text && x.GetPatient().GetTc() == patient_tc_input.Text);
                 foreach (var x in examinatons)
