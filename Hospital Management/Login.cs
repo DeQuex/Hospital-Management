@@ -73,7 +73,50 @@ namespace Hospital_Management
 
         private void lbl_forgot_Click(object sender, EventArgs e)
         {
-            var dialogResult = MessageBox.Show("Can you access your e-mail address?", "SAS Project - Info");
+            if (tcbox.Text.Length != 11)
+            {
+                Functions.MessageBox.Warn("TC is wrong.");
+                return;
+            }
+            var dialogResult = MessageBox.Show("Can you access your e-mail address?", "SAS Project - Info", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.Yes)
+            {
+                if (Functions.sendMailCheck() && Functions.MySQL.check_connection())
+                {
+                    var new_password = Functions.GeneratePassword();
+                    var users = Functions.MySQL.GetUsers();
+                    string email = null;
+                    string name = null;
+                    foreach (var x in users.GetList()) 
+                    {
+                        if (x.GetStaffTc() == tcbox.Text)
+                        {
+                            email = x.GetMail();
+                            name = x.GetNameSurname()[0];
+                            break;
+                        }
+                    }
+
+                    if (email != null && name != null)
+                    {
+                        Functions.sendMail(new_password, email, name);
+                        Functions.MySQL.Edit("users", "password", Functions.ComputeSha256Hash(new_password), "staff_tc", tcbox.Text);
+                        Functions.MessageBox.Info("New password is sent to your email.");
+                    }
+                    else
+                    {
+                        Functions.MessageBox.Warn("User not found.");
+                    }
+                }
+                else
+                {
+                    Functions.MessageBox.Error("Connection error!");
+                }
+            }
+            else
+            {
+                Functions.MessageBox.Info("Contact with your admin.");
+            }
         }
     }
 }
