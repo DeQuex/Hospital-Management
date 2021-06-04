@@ -33,7 +33,6 @@ namespace Hospital_Management
             this.btn_signout = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@ namespace Hospital_Management
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label33 = new System.Windows.Forms.Label();
             this.sidePanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.rightPanel.SuspendLayout();
             this.panel23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,7 +60,6 @@ namespace Hospital_Management
             this.sidePanel.Controls.Add(this.btn_signout);
             this.sidePanel.Controls.Add(this.panel1);
             this.sidePanel.Controls.Add(this.label1);
-            this.sidePanel.Controls.Add(this.pictureBox1);
             this.sidePanel.Location = new System.Drawing.Point(0, 0);
             this.sidePanel.Name = "sidePanel";
             this.sidePanel.Size = new System.Drawing.Size(286, 765);
@@ -95,20 +92,11 @@ namespace Hospital_Management
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label1.Location = new System.Drawing.Point(139, 37);
+            this.label1.Location = new System.Drawing.Point(80, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 28);
             this.label1.TabIndex = 4;
             this.label1.Text = "Deneme İsim";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.pictureBox1.Location = new System.Drawing.Point(14, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 83);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
             // 
             // rightPanel
             // 
@@ -247,7 +235,6 @@ namespace Hospital_Management
             this.SizeChanged += new System.EventHandler(this.StaffInterface_SizeChanged);
             this.sidePanel.ResumeLayout(false);
             this.sidePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.rightPanel.ResumeLayout(false);
             this.rightPanel.PerformLayout();
             this.panel23.ResumeLayout(false);
@@ -266,7 +253,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Button btn_signout;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.Panel panel27;

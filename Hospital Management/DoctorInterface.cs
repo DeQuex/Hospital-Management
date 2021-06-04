@@ -195,7 +195,7 @@ namespace Hospital_Management
             var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
             foreach (var x in appointments)
             {
-                if (x.GetAppointmentId() == dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString())
+                if (x.GetAppointmentId() == dataGridView4.SelectedRows[0].Cells["Id"].Value.ToString())
                 {
                     selectedAppointment = x;
                     break;
@@ -248,12 +248,13 @@ namespace Hospital_Management
             var appointments = Functions.MySQL.GetAppointments().GetList().Where(x => x.GetAccount().GetStaffId() == Form1.LoginedAccount.GetStaffId());
             foreach (var x in appointments)
             {
-                if (x.GetAppointmentId() == dataGridView1.SelectedRows[0].Cells["Id"].Value.ToString())
+                if (x.GetAppointmentId() == dataGridView2.SelectedRows[0].Cells["Id"].Value.ToString())
                 {
                     selectedAppointment = x;
                     break;
                 }
             }
+
             GetInfo();
         }
 

@@ -70,5 +70,10 @@ namespace Hospital_Management
             Form.ActiveForm?.Controls.Add(new Register());
             Form.ActiveForm?.Controls.Remove(this);
         }
+
+        private void lbl_forgot_Click(object sender, EventArgs e)
+        {
+            var dialogResult = MessageBox.Show("Can you access your e-mail address?", "SAS Project - Info");
+        }
     }
 }

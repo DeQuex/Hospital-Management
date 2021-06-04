@@ -51,7 +51,7 @@ namespace Hospital_Management
                 try
                 {
                     connection.Open();
-                    var sql = $"update sas.{table_name} set {columnKey} = {columnValue} where {whereKey} = '{whereValue}';";
+                    var sql = $"update sas.{table_name} set {columnKey} = '{columnValue}' where {whereKey} = '{whereValue}';";
                     var edit = new MySqlCommand(sql, connection);
                     edit.ExecuteReader();
                     connection.Close();
