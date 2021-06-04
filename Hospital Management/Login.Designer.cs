@@ -39,10 +39,11 @@ namespace Hospital_Management
             this.passwordpanel = new System.Windows.Forms.Panel();
             this.passbox = new System.Windows.Forms.TextBox();
             this.tcpanel = new System.Windows.Forms.Panel();
-            this.Logo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LoginPanel.SuspendLayout();
             this.passwordpanel.SuspendLayout();
             this.tcpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tcbox
@@ -164,21 +165,23 @@ namespace Hospital_Management
             this.tcpanel.Size = new System.Drawing.Size(175, 51);
             this.tcpanel.TabIndex = 2;
             // 
-            // Logo
+            // pictureBox1
             // 
-            this.Logo.BackColor = System.Drawing.Color.DarkGray;
-            this.Logo.Location = new System.Drawing.Point(28, 23);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(200, 100);
-            this.Logo.TabIndex = 5;
+            this.pictureBox1.Image = global::Hospital_Management.Properties.Resources.saslogo;
+            this.pictureBox1.Location = new System.Drawing.Point(288, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 156);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(90)))), ((int)(((byte)(101)))));
-            this.Controls.Add(this.Logo);
             this.Controls.Add(this.LoginPanel);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
             this.Size = new System.Drawing.Size(817, 556);
             this.Load += new System.EventHandler(this.Login_Load);
@@ -189,6 +192,7 @@ namespace Hospital_Management
             this.passwordpanel.PerformLayout();
             this.tcpanel.ResumeLayout(false);
             this.tcpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,8 +206,8 @@ namespace Hospital_Management
         private System.Windows.Forms.Button btn_login;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel Logo;
         private System.Windows.Forms.Label lbl_register;
         private System.Windows.Forms.Label lbl_forgot;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -18,7 +18,7 @@ namespace Hospital_Management
         }
         private void Login_SizeChanged(object sender, EventArgs e)
         {
-            Functions.OrderControl(this, Functions.Direction.Vertical, 0, Logo, LoginPanel);
+            Functions.OrderControl(this, Functions.Direction.Vertical, 0, pictureBox1, LoginPanel);
         }
 
         private void tcbox_KeyPress(object sender, KeyPressEventArgs e)
