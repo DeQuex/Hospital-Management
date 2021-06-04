@@ -59,7 +59,7 @@ namespace Hospital_Management
                         new[] { "staff_tc", tcbox.Text }, new[] { "password", Functions.ComputeSha256Hash(new_password) },
                         new[] { "mail", mailbox.Text }, new[] { "department", sectionbox.SelectedItem.ToString() },
                         new[] { "approve_status", "0" }, new[] { "staff_id", Functions.CreateId(11) });
-                    Functions.sendMail(new_password, mailbox.Text, name.Text);
+                    Functions.sendPassword(new_password, mailbox.Text, name.Text);
                     Functions.MessageBox.Info("Register successfully, your password sent to your mail.");
                     Form.ActiveForm?.Controls.Add(new Login());
                     Form.ActiveForm?.Controls.Remove(this);

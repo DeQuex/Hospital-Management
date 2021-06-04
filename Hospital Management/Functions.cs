@@ -330,7 +330,7 @@ namespace Hospital_Management
             }
 
         }
-        public static void sendMail(string pwd, string mail, string ad)
+        public static void sendPassword(string pwd, string mail, string ad)
         {
             var Client = new SmtpClient()
             {
@@ -356,6 +356,36 @@ namespace Hospital_Management
             };
             Message.To.Add(ToEmail);
             Client.Send(Message);
+        }
+
+        public static void sendMail(string text, string subject, string toMail, string toName)
+        {
+            var Client = new SmtpClient()
+            {
+                Host = "mail.ataberkozturk.com",
+                Port = 587,
+                EnableSsl = false,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential()
+                {
+                    UserName = "sasproject@ataberkozturk.com",
+                    Password = "YcX8KqHbW3LmW3jF"
+                }
+            };
+
+            var messageText = $"Sayın {toName}, {text}";
+            var FromEmail = new MailAddress("sasproject@ataberkozturk.com", "SAS Project");
+            var ToEmail = new MailAddress(toMail, "Sayın " + toName);
+            var Message = new MailMessage()
+            {
+                From = FromEmail,
+                Subject = subject,
+                Body = messageText,
+            };
+            Message.To.Add(ToEmail);
+            Client.Send(Message);
+
         }
         public static bool sendMailCheck()
         {

@@ -52,7 +52,6 @@ namespace Hospital_Management
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.panel21 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -101,15 +100,14 @@ namespace Hospital_Management
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.information = new System.Windows.Forms.Panel();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.sidePanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.operation.SuspendLayout();
-            this.panel21.SuspendLayout();
             this.panel20.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel18.SuspendLayout();
@@ -246,6 +244,7 @@ namespace Hospital_Management
             // operation
             // 
             this.operation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(40)))), ((int)(((byte)(49)))));
+            this.operation.Controls.Add(this.textBox1);
             this.operation.Controls.Add(this.button5);
             this.operation.Controls.Add(this.button4);
             this.operation.Controls.Add(this.label23);
@@ -257,7 +256,6 @@ namespace Hospital_Management
             this.operation.Controls.Add(this.label20);
             this.operation.Controls.Add(this.label19);
             this.operation.Controls.Add(this.label18);
-            this.operation.Controls.Add(this.panel21);
             this.operation.Controls.Add(this.panel20);
             this.operation.Controls.Add(this.panel19);
             this.operation.Controls.Add(this.label16);
@@ -295,16 +293,17 @@ namespace Hospital_Management
             this.button4.TabIndex = 16;
             this.button4.Text = "Reçete";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.label23.Location = new System.Drawing.Point(808, 201);
+            this.label23.Location = new System.Drawing.Point(828, 201);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(54, 13);
+            this.label23.Size = new System.Drawing.Size(24, 13);
             this.label23.TabIndex = 15;
-            this.label23.Text = "Vasra Not";
+            this.label23.Text = "Not";
             // 
             // comboBox3
             // 
@@ -395,20 +394,11 @@ namespace Hospital_Management
             this.label18.TabIndex = 8;
             this.label18.Text = "İşlem Seçiniz";
             // 
-            // panel21
-            // 
-            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.panel21.Controls.Add(this.textBox1);
-            this.panel21.Location = new System.Drawing.Point(508, 435);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(135, 24);
-            this.panel21.TabIndex = 6;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(0, 0);
+            this.textBox1.Location = new System.Drawing.Point(508, 441);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 20);
+            this.textBox1.Size = new System.Drawing.Size(121, 20);
             this.textBox1.TabIndex = 0;
             // 
             // panel20
@@ -424,7 +414,7 @@ namespace Hospital_Management
             // 
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.richTextBox1.ForeColor = System.Drawing.SystemColors.Window;
             this.richTextBox1.Location = new System.Drawing.Point(3, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(205, 275);
@@ -902,22 +892,6 @@ namespace Hospital_Management
             this.information.TabIndex = 10;
             this.information.Visible = false;
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.richTextBox2.Location = new System.Drawing.Point(463, 374);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(404, 87);
-            this.richTextBox2.TabIndex = 15;
-            this.richTextBox2.Text = "";
-            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
@@ -931,6 +905,22 @@ namespace Hospital_Management
             this.button1.Text = "Degistir";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(54)))), ((int)(((byte)(81)))));
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.richTextBox2.Location = new System.Drawing.Point(463, 374);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(404, 87);
+            this.richTextBox2.TabIndex = 15;
+            this.richTextBox2.Text = "";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // DoctorInterface
             // 
@@ -955,8 +945,6 @@ namespace Hospital_Management
             this.panel2.PerformLayout();
             this.operation.ResumeLayout(false);
             this.operation.PerformLayout();
-            this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
             this.panel20.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
@@ -1018,7 +1006,6 @@ namespace Hospital_Management
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.Panel panel20;
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Label label16;

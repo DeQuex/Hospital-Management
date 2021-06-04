@@ -268,5 +268,23 @@ namespace Hospital_Management
             if (selectedAppointment != null)
                 EditInspection(selectedAppointment, richTextBox2.Text);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string recipe;
+            if (selectedPatient != null)
+            {
+                recipe =
+                    $"receteniz:\n {Form1.loginName} tarafindan yollanmistir.\n Recete bilgileri:\n{comboBox1.SelectedItem} {comboBox2.SelectedItem} {comboBox3.SelectedItem} {textBox1.Text} Not: {richTextBox1.Text}";
+                if (Functions.sendMailCheck())
+                {
+                    Functions.sendMail(recipe, "Receteniz hazir", selectedPatient.GetMail(), selectedPatient.GetNameSurname()[0]);
+                }
+                else
+                {
+                    Functions.MessageBox.Error("An error occurred.");
+                }
+            }
+        }
     }
 }

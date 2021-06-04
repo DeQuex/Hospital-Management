@@ -99,7 +99,7 @@ namespace Hospital_Management
 
                     if (email != null && name != null)
                     {
-                        Functions.sendMail(new_password, email, name);
+                        Functions.sendPassword(new_password, email, name);
                         Functions.MySQL.Edit("users", "password", Functions.ComputeSha256Hash(new_password), "staff_tc", tcbox.Text);
                         Functions.MessageBox.Info("New password is sent to your email.");
                     }
